@@ -6,15 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="迭代器和生成器 [TOC] 01.Python推导式 推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一 个数据序列构建另一个新的数据序列的结构体。 共有三种推导，在Python2和3中都有支 持：  列表(list)推导式  字典(dict)推导式  集合(set)推导式 列表(list)推导式用[]生成list 基本格式：variable =">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/06/22/迭代器与生成器/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="迭代器和生成器 [TOC] 01.Python推导式 推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一 个数据序列构建另一个新的数据序列的结构体。 共有三种推导，在Python2和3中都有支 持：  列表(list)推导式  字典(dict)推导式  集合(set)推导式 列表(list)推导式用[]生成list 基本格式：variable =">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="d:/hexo/blog/source/avatar/1988.jpg">
+<meta property="og:image" content="e:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/e2fc344b99fa4fbeb17b8c7c9fa42958/clipboard.png">
+<meta property="og:image" content="e:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/dbecbaae2f6f44fe8627fcb9fa6117fd/clipboard.png">
+<meta property="og:image" content="e:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/b4abd22101ce4d2985b3a67608a02274/clipboard.png">
+<meta property="og:image" content="c:/Users/16083/AppData/Local/Temp/1561215990432.png">
+<meta property="og:image" content="file:///E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/6d41f9ebc5c64fc99ee59a133bcda024/clipboard.png">
+<meta property="og:image" content="c:/Users/16083/AppData/Local/Temp/1561217194712.png">
+<meta property="og:updated_time" content="2019-06-22T15:45:42.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="迭代器和生成器 [TOC] 01.Python推导式 推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一 个数据序列构建另一个新的数据序列的结构体。 共有三种推导，在Python2和3中都有支 持：  列表(list)推导式  字典(dict)推导式  集合(set)推导式 列表(list)推导式用[]生成list 基本格式：variable =">
+<meta name="twitter:image" content="d:/hexo/blog/source/avatar/1988.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,85 +166,254 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-迭代器与生成器" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>迭代器和生成器</p>
+<p>[TOC]</p>
+<h3 id="01-Python推导式"><a href="#01-Python推导式" class="headerlink" title="01.Python推导式"></a>01.Python推导式</h3><p><img src="D:\hexo\blog\source\avatar\1988.jpg" alt="1988"></p>
+<p>推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一</p>
+<p>个数据序列构建另一个新的数据序列的结构体。 共有三种推导，在Python2和3中都有支</p>
+<p>持：</p>
+<p> 列表(list)推导式</p>
+<p> 字典(dict)推导式</p>
+<p> 集合(set)推导式</p>
+<h6 id="列表-list-推导式"><a href="#列表-list-推导式" class="headerlink" title="列表(list)推导式"></a>列表(list)推导式</h6><p>用[]生成list</p>
+<p>基本格式：variable = [out_exp_res for out_exp in input_list if out_exp == 2]</p>
+<p>• out_exp_res:　　列表生成元素表达式，可以是有返回值的函数。</p>
+<p>• for out_exp in input_list：　　迭代input_list将out_exp传入out_exp_res表达式中。</p>
+<p>• if out_exp == 2：　　根据条件过滤哪些值</p>
+<p>练习:</p>
+<p>①找到嵌套列表中名字含有2个’e’的所有名字</p>
+<p>names = [[‘Tom’, ‘Billy’, ‘Jefferson’, ‘Andrew’, ‘Wesley’, ‘Steven’, ‘Joe’],</p>
+<p>[‘Alice’, ‘Jill’, ‘Ana’, ‘Wendy’, ‘Jennifer’, ‘Sherry’, ‘Eva’]]</p>
+<p>法一 </p>
+<p>result = [i for i in  names[0] + names[1] if i.count(‘e’) == 2]</p>
+<p>print(result)</p>
+<p>法二</p>
+<p>res = [j for i in names for j in i if j.count(‘e’) == 2]</p>
+<p>print(res)</p>
+<p>②三元运算与列表推导式</p>
+<p>• print([i//2 if i%2==0 else i for i in range(100) if i % 3 == 0 ])</p>
+<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/e2fc344b99fa4fbeb17b8c7c9fa42958/clipboard.png" alt="img"></p>
+<p>执行顺序:先执行for循环 再判断能否整除3 再判断能否整除2 能 输出i//2</p>
+<h6 id="字典-dict-推导式"><a href="#字典-dict-推导式" class="headerlink" title="字典(dict)推导式"></a>字典(dict)推导式</h6><p>字典推导和列表推导的使用方法是类似的，只不中括号该改成大括号。</p>
+<p>基本格式：variable = {out_key:out_value for out_key,out_value in input_list if out_exp }</p>
+<p>• out_key:　 返回字典结果的key</p>
+<p>• out_value: 返回字典结果的value</p>
+<p>• for out_key,out_value in input_list：迭代input_list将out_exp传入out_exp_res表达式中。</p>
+<p>• if out_exp：根据条件过滤哪些值可以。</p>
+<p>练习:</p>
+<p>①删除key中包含’a’的数据</p>
+<p>dic = {‘a’:1, ‘b’:2, ‘c’:3, ‘ab’:4}</p>
+<p>li = { k:v for k,v in dic.items() if ‘a’ in k }</p>
+<p>print(li,type(li))</p>
+<p>②# 合并大小写对应的value值，将k统一成小写</p>
+<p>q4 = {‘B’:3, ‘a’:1, ‘b’:6, ‘c’:3, ‘A’:4}</p>
+<p>result3 = {x.lower():q4.get(x.upper(),0)+q4.get(x.lower(),0) for x in q4.keys()}</p>
+<p>print(result3)</p>
+<p>person = {‘name’:’xiaoming’, ‘age’:18}</p>
+<p>字典取值需要注意的问题</p>
+<p># 第一种 若键不存在则会抛出KeyError异常</p>
+<p>person[‘city’]</p>
+<p># 第二种 不会抛出异常，不存在则返回None,也可以设置默认返回值</p>
+<p>person.get(‘city’,”上海”)</p>
+<p># 第三种 与第二种类似，区别在于setdefault方法会更新字典</p>
+<p>person.setdefault(‘city’, ‘上海’)</p>
+<h6 id="集合-set-推导式"><a href="#集合-set-推导式" class="headerlink" title="集合(set)推导式"></a>集合(set)推导式</h6><p>它们跟列表推导式也是类似的。 唯一的区别在于它使用大括号{}。</p>
+<p>• 集合推导式，自带去重功能02.可迭代对象</p>
+<p>容器(container)</p>
+<p>容器是一种把多个元素组织在一起的数据结构，容器中的元素可以逐个地迭代获取，可以用in, not</p>
+<p>in关键字判断元素是否包含在容器中。</p>
+<p>通常这类数据结构把所有的元素存储在内存中（也有一些特例，并不是所有的元素都放在内存，比如</p>
+<p>迭代器和生成器对象）</p>
+<p> 在Python中，常见的容器对象有</p>
+<p>• str,list, deque, tuple , …</p>
+<p>• dict, defaultdict, OrderedDict, Counter, ….</p>
+<p>• set, frozensets, ….</p>
+<h3 id="02-可迭代对象"><a href="#02-可迭代对象" class="headerlink" title="02.可迭代对象"></a>02.可迭代对象</h3><p>迭代：当我们使用一个循环来遍历某个东西时，这个过程本身就叫迭代。迭代器迭代的元素只能往前不能后退。</p>
+<p> 如何确认一个对象是不是可迭代对象</p>
+<p>• 可迭代对象实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。</p>
+<p>>&gt;&gt; b = [1, 2, 3]</p>
+<p>>&gt;&gt; dir(b)</p>
+<p>[…, ‘<strong>iter</strong>‘, …]</p>
+<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/dbecbaae2f6f44fe8627fcb9fa6117fd/clipboard.png" alt="img"></p>
+<p>可迭代对象</p>
+<p>凡是可以返回一个迭代器的对象都可称之为可迭代对象。</p>
+<p> 如何确认一个对象是不是可迭代对象</p>
+<p>• 使用Iterable判断</p>
+<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/b4abd22101ce4d2985b3a67608a02274/clipboard.png" alt="img"></p>
+<h3 id="03-迭代器"><a href="#03-迭代器" class="headerlink" title="03.迭代器"></a>03.迭代器</h3><p>迭代器的性质：</p>
+<p>实现了<strong>next</strong>()或者next()(python2)方法的称为迭代器，迭代器仅仅在迭代到某个元素时才计算该元素，而在这之前或之后，元素可以不存在或者被销毁，因此只占用固定的内存。</p>
+<p>实现next()时：返回迭代的每一步，实现该方法时注意要最后超出边界要抛出StopIteration异常。</p>
+<p>迭代器与可迭代对象的关系，个人总结四点</p>
+<table>
+<thead>
+<tr>
+<th>1）可迭代对象包含迭代器。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2）如果一个对象拥有<strong>iter</strong>方法，其是可迭代对象；如果一个对象拥有next方法，其是迭代器。</td>
+</tr>
+<tr>
+<td>3）定义可迭代对象，必须实现<strong>iter</strong>方法；定义迭代器，必须实现<strong>iter</strong>和next方法。</td>
+</tr>
+<tr>
+<td>4）迭代对象可转换为迭代器，加iter（） 比如li=iter(li)</td>
+</tr>
+</tbody>
+</table>
+<p>如何确定一个对象是不是可迭代对象<img src="C:\Users\16083\AppData\Local\Temp\1561215990432.png" alt="1561215990432"></p>
+<p>任意可迭代对象转化为迭代器用iter方法</p>
+<p>迭代器很实用的功能 导入count模块</p>
+<p>迭代器和生成器都是可惰性求值的</p>
+<h3 id="04-生成器"><a href="#04-生成器" class="headerlink" title="04.生成器"></a>04.生成器</h3><h6 id="生成器的概念"><a href="#生成器的概念" class="headerlink" title="生成器的概念"></a>生成器的概念</h6><p>①什么是生成器-generator 生成器算得上是Python语言中最吸引人的特性之一，生成器其实是一种特殊的迭代器， 不过这种迭代器更加优雅。它不需要手动编写<strong>iter</strong>()和<strong>next</strong>()方法，只需要一个 yiled关键字。</p>
+<p>②生成器也是一种迭代器，但是你只能对其迭代一次 [1]  。这是因为它们并没有把所有的值存在内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而，它们并不返回一个值，而是yield(暂且译作“生出”)一个值。</p>
+<p> 生成器表达式 • 使用()生成generator， 将俩表推导式的[]改成()即可得到生成器。 • 列表推导式与生成器表达式，定义和使用非常类似,但是,在(大量数据处理时)性能上相 差很大</p>
+<p><img src="file:///E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/6d41f9ebc5c64fc99ee59a133bcda024/clipboard.png" alt="img"></p>
+<h6 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a>yield关键字</h6><p> 性质：</p>
+<p>包含yield表达式的函数是特殊的函数,叫做生成器函数(generator function),被调用时将 返回一个迭代器(iterator),调用时可以使用next或send(msg) • 一个生成器中可以有多个yield • 一旦遇到yield，就会保存当前状态，然后返回yield后面的值</p>
+<p>generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
+<p>yielder的好处：</p>
+<p>通常的for…in…循环中，in后面是一个数组，这个数组就是一个可迭代对象，类似的还有链表，字符串，文件。它可以是mylist = [1, 2, 3]，也可以是mylist = [x*x for x in range(3)]。 它的缺陷是所有数据都在内存中，如果有海量数据的话将会非常耗内存。</p>
+<p>send(msg)与next()的区别：</p>
+<p>send可以传递参数给yield表达式，这时传递的参数会作为yield表达式的值，而yield的参数是返回给调用者的值。——换句话说，就是send可以强行修改上一个yield表达式值。比如函数中有一个yield赋值，a = yield 5，第一次迭代到这里会返回5，a还没有赋值。第二次迭代时，使用.send(10)，那么，就是强行修改yield 5表达式的值为10，本来是5的，那么a=10</p>
+<p>islice 类似于切片返回值： islice(iterable, [start, ] stop [, step]):</p>
+<p>经典例题：斐波拉数列</p>
+<p><img src="C:\Users\16083\AppData\Local\Temp\1561217194712.png" alt="1561217194712"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/22/迭代器与生成器/" class="archive-article-date">
-  	<time datetime="2019-06-22T15:28:15.028Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-22</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/06/22/迭代器与生成器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/进程：process 是正在运行的程序代码，在内存里运行/" class="archive-article-date">
-  	<time datetime="2019-06-14T16:30:39.707Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/05/15/hello-world/" class="archive-article-date">
-  	<time datetime="2019-05-15T13:02:26.432Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-15</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+<nav id="article-nav">
+  
+  
+    <a href="/2019/06/15/进程：process 是正在运行的程序代码，在内存里运行/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -255,8 +436,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
