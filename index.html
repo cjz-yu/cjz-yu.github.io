@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src class="js-avatar">
+			<img src="/img/head1.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Jack</a></h1>
@@ -103,7 +103,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src class="js-avatar">
+				<img src="/img/head1.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Jack</h1>
@@ -156,15 +156,259 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-迭代器与生成器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2019-07-02-raid与lvm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/2019-07-02-raid与lvm/">raid与lvm</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/02/2019-07-02-raid与lvm/" class="archive-article-date">
+  	<time datetime="2019-07-02T12:53:29.193Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>迭代器和生成器</p>
-<p>[TOC]</p>
-<h3 id="01-Python推导式"><a href="#01-Python推导式" class="headerlink" title="01.Python推导式"></a>01.Python推导式</h3><p><img src="D:\hexo\blog\source\avatar\1988.jpg" alt="1988"></p>
-<p>推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一</p>
+        <h1 id="linux的raid与lvm"><a href="#linux的raid与lvm" class="headerlink" title="linux的raid与lvm"></a>linux的raid与lvm</h1><h2 id="raid磁盘阵列概念"><a href="#raid磁盘阵列概念" class="headerlink" title="raid磁盘阵列概念"></a>raid磁盘阵列概念</h2><p>百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MTBF），储存冗余数据也增加了容错</p>
+<p>个人理解：把很多独立的磁盘组合起来形成一个逻辑上的巨大磁盘，数据从原来的磁盘溢满可以到存在多个硬盘上</p>
+<h2 id="raid功能"><a href="#raid功能" class="headerlink" title="raid功能"></a>raid功能</h2><p>(1)通过对磁盘上的数据进行条带化，实现对数据成块存取，减少磁盘的机械寻道时间，提高了数据存取速度。 </p>
+<p>(2)通过对一个阵列中的几块磁盘同时读取，减少了磁盘的机械寻道时间，提高数据存取速度。 </p>
+<p>(3)通过镜像或者存储奇偶校验信息的方式，实现了对数据的冗余保护</p>
+<p>机械寻道的意思类似你在一本书的目录找到你想看的章节,你在翻到那个章节所需要的时间…这是个物理过程不可避免…类似内存寻址的方式,现在它用一个阵列对多块磁盘读取，肯定要快很多 </p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>磁盘阵列作为独立系统在主机外直连或通过网络与主机相连。磁盘阵列有多个端口可以被不同主机或不同端口连接。一个主机连接阵列的不同端口可提升传输速度。 </p>
+<p>和当时PC用单磁盘内部集成缓存一样，在磁盘阵列内部为加快与主机交互速度，都带有一定量的缓冲存储器。主机与磁盘阵列的缓存交互，缓存与具体的磁盘交互数据。 </p>
+<p>在应用中，有部分常用的数据是需要经常读取的，磁盘阵列根据内部的算法，查找出这些经常读取的数据，存储在缓存中，加快主机读取这些数据的速度，而对于其他缓存中没有的数据，主机要读取，则由阵列从磁盘上直接读取传输给主机。对于主机写入的数据，只写在缓存中，主机可以立即完成写操作。然后由缓存再慢慢写入磁盘。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：提高传输速率  原因是多个磁盘同时工作提高了存储系统的吞吐量在逻辑上属于同一磁盘驱动器</p>
+<p>缺点：RAID0没有冗余功能，如果一个磁盘（物理）损坏，则所有的数据都无法使用。</p>
+<p>​      RAID1磁盘的利用率最高只能达到50%(使用两块盘的情况下)，是所有RAID级别中最低的。  </p>
+<h2 id="RAID级别"><a href="#RAID级别" class="headerlink" title="RAID级别"></a>RAID级别</h2><p>级别有RAID0、RAID1、RAID5、RAID6、RAID10、RAID01等，这里讲几种经典的</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RAID0</th>
+<th style="text-align:left">读写速度快，但是没有容错功能。2块以上磁盘组成。磁盘利用率100% –》条带卷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RAID1</td>
+<td style="text-align:left">镜像卷：2块磁盘组成，有容错功能。磁盘利用率50%</td>
+</tr>
+<tr>
+<td style="text-align:center">raid5</td>
+<td style="text-align:left">背后的原理是 分布校验 + 条带  ：可以容错，至少3块磁盘，最多坏一块。</td>
+</tr>
+<tr>
+<td style="text-align:center">raid6</td>
+<td style="text-align:left">背后的原理是 分布校验 +分布校验+ 条带  ：可以容错，至少4块磁盘，最多坏2块。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/02/2019-07-02-raid与lvm/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-关于git一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/关于git一些问题/">git版本控制</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/02/关于git一些问题/" class="archive-article-date">
+  	<time datetime="2019-07-02T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#### </p>
+<h3 id="什么是Git？"><a href="#什么是Git？" class="headerlink" title="什么是Git？"></a>什么是Git？</h3><ul>
+<li>Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。</li>
+<li>与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。</li>
+<li>每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，因此当服务器中断时，你需要的所有恢复数据都在你队友的本地 Git 存储库中。</li>
+<li>还有一个中央云存储库，开发人员可以向其提交更改，并与其他团队成员进行共享，如图所示，所有协作者都在提交更改“远程存储库”。</li>
+<li></li>
+</ul>
+<h4 id="git和SVN有什么区别？"><a href="#git和SVN有什么区别？" class="headerlink" title="git和SVN有什么区别？"></a>git和SVN有什么区别？</h4><table>
+<thead>
+<tr>
+<th>GIt</th>
+<th><strong>SVN</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.Git是一个分布式的版本控制工具</td>
+<td>1. SVN 是集中版本控制工具</td>
+</tr>
+<tr>
+<td>2.它属于第3代版本控制工具</td>
+<td>2.它属于第2代版本控制工具</td>
+</tr>
+<tr>
+<td>3.客户端可以在其本地系统上克隆整个存储库</td>
+<td>3.版本历史记录存储在服务器端存储库中</td>
+</tr>
+<tr>
+<td>4.即使离线也可以提交</td>
+<td>4.只允许在线提交</td>
+</tr>
+<tr>
+<td>5.Push/pull 操作更快</td>
+<td>5.Push/pull 操作较慢</td>
+</tr>
+<tr>
+<td>6.工程可以用 commit 自动共享</td>
+<td>6.没有任何东西自动共享</td>
+</tr>
+</tbody>
+</table>
+<h4 id="集中式版本控制与分布式版本控制的区别（图）"><a href="#集中式版本控制与分布式版本控制的区别（图）" class="headerlink" title="集中式版本控制与分布式版本控制的区别（图）"></a>集中式版本控制与分布式版本控制的区别（图）</h4><p>集中式版本控制客户端省磁盘空间，权限控制方便，可以做到目录级别的控制<br>缺点：如果server关机了，客户端无法提交数据和做验证。server磁盘坏了，会丢失所有的变化数据</p>
+<p>分布式版本控制：可以本地查看所有的版本历史，可以离线提交，只需在联网时push到相应的服务器或用户<br>每个用户那里保存的都是所有版本的版本数据，所以只要有一个用户的设备没问题就可以恢复所有数据。<br>缺点：增加了本地存储空间的占用，代码保密性差，不利于做权限控制。</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim" alt="mark"></p>
+<p>git常见的命令</p>
+<p>git clone 克隆远程仓库到本地<br>git remote -v 查看远程仓库<br>git add 将文件暂存<br>git commit -m ‘备注信息’将文件提交到本地仓库<br>git push origin master 将文件推到origin源master分支<br>git pull origin master 拉取数据到本地<br>git status  查看状态<br>git log  查看日志<br>git config 查看配置<br>git reset –hard commit ID号 回滚（通过git log得到）<br>git branch -a 查看所有分支<br>git checkout 分支名  切换分支<br>git branch 分支名 创建新分支<br>git branch -d 分支名 删除分支</p>
+<h4 id="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"><a href="#提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？" class="headerlink" title="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"></a>提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？</h4><h5 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h5><p>当web页面有更新，本地也有更新，然后本地在push前，没有得到最新版本就直接push就会产生冲突，即本地与服务器存在不一致的地方就会冲突<br>或者当两人甚至多人对同一个文件进行修改时，push也会产生冲突</p>
+<h5 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h5><p>通过git stash命令，把工作区的修改提交到栈区，目的是保存工作区的修改；<br>通过git pull命令，拉取远程分支上的代码并合并到本地分支，目的是消除冲突；<br>通过git stash pop命令，把保存在栈区的修改部分合并到最新的工作空间中；</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/02/关于git一些问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-迭代器与生成器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/15/迭代器与生成器/">迭代器与生成器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/15/迭代器与生成器/" class="archive-article-date">
+  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="迭代器和生成器"><a href="#迭代器和生成器" class="headerlink" title="迭代器和生成器"></a>迭代器和生成器</h1><p>[TOC]</p>
+<h3 id="01-Python推导式"><a href="#01-Python推导式" class="headerlink" title="01.Python推导式"></a>01.Python推导式</h3><p>推导式comprehensions（又称解析式），是Python的一种独有特性。推导式是可以从一</p>
 <p>个数据序列构建另一个新的数据序列的结构体。 共有三种推导，在Python2和3中都有支</p>
 <p>持：</p>
 <p> 列表(list)推导式</p>
@@ -187,7 +431,7 @@
 <p>print(res)</p>
 <p>②三元运算与列表推导式</p>
 <p>• print([i//2 if i%2==0 else i for i in range(100) if i % 3 == 0 ])</p>
-<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/e2fc344b99fa4fbeb17b8c7c9fa42958/clipboard.png" alt="img"></p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/587EO3aKTkEn.png?imageslim" alt="mark"></p>
 <p>执行顺序:先执行for循环 再判断能否整除3 再判断能否整除2 能 输出i//2</p>
 <h6 id="字典-dict-推导式"><a href="#字典-dict-推导式" class="headerlink" title="字典(dict)推导式"></a>字典(dict)推导式</h6><p>字典推导和列表推导的使用方法是类似的，只不中括号该改成大括号。</p>
 <p>基本格式：variable = {out_key:out_value for out_key,out_value in input_list if out_exp }</p>
@@ -229,12 +473,12 @@
 <p>>&gt;&gt; b = [1, 2, 3]</p>
 <p>>&gt;&gt; dir(b)</p>
 <p>[…, ‘<strong>iter</strong>‘, …]</p>
-<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/dbecbaae2f6f44fe8627fcb9fa6117fd/clipboard.png" alt="img"></p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/40kRXy1nboFz.png?imageslim" alt="mark"></p>
 <p>可迭代对象</p>
 <p>凡是可以返回一个迭代器的对象都可称之为可迭代对象。</p>
 <p> 如何确认一个对象是不是可迭代对象</p>
 <p>• 使用Iterable判断</p>
-<p><img src="E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/b4abd22101ce4d2985b3a67608a02274/clipboard.png" alt="img"></p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/sSmoMXI0f9fX.png?imageslim" alt="mark"></p>
 <h3 id="03-迭代器"><a href="#03-迭代器" class="headerlink" title="03.迭代器"></a>03.迭代器</h3><p>迭代器的性质：</p>
 <p>实现了<strong>next</strong>()或者next()(python2)方法的称为迭代器，迭代器仅仅在迭代到某个元素时才计算该元素，而在这之前或之后，元素可以不存在或者被销毁，因此只占用固定的内存。</p>
 <p>实现next()时：返回迭代的每一步，实现该方法时注意要最后超出边界要抛出StopIteration异常。</p>
@@ -257,14 +501,14 @@
 </tr>
 </tbody>
 </table>
-<p>如何确定一个对象是不是可迭代对象<img src="C:\Users\16083\AppData\Local\Temp\1561215990432.png" alt="1561215990432"></p>
+<p>如何确定一个对象是不是可迭代对象<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/BJ3Ulr4H5oxs.png?imageslim" alt="mark"></p>
 <p>任意可迭代对象转化为迭代器用iter方法</p>
 <p>迭代器很实用的功能 导入count模块</p>
 <p>迭代器和生成器都是可惰性求值的</p>
 <h3 id="04-生成器"><a href="#04-生成器" class="headerlink" title="04.生成器"></a>04.生成器</h3><h6 id="生成器的概念"><a href="#生成器的概念" class="headerlink" title="生成器的概念"></a>生成器的概念</h6><p>①什么是生成器-generator 生成器算得上是Python语言中最吸引人的特性之一，生成器其实是一种特殊的迭代器， 不过这种迭代器更加优雅。它不需要手动编写<strong>iter</strong>()和<strong>next</strong>()方法，只需要一个 yiled关键字。</p>
 <p>②生成器也是一种迭代器，但是你只能对其迭代一次 [1]  。这是因为它们并没有把所有的值存在内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而，它们并不返回一个值，而是yield(暂且译作“生出”)一个值。</p>
 <p> 生成器表达式 • 使用()生成generator， 将俩表推导式的[]改成()即可得到生成器。 • 列表推导式与生成器表达式，定义和使用非常类似,但是,在(大量数据处理时)性能上相 差很大</p>
-<p><img src="file:///E:/%E6%9C%89%E9%81%93%E7%AC%94%E8%AE%B0/YoudaoNote/qq0430EFB1FA686F06B101B45EC3F97978/6d41f9ebc5c64fc99ee59a133bcda024/clipboard.png" alt="img"></p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/B3rzj2B5ln02.png?imageslim" alt="mark"></p>
 <h6 id="yield关键字"><a href="#yield关键字" class="headerlink" title="yield关键字"></a>yield关键字</h6><p> 性质：</p>
 <p>包含yield表达式的函数是特殊的函数,叫做生成器函数(generator function),被调用时将 返回一个迭代器(iterator),调用时可以使用next或send(msg) • 一个生成器中可以有多个yield • 一旦遇到yield，就会保存当前状态，然后返回yield后面的值</p>
 <p>generator和函数的执行流程不一样。函数是顺序执行，遇到return语句或者最后一行函数语句就返回。而变成generator的函数，在每次调用next()的时候执行，遇到yield语句返回，再次执行时从上次返回的yield语句处继续执行。</p>
@@ -274,7 +518,7 @@
 <p>send可以传递参数给yield表达式，这时传递的参数会作为yield表达式的值，而yield的参数是返回给调用者的值。——换句话说，就是send可以强行修改上一个yield表达式值。比如函数中有一个yield赋值，a = yield 5，第一次迭代到这里会返回5，a还没有赋值。第二次迭代时，使用.send(10)，那么，就是强行修改yield 5表达式的值为10，本来是5的，那么a=10</p>
 <p>islice 类似于切片返回值： islice(iterable, [start, ] stop [, step]):</p>
 <p>经典例题：斐波拉数列</p>
-<p><img src="C:\Users\16083\AppData\Local\Temp\1561217194712.png" alt="1561217194712"></p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190702/kOfcKl75O5A6.png?imageslim" alt="mark"></p>
 
       
 
@@ -283,11 +527,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/22/迭代器与生成器/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/15/迭代器与生成器/">展开全文 >></a>
         </p>
       
 
@@ -317,8 +572,23 @@
 
 
   
-    <article id="post-进程：process 是正在运行的程序代码，在内存里运行" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-计算机网络物理层" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/15/计算机网络物理层/">物理层知识点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/15/计算机网络物理层/" class="archive-article-date">
+  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -373,11 +643,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/15/进程：process 是正在运行的程序代码，在内存里运行/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/06/15/计算机网络物理层/">展开全文 >></a>
         </p>
       
 
@@ -552,6 +833,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

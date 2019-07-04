@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/6 | Hexo</title>
+  <title>raid与lvm | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="raid与lvm">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-04T12:06:52.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="raid与lvm">
+<meta name="twitter:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,98 +159,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2019-07-02-raid与lvm" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/迭代器与生成器/" class="archive-article-date">
-  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/迭代器与生成器/">迭代器与生成器</a>
+    <h1 class="article-title" itemprop="name">
+      raid与lvm
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/02/2019-07-02-raid与lvm/" class="archive-article-date">
+  	<time datetime="2019-07-02T12:53:29.193Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="linux的raid与lvm"><a href="#linux的raid与lvm" class="headerlink" title="linux的raid与lvm"></a>linux的raid与lvm</h1><h2 id="raid磁盘阵列概念"><a href="#raid磁盘阵列概念" class="headerlink" title="raid磁盘阵列概念"></a>raid磁盘阵列概念</h2><p>百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MTBF），储存冗余数据也增加了容错</p>
+<p>个人理解：把很多独立的磁盘组合起来形成一个逻辑上的巨大磁盘，数据从原来的磁盘溢满可以到存在多个硬盘上</p>
+<h2 id="raid功能"><a href="#raid功能" class="headerlink" title="raid功能"></a>raid功能</h2><p>(1)通过对磁盘上的数据进行条带化，实现对数据成块存取，减少磁盘的机械寻道时间，提高了数据存取速度。 </p>
+<p>(2)通过对一个阵列中的几块磁盘同时读取，减少了磁盘的机械寻道时间，提高数据存取速度。 </p>
+<p>(3)通过镜像或者存储奇偶校验信息的方式，实现了对数据的冗余保护</p>
+<p>机械寻道的意思类似你在一本书的目录找到你想看的章节,你在翻到那个章节所需要的时间…这是个物理过程不可避免…类似内存寻址的方式,现在它用一个阵列对多块磁盘读取，肯定要快很多 </p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>磁盘阵列作为独立系统在主机外直连或通过网络与主机相连。磁盘阵列有多个端口可以被不同主机或不同端口连接。一个主机连接阵列的不同端口可提升传输速度。 </p>
+<p>和当时PC用单磁盘内部集成缓存一样，在磁盘阵列内部为加快与主机交互速度，都带有一定量的缓冲存储器。主机与磁盘阵列的缓存交互，缓存与具体的磁盘交互数据。 </p>
+<p>在应用中，有部分常用的数据是需要经常读取的，磁盘阵列根据内部的算法，查找出这些经常读取的数据，存储在缓存中，加快主机读取这些数据的速度，而对于其他缓存中没有的数据，主机要读取，则由阵列从磁盘上直接读取传输给主机。对于主机写入的数据，只写在缓存中，主机可以立即完成写操作。然后由缓存再慢慢写入磁盘。</p>
+<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：提高传输速率  原因是多个磁盘同时工作提高了存储系统的吞吐量在逻辑上属于同一磁盘驱动器</p>
+<p>缺点：RAID0没有冗余功能，如果一个磁盘（物理）损坏，则所有的数据都无法使用。</p>
+<p>​      RAID1磁盘的利用率最高只能达到50%(使用两块盘的情况下)，是所有RAID级别中最低的。  </p>
+<h2 id="RAID级别"><a href="#RAID级别" class="headerlink" title="RAID级别"></a>RAID级别</h2><p>级别有RAID0、RAID1、RAID5、RAID6、RAID10、RAID01等，这里讲几种经典的</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">RAID0</th>
+<th style="text-align:left">读写速度快，但是没有容错功能。2块以上磁盘组成。磁盘利用率100% –》条带卷</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RAID1</td>
+<td style="text-align:left">镜像卷：2块磁盘组成，有容错功能。磁盘利用率50%</td>
+</tr>
+<tr>
+<td style="text-align:center">raid5</td>
+<td style="text-align:left">背后的原理是 分布校验 + 条带  ：可以容错，至少3块磁盘，最多坏一块。</td>
+</tr>
+<tr>
+<td style="text-align:center">raid6</td>
+<td style="text-align:left">背后的原理是 分布校验 +分布校验+ 条带  ：可以容错，至少4块磁盘，最多坏2块。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/计算机网络物理层/" class="archive-article-date">
-  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/02/关于git一些问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git版本控制</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/计算机网络物理层/">物理层知识点</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -268,8 +377,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/6 | Hexo</title>
+  <title>git版本控制 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2019/06/index.html">
+  <meta name="description" content="####  什么是Git？ Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。 与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。 每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git版本控制">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/关于git一些问题/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="####  什么是Git？ Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。 与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。 每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim">
+<meta property="og:updated_time" content="2019-07-04T12:11:10.507Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="git版本控制">
+<meta name="twitter:description" content="####  什么是Git？ Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。 与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。 每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，">
+<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,98 +161,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-关于git一些问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/迭代器与生成器/" class="archive-article-date">
-  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/迭代器与生成器/">迭代器与生成器</a>
+    <h1 class="article-title" itemprop="name">
+      git版本控制
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/07/02/关于git一些问题/" class="archive-article-date">
+  	<time datetime="2019-07-02T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#### </p>
+<h3 id="什么是Git？"><a href="#什么是Git？" class="headerlink" title="什么是Git？"></a>什么是Git？</h3><ul>
+<li>Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。</li>
+<li>与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。</li>
+<li>每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，因此当服务器中断时，你需要的所有恢复数据都在你队友的本地 Git 存储库中。</li>
+<li>还有一个中央云存储库，开发人员可以向其提交更改，并与其他团队成员进行共享，如图所示，所有协作者都在提交更改“远程存储库”。</li>
+<li></li>
+</ul>
+<h4 id="git和SVN有什么区别？"><a href="#git和SVN有什么区别？" class="headerlink" title="git和SVN有什么区别？"></a>git和SVN有什么区别？</h4><table>
+<thead>
+<tr>
+<th>GIt</th>
+<th><strong>SVN</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.Git是一个分布式的版本控制工具</td>
+<td>1. SVN 是集中版本控制工具</td>
+</tr>
+<tr>
+<td>2.它属于第3代版本控制工具</td>
+<td>2.它属于第2代版本控制工具</td>
+</tr>
+<tr>
+<td>3.客户端可以在其本地系统上克隆整个存储库</td>
+<td>3.版本历史记录存储在服务器端存储库中</td>
+</tr>
+<tr>
+<td>4.即使离线也可以提交</td>
+<td>4.只允许在线提交</td>
+</tr>
+<tr>
+<td>5.Push/pull 操作更快</td>
+<td>5.Push/pull 操作较慢</td>
+</tr>
+<tr>
+<td>6.工程可以用 commit 自动共享</td>
+<td>6.没有任何东西自动共享</td>
+</tr>
+</tbody>
+</table>
+<h4 id="集中式版本控制与分布式版本控制的区别（图）"><a href="#集中式版本控制与分布式版本控制的区别（图）" class="headerlink" title="集中式版本控制与分布式版本控制的区别（图）"></a>集中式版本控制与分布式版本控制的区别（图）</h4><p>集中式版本控制客户端省磁盘空间，权限控制方便，可以做到目录级别的控制<br>缺点：如果server关机了，客户端无法提交数据和做验证。server磁盘坏了，会丢失所有的变化数据</p>
+<p>分布式版本控制：可以本地查看所有的版本历史，可以离线提交，只需在联网时push到相应的服务器或用户<br>每个用户那里保存的都是所有版本的版本数据，所以只要有一个用户的设备没问题就可以恢复所有数据。<br>缺点：增加了本地存储空间的占用，代码保密性差，不利于做权限控制。</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim" alt="mark"></p>
+<p>git常见的命令</p>
+<p>git clone 克隆远程仓库到本地<br>git remote -v 查看远程仓库<br>git add 将文件暂存<br>git commit -m ‘备注信息’将文件提交到本地仓库<br>git push origin master 将文件推到origin源master分支<br>git pull origin master 拉取数据到本地<br>git status  查看状态<br>git log  查看日志<br>git config 查看配置<br>git reset –hard commit ID号 回滚（通过git log得到）<br>git branch -a 查看所有分支<br>git checkout 分支名  切换分支<br>git branch 分支名 创建新分支<br>git branch -d 分支名 删除分支</p>
+<h4 id="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"><a href="#提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？" class="headerlink" title="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"></a>提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？</h4><h5 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h5><p>当web页面有更新，本地也有更新，然后本地在push前，没有得到最新版本就直接push就会产生冲突，即本地与服务器存在不一致的地方就会冲突<br>或者当两人甚至多人对同一个文件进行修改时，push也会产生冲突</p>
+<h5 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h5><p>通过git stash命令，把工作区的修改提交到栈区，目的是保存工作区的修改；<br>通过git pull命令，拉取远程分支上的代码并合并到本地分支，目的是消除冲突；<br>通过git stash pop命令，把保存在栈区的修改部分合并到最新的工作空间中；</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/02/关于git一些问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/06/15/计算机网络物理层/" class="archive-article-date">
-  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/07/02/2019-07-02-raid与lvm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          raid与lvm
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/15/迭代器与生成器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迭代器与生成器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/06/15/计算机网络物理层/">物理层知识点</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -268,8 +401,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
