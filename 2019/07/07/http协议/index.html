@@ -6,22 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>raid与lvm | Hexo</title>
+  <title>Http协议 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
-<meta name="keywords" content="linux">
+  <meta name="description" content="[TOC] http协议HTTP简介什么是超文本(HyperText)？ 包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。 什么是URL？ URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识">
+<meta name="keywords" content="前端知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="raid与lvm">
-<meta property="og:url" content="http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/index.html">
+<meta property="og:title" content="Http协议">
+<meta property="og:url" content="http://yoursite.com/2019/07/07/http协议/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
+<meta property="og:description" content="[TOC] http协议HTTP简介什么是超文本(HyperText)？ 包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。 什么是URL？ URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
-<meta property="og:updated_time" content="2019-07-04T15:56:25.003Z">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190707/J99OOUwOAh7L.png?imageslim">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/gFPQ3AnTQzpS.png?imageslim">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/zTDrHxDUU6vm.png?imageslim">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/jma5eadbcNms.png?imageslim">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/WjXc8wz42JNn.png?imageslim">
+<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/9hcqdIsvjvyw.png?imageslim">
+<meta property="og:updated_time" content="2019-07-08T04:39:28.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="raid与lvm">
-<meta name="twitter:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
-<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
+<meta name="twitter:title" content="Http协议">
+<meta name="twitter:description" content="[TOC] http协议HTTP简介什么是超文本(HyperText)？ 包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。 什么是URL？ URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识">
+<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190707/J99OOUwOAh7L.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,114 +166,271 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2019-07-02-raid与lvm" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-http协议" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      raid与lvm
+      Http协议
     </h1>
   
 
         
-        <a href="/2019/07/02/2019-07-02-raid与lvm/" class="archive-article-date">
-  	<time datetime="2019-07-02T12:53:29.193Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+        <a href="/2019/07/07/http协议/" class="archive-article-date">
+  	<time datetime="2019-07-07T04:28:35.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="linux的raid与lvm"><a href="#linux的raid与lvm" class="headerlink" title="linux的raid与lvm"></a>linux的raid与lvm</h1><h2 id="raid磁盘阵列概念"><a href="#raid磁盘阵列概念" class="headerlink" title="raid磁盘阵列概念"></a>raid磁盘阵列概念</h2><p>百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MTBF），储存冗余数据也增加了容错</p>
-<p>个人理解：把很多独立的磁盘组合起来形成一个逻辑上的巨大磁盘，数据从原来的磁盘溢满可以到存在多个硬盘上</p>
-<h2 id="raid功能"><a href="#raid功能" class="headerlink" title="raid功能"></a>raid功能</h2><p>(1)通过对磁盘上的数据进行条带化，实现对数据成块存取，减少磁盘的机械寻道时间，提高了数据存取速度。 </p>
-<p>(2)通过对一个阵列中的几块磁盘同时读取，减少了磁盘的机械寻道时间，提高数据存取速度。 </p>
-<p>(3)通过镜像或者存储奇偶校验信息的方式，实现了对数据的冗余保护</p>
-<p>机械寻道的意思类似你在一本书的目录找到你想看的章节,你在翻到那个章节所需要的时间…这是个物理过程不可避免…类似内存寻址的方式,现在它用一个阵列对多块磁盘读取，肯定要快很多 </p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>磁盘阵列作为独立系统在主机外直连或通过网络与主机相连。磁盘阵列有多个端口可以被不同主机或不同端口连接。一个主机连接阵列的不同端口可提升传输速度。 </p>
-<p>和当时PC用单磁盘内部集成缓存一样，在磁盘阵列内部为加快与主机交互速度，都带有一定量的缓冲存储器。主机与磁盘阵列的缓存交互，缓存与具体的磁盘交互数据。 </p>
-<p>在应用中，有部分常用的数据是需要经常读取的，磁盘阵列根据内部的算法，查找出这些经常读取的数据，存储在缓存中，加快主机读取这些数据的速度，而对于其他缓存中没有的数据，主机要读取，则由阵列从磁盘上直接读取传输给主机。对于主机写入的数据，只写在缓存中，主机可以立即完成写操作。然后由缓存再慢慢写入磁盘。</p>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：提高传输速率  原因是多个磁盘同时工作提高了存储系统的吞吐量在逻辑上属于同一磁盘驱动器</p>
-<p>缺点：RAID0没有冗余功能，如果一个磁盘（物理）损坏，则所有的数据都无法使用。</p>
-<p>​      RAID1磁盘的利用率最高只能达到50%(使用两块盘的情况下)，是所有RAID级别中最低的。  </p>
-<h2 id="RAID级别"><a href="#RAID级别" class="headerlink" title="RAID级别"></a>RAID级别</h2><p>级别有RAID0、RAID1、RAID5、RAID6、RAID10、RAID01等，这里讲几种经典的</p>
+        <p>[TOC]</p>
+<h1 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h1><h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>什么是超文本(HyperText)？</p>
+<p>包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。</p>
+<p>什么是URL？</p>
+<p>URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识万维网中的某一个文档。URL由协议、主机和端口(默认为80)以及文件名三部分构成。如：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190707/J99OOUwOAh7L.png?imageslim" alt="mark">!</p>
+<p>​                           <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/gFPQ3AnTQzpS.png?imageslim" alt="mark"></p>
+<p>什么是超文本传输协议HTTP？</p>
+<p>是一种按照URL指示，将超文本文档从一台主机(Web服务器)传输到另一台主机(浏览器)的应用层协议，以实现超链接的功能。</p>
+<h2 id="TTP的工作原理"><a href="#TTP的工作原理" class="headerlink" title="TTP的工作原理"></a>TTP的工作原理</h2><p>请求/响应交互模型                                                                  <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/zTDrHxDUU6vm.png?imageslim" alt="mark"></p>
+<p>在用户点击URL为<a href="http://www.sxtyu.com/index.html的" target="_blank" rel="noopener">http://www.sxtyu.com/index.html的</a>    链接后，浏览器和Web服务器执行以下动作：</p>
+<p>① 浏览器分析超链接中的URL</p>
+<p>②浏览器向DNS请求解析<a href="http://www.sxtyu.com的IP地址" target="_blank" rel="noopener">www.sxtyu.com的IP地址</a></p>
+<p>③DNS将解析出的IP地址202.2.16.21返回浏览器</p>
+<p>④浏览器与服务器建立TCP连接(80端口)</p>
+<p>⑤浏览器请求文档：GET /index.html</p>
+<p>⑥服务器给出响应，将文档 index.html发送给浏览器</p>
+<p>⑦释放TCP连接</p>
+<p>⑧浏览器显示index.html中的内容</p>
+<p>从封装的角度来考虑背后发生了什么     </p>
+<p>http协议属于应用层     去   你的电脑 =&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;服务器  </p>
+<p>​                                      回来    服务器=&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;你的电脑 </p>
+<p> <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/jma5eadbcNms.png?imageslim" alt="mark"></p>
+<h2 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h2><p>请求报文</p>
+<p>即从客户端(浏览器)向Web服务器发送的请求报文。报文的所有字段都是ASCII码。</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/WjXc8wz42JNn.png?imageslim" alt="mark"></p>
+<p>请求报文中的方法</p>
+<p>方法(Method)是对所请求对象所进行的操作,也就是一些命令。请求报文中的操作有:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">RAID0</th>
-<th style="text-align:left">读写速度快，但是没有容错功能。2块以上磁盘组成。磁盘利用率100% –》条带卷</th>
+<th>方法(操作）</th>
+<th>含义</th>
+<th>方法(操作)</th>
+<th>含义</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">RAID1</td>
-<td style="text-align:left">镜像卷：2块磁盘组成，有容错功能。磁盘利用率50%</td>
+<td>GET</td>
+<td>请求读取一个Web页面</td>
+<td>HEAD</td>
+<td>请求读取一个Web页面的首部</td>
 </tr>
 <tr>
-<td style="text-align:center">raid5</td>
-<td style="text-align:left">背后的原理是 分布校验 + 条带  ：可以容错，至少3块磁盘，最多坏一块。</td>
+<td>POST</td>
+<td>附加一个命名资源(如Web页面)</td>
+<td>PUT</td>
+<td>请求存储一个Web页面</td>
 </tr>
 <tr>
-<td style="text-align:center">raid6</td>
-<td style="text-align:left">背后的原理是 分布校验 +分布校验+ 条带  ：可以容错，至少4块磁盘，最多坏2块。</td>
+<td>DELETE</td>
+<td>删除Web页面</td>
+<td>TRACE</td>
+<td>用于测试，要求服务器送回收到的请求</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>用于代理服务器</td>
+<td>OPTION</td>
+<td>查询特定选项</td>
 </tr>
 </tbody>
 </table>
-<h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
-<p>一些题外话：现在大部分公司都购买云服务器了，云服务产商会提供数据不丢失的保障<br>99.9999%，所以没必要购买真实服务器</p>
-<p>能购买服务器的公司都是大公司，真实的服务器才会做raid</p>
-<h3 id="lvm（逻辑卷管理）"><a href="#lvm（逻辑卷管理）" class="headerlink" title="lvm（逻辑卷管理）"></a>lvm（逻辑卷管理）</h3><h4 id="①为什么会出现逻辑卷管理"><a href="#①为什么会出现逻辑卷管理" class="headerlink" title="①为什么会出现逻辑卷管理"></a>①为什么会出现逻辑卷管理</h4><p>我们平时在为系统分区时，该如何评估和分配硬件分区的容量？我们要考虑当前分区需要的容量，并且预计以后分区可能需要的容量的最大值，但是当它满了之后呢？我们得重新备份整个系统、清除硬盘、重新对硬盘分区，然后恢复数据到新分区</p>
-<p>我们假想出现一中能把这些分区在逻辑上是能够连接在一起的，并能实现动态扩容+分区结构不需要改变</p>
-<h4 id="②原理与简介"><a href="#②原理与简介" class="headerlink" title="②原理与简介"></a>②原理与简介</h4><p>逻辑卷管理器本质上是一个虚拟设备驱动，我们都知道内核是管理CPU和内存的程序，而逻辑卷是在内核和存储设备之间添加的一个新层次，将几块磁盘（物理卷，PhysicalVolume）组合形成卷组（VolumeGroup)，然后在每次从从卷组中划分不同大小的逻辑卷（LogicalVolume），卷组替代了磁盘块成为数据存储的基本单元，底层的原始磁盘不再由内核直接控制，而由LVM层来控制，LVM管理着所有物理卷的物理盘区，维持着逻辑盘区和物理盘区之间的映射</p>
-<p>有以上的原理我们可以知道，逻辑卷不必是连续的空间，它可以跨越许多物理卷，并且可以在任何时候任意的调整大小。相比物理磁盘来说，更易于磁盘空间的管理</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim" alt="mark"></p>
-<h4 id="③LVM机制的基本概念"><a href="#③LVM机制的基本概念" class="headerlink" title="③LVM机制的基本概念"></a>③LVM机制的基本概念</h4><table>
+<p>多讲一句GET与POST的区别（面试经典题）</p>
+<p>GET请求只能进行url编码，且它在url（参数通常限制为2K）中传递的参数是有限制的，且参数直接暴露在url上，它会被浏览器主动cache</p>
+<p>而POST支持多种编码方式，参数放在requestbody中,故它更安全，但post中的参数不会被保留在浏览器历史记录中</p>
+<p>本质上是没有区别的，它们都是http协议的请求方法，底层实现都是依赖tcp/ip协议的，由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
+<p> GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>首部字段或消息头</p>
+<table>
 <thead>
 <tr>
-<th style="text-align:left">PV（Physical Volume，物理卷）</th>
-<th>整个硬盘，或使用fdisk等工具建立的普通分区<br> 包括许多默认4MB大小的PE（Physical Extents，基本单元）</th>
+<th>头(header)</th>
+<th>类型</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">VG（Volume Group，卷组）</td>
-<td>一个或多个物理卷组合而成的整体</td>
+<td>User- Agent</td>
+<td>请求</td>
+<td>关于浏览器和它平台的信息，如Mozilla5.0</td>
 </tr>
 <tr>
-<td style="text-align:left">LV（Logical Volume，逻辑卷）</td>
-<td>从卷组中分割出的一块空间，用于建立文件系统</td>
+<td>Accept</td>
+<td>请求</td>
+<td>客户能处理的页面的类型，如text/html</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>请求</td>
+<td>客户可以接受的字符集，如Unicode-1-1</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>请求</td>
+<td>客户能处理的页面编码方法，如gzip</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>请求</td>
+<td>客户能处理的自然语言，如en(英语)，zh-cn(简体中文）</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>请求</td>
+<td>服务器的DNS名称。从URL中提取出来，必需。</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>请求</td>
+<td>客户的信息凭据列表</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>请求</td>
+<td>将以前设置的Cookie送回服务器器，可用来作为会话信息</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>双向</td>
+<td>消息被发送时的日期和时间</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>响应</td>
+<td>关于服务器的信息，如Microsoft-IIS/6.0</td>
+</tr>
+<tr>
+<td>Content-Encoding</td>
+<td>响应</td>
+<td>内容是如何被编码的（如gzip)</td>
+</tr>
+<tr>
+<td>Content-Language</td>
+<td>响应</td>
+<td>页面所使用的自然语言</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>响应</td>
+<td>以字节计算的页面长度</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>响应</td>
+<td>指示客户将请求发送给别处，即重定向到另一个URL</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>响应</td>
+<td>页面的MIME类型（即哪些文件对应哪些类型比如image对应jpg）</td>
+</tr>
+<tr>
+<td>Set-Cookie</td>
+<td>响应</td>
+<td>服务器希望客户保存一个Cookie</td>
 </tr>
 </tbody>
 </table>
-<h4 id="④linux中关于lvm的操作"><a href="#④linux中关于lvm的操作" class="headerlink" title="④linux中关于lvm的操作"></a>④linux中关于lvm的操作</h4><h6 id="Ⅰ-创建pv（物理卷）"><a href="#Ⅰ-创建pv（物理卷）" class="headerlink" title="Ⅰ.创建pv（物理卷）"></a>Ⅰ.创建pv（物理卷）</h6><p>[root@localhost ~]# yum provides pvcreate                               ###安装pvcreate包</p>
-<p>[root@localhost ~]# pvcreate  /dev/sd[bcd]                             ######创建逻辑卷b,c,d, 它们也可以单独创立<br>Physical volume “/dev/sdb” successfully created.<br>Physical volume “/dev/sdc” successfully created.<br>Physical volume “/dev/sdd” successfully created</p>
-<h6 id="Ⅱ-创建VG（卷组）"><a href="#Ⅱ-创建VG（卷组）" class="headerlink" title="Ⅱ.创建VG（卷组）"></a>Ⅱ.创建VG（卷组）</h6><p>[root@localhost ~]# vgcreate  cjz  /dev/sd[bcd]                        #######把bcd组合起来为一个卷组，并起名cjz<br>  Volume group “cjz” successfully created</p>
-<p>关于vg的重要命令  </p>
-<p>vgscan 扫描vg  </p>
-<p>vgdisplay cjz 查看vg里的cjz卷组的信息</p>
-<h6 id="Ⅲ-创建LV-Logical-Volume，逻辑卷"><a href="#Ⅲ-创建LV-Logical-Volume，逻辑卷" class="headerlink" title="Ⅲ.创建LV(Logical Volume，逻辑卷 )"></a>Ⅲ.创建LV(Logical Volume，逻辑卷 )</h6><p>[root@localhost ~]# lvcreate -L 299G -n file_store cjz      ##从cjz卷组中创建一个299G的逻辑卷，取名file_store<br>  Logical volume “file_store” created.<br>-L  指定大小 size<br>-n  指定LV的名字  name</p>
-<p>[root@localhost ~]# mkfs.xfs /dev/cjzi/file_store                                       ########格式化逻辑卷</p>
-<p>一个LV就相当于标准磁盘里的一个分区</p>
-<h6 id="Ⅳ-挂载使用"><a href="#Ⅳ-挂载使用" class="headerlink" title="Ⅳ.挂载使用"></a>Ⅳ.挂载使用</h6><p>[root@localhost ~]# mkdir  /file                                                                  ############### 新建挂载点<br>[root@localhost ~]# mount   /dev/cjz/file_store  /file                 ######挂载LV file_store到/file</p>
-<p>df -Th    可以查看文件系统的挂载情况</p>
-<h6 id="Ⅴ开机自动挂载"><a href="#Ⅴ开机自动挂载" class="headerlink" title="Ⅴ开机自动挂载"></a>Ⅴ开机自动挂载</h6><p>vim  /etc/fstab<br>/dev/cjz/file_store    /file  xfs   defaults 0 0                     #########这是我所要添加的行</p>
-<pre><code>/dev/cjz/file_store  设备文件的路径
-/file 挂载点
-xfs 表示文件系统的类型
-defaults  文件系统默认的挂载选项：类似于ro，rw等等
-0 表示是否支持dump命令，进行备份
-0 表示开机的时候是否检测这个文件系统是否有问题，0表示不检测
-    1 表示检测，优先级高
-    2 表示检测，优先级低
-</code></pre><h6 id="Ⅵ-扩容"><a href="#Ⅵ-扩容" class="headerlink" title="Ⅵ.扩容"></a>Ⅵ.扩容</h6><p>扩容的流程：<br>    pv—》vg—》lv<br>    lv 索要空间步骤：lv –》vg—》pv</p>
-<p>——————————-1.创建新的pv–<br>[root@localhost file]# pvcreate /dev/sde<br>  Physical volume “/dev/sde” successfully created.<br>[root@localhost file]# pvcreate /dev/sdf<br>  Physical volume “/dev/sdf” successfully created.<br>[root@localhost file]# pvscan<br>  PV /dev/sdb   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdc   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdd   VG cjz       lvm2 [&lt;100.00 GiB / 1012.00 MiB free]<br>  PV /dev/sdf                      lvm2 [200.00 GiB]<br>  PV /dev/sde                      lvm2 [200.00 GiB]<br>  Total: 5 [&lt;699.99 GiB] / in use: 3 [&lt;299.99 GiB] / in no VG: 2 [400.00 GiB]<br>[root@localhost file]#<br>——————————-2.将pv扩到vg里<br>[root@localhost file]# vgextend  cjz  /dev/sdf  /dev/sde<br>  Volume group “cjz” successfully extended<br>[root@localhost file]#<br>[root@localhost file]# lvextend -L +399G /dev/alimeimei/file_store </p>
-<p>[root@localhost file]# lvdisplay  /dev/cjz/file_store<br>  LV Size                698.00 GiB<br>——————————–3.告诉linux系统重新识别挂载的分区的大小<br>xfs_growfs —》xfs<br>resize2fs  —》ext3/ext4</p>
-<p> [root@localhost ~]# xfs_growfs /dev/cjz/file_store<br>meta-data=/dev/mapper/cjz-file_store isize=512    agcount=4, agsize=19595264 blks<br>         =                       sectsz=512   attr=2, projid32bit=1<br>         =                       crc=1        finobt=0 spinodes=0<br>data     =                       bsize=4096   blocks=78381056, imaxpct=25<br>         =                       sunit=0      swidth=0 blks<br>naming   =version 2              bsize=4096   ascii-ci=0 ftype=1<br>log      =internal               bsize=4096   blocks=38272, version=2<br>         =                       sectsz=512   sunit=0 blks, lazy-count=1<br>realtime =none                   extsz=4096   blocks=0, rtextents=0<br>data blocks changed from 78381056 to 182976512<br>[root@localhost ~]# df -Th<br>文件系统                         类型      容量  已用  可用 已用% 挂载点<br>/dev/sda3                        xfs        80G  1.6G   79G    2% /<br>devtmpfs                         devtmpfs  481M     0  481M    0% /dev<br>tmpfs                            tmpfs     492M     0  492M    0% /dev/shm<br>tmpfs                            tmpfs     492M  7.6M  485M    2% /run<br>tmpfs                            tmpfs     492M     0  492M    0% /sys/fs/cgroup<br>/dev/sda2                        xfs        20G   33M   20G    1% /data<br>/dev/sda1                        xfs       497M  117M  381M   24% /boot<br>tmpfs                            tmpfs      99M     0   99M    0% /run/user/0<br>/dev/mapper/cjz-file_store xfs       698G   33M  698G    1% /file</p>
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>raid–》磁盘阵列–》raid0   1  5 6 10 –&gt;容错、速度快<br>    lvm–》逻辑卷—》动态扩容—》PV、VG、LV</p>
-<pre><code>先做raid---》然后使用lvm
-</code></pre>
+<p>响应报文中的状态码</p>
+<p>状态码(Status-Code)是响应报文状态行中包含的一个3位数字，指明特定的请求是否被满足，如果没有满足，原因是什么。状态码分为以下五类：</p>
+<table>
+<thead>
+<tr>
+<th>状态码范围</th>
+<th>状态码类别</th>
+<th style="text-align:left">典型状态码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100-199</td>
+<td>信息类状态码</td>
+<td style="text-align:left">100</td>
+<td>收到请求出事部分，请继续发送</td>
+</tr>
+<tr>
+<td>200-299</td>
+<td>成功状态码</td>
+<td style="text-align:left">200</td>
+<td>请求已经被正常处理</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">204</td>
+<td>请求已经被正常处理，但没有主体数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">206</td>
+<td>对资源部分请求成功</td>
+</tr>
+<tr>
+<td>300-399</td>
+<td>重定向状态码</td>
+<td style="text-align:left">301</td>
+<td>请求的URL资源已被更新，响应首部包含新的URL</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">302</td>
+<td>请求的URL资源临时更新</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">304</td>
+<td>请求不符合条件，需要更改条件</td>
+</tr>
+<tr>
+<td>400-499</td>
+<td>客户端错误状态码</td>
+<td style="text-align:left">400</td>
+<td>客户端发送一个错误请求</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">403</td>
+<td>访问被拒绝</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">404</td>
+<td>没有找到请求</td>
+</tr>
+<tr>
+<td>500-599</td>
+<td>服务器错误状态码</td>
+<td style="text-align:left">500</td>
+<td>服务器出现错误，无法提供请求的资源</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><p>什么是HTTP代理？</p>
+<p>HTTP代理又称Web缓存或代理服务器(Proxy Server),是一种网络实体，能代表浏览器发出HTTP请求，并将最近的一些请求和响应暂存在本地磁盘中，当请求的Web页面先前暂存过，则直接将暂存的页面发给客户端(浏览器)，无须再次访问Internet。</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/9hcqdIsvjvyw.png?imageslim" alt="mark"></h2>
       
 
       
@@ -302,7 +464,7 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端知识</a>
         		</li>
       		
 		</ul>
@@ -358,7 +520,7 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/07/http协议/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -372,18 +534,9 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
   
 <nav id="article-nav">
   
-    <a href="/2019/07/05/面向对象编程/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          面向对象编程
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/02/关于git一些问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git版本控制</div>
+    <a href="/2019/07/05/面向对象编程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面向对象编程</div>
       <i class="icon-circle-right"></i>
     </a>
   

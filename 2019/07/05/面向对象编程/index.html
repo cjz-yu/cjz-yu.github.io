@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>raid与lvm | Hexo</title>
+  <title>面向对象编程 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
-<meta name="keywords" content="linux">
+  <meta name="description" content="[TOC] 面向对象编程名词解释①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态  ②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。  ③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。 ④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法 ⑤对象：通">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="raid与lvm">
-<meta property="og:url" content="http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/index.html">
+<meta property="og:title" content="面向对象编程">
+<meta property="og:url" content="http://yoursite.com/2019/07/05/面向对象编程/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
+<meta property="og:description" content="[TOC] 面向对象编程名词解释①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态  ②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。  ③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。 ④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法 ⑤对象：通">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
-<meta property="og:updated_time" content="2019-07-04T15:56:25.003Z">
+<meta property="og:updated_time" content="2019-07-07T04:42:11.409Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="raid与lvm">
-<meta name="twitter:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
-<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
+<meta name="twitter:title" content="面向对象编程">
+<meta name="twitter:description" content="[TOC] 面向对象编程名词解释①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态  ②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。  ③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。 ④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法 ⑤对象：通">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -161,114 +159,114 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-2019-07-02-raid与lvm" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-面向对象编程" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      raid与lvm
+      面向对象编程
     </h1>
   
 
         
-        <a href="/2019/07/02/2019-07-02-raid与lvm/" class="archive-article-date">
-  	<time datetime="2019-07-02T12:53:29.193Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
+        <a href="/2019/07/05/面向对象编程/" class="archive-article-date">
+  	<time datetime="2019-07-05T14:19:58.142Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="linux的raid与lvm"><a href="#linux的raid与lvm" class="headerlink" title="linux的raid与lvm"></a>linux的raid与lvm</h1><h2 id="raid磁盘阵列概念"><a href="#raid磁盘阵列概念" class="headerlink" title="raid磁盘阵列概念"></a>raid磁盘阵列概念</h2><p>百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MTBF），储存冗余数据也增加了容错</p>
-<p>个人理解：把很多独立的磁盘组合起来形成一个逻辑上的巨大磁盘，数据从原来的磁盘溢满可以到存在多个硬盘上</p>
-<h2 id="raid功能"><a href="#raid功能" class="headerlink" title="raid功能"></a>raid功能</h2><p>(1)通过对磁盘上的数据进行条带化，实现对数据成块存取，减少磁盘的机械寻道时间，提高了数据存取速度。 </p>
-<p>(2)通过对一个阵列中的几块磁盘同时读取，减少了磁盘的机械寻道时间，提高数据存取速度。 </p>
-<p>(3)通过镜像或者存储奇偶校验信息的方式，实现了对数据的冗余保护</p>
-<p>机械寻道的意思类似你在一本书的目录找到你想看的章节,你在翻到那个章节所需要的时间…这是个物理过程不可避免…类似内存寻址的方式,现在它用一个阵列对多块磁盘读取，肯定要快很多 </p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>磁盘阵列作为独立系统在主机外直连或通过网络与主机相连。磁盘阵列有多个端口可以被不同主机或不同端口连接。一个主机连接阵列的不同端口可提升传输速度。 </p>
-<p>和当时PC用单磁盘内部集成缓存一样，在磁盘阵列内部为加快与主机交互速度，都带有一定量的缓冲存储器。主机与磁盘阵列的缓存交互，缓存与具体的磁盘交互数据。 </p>
-<p>在应用中，有部分常用的数据是需要经常读取的，磁盘阵列根据内部的算法，查找出这些经常读取的数据，存储在缓存中，加快主机读取这些数据的速度，而对于其他缓存中没有的数据，主机要读取，则由阵列从磁盘上直接读取传输给主机。对于主机写入的数据，只写在缓存中，主机可以立即完成写操作。然后由缓存再慢慢写入磁盘。</p>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：提高传输速率  原因是多个磁盘同时工作提高了存储系统的吞吐量在逻辑上属于同一磁盘驱动器</p>
-<p>缺点：RAID0没有冗余功能，如果一个磁盘（物理）损坏，则所有的数据都无法使用。</p>
-<p>​      RAID1磁盘的利用率最高只能达到50%(使用两块盘的情况下)，是所有RAID级别中最低的。  </p>
-<h2 id="RAID级别"><a href="#RAID级别" class="headerlink" title="RAID级别"></a>RAID级别</h2><p>级别有RAID0、RAID1、RAID5、RAID6、RAID10、RAID01等，这里讲几种经典的</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">RAID0</th>
-<th style="text-align:left">读写速度快，但是没有容错功能。2块以上磁盘组成。磁盘利用率100% –》条带卷</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">RAID1</td>
-<td style="text-align:left">镜像卷：2块磁盘组成，有容错功能。磁盘利用率50%</td>
-</tr>
-<tr>
-<td style="text-align:center">raid5</td>
-<td style="text-align:left">背后的原理是 分布校验 + 条带  ：可以容错，至少3块磁盘，最多坏一块。</td>
-</tr>
-<tr>
-<td style="text-align:center">raid6</td>
-<td style="text-align:left">背后的原理是 分布校验 +分布校验+ 条带  ：可以容错，至少4块磁盘，最多坏2块。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
-<p>一些题外话：现在大部分公司都购买云服务器了，云服务产商会提供数据不丢失的保障<br>99.9999%，所以没必要购买真实服务器</p>
-<p>能购买服务器的公司都是大公司，真实的服务器才会做raid</p>
-<h3 id="lvm（逻辑卷管理）"><a href="#lvm（逻辑卷管理）" class="headerlink" title="lvm（逻辑卷管理）"></a>lvm（逻辑卷管理）</h3><h4 id="①为什么会出现逻辑卷管理"><a href="#①为什么会出现逻辑卷管理" class="headerlink" title="①为什么会出现逻辑卷管理"></a>①为什么会出现逻辑卷管理</h4><p>我们平时在为系统分区时，该如何评估和分配硬件分区的容量？我们要考虑当前分区需要的容量，并且预计以后分区可能需要的容量的最大值，但是当它满了之后呢？我们得重新备份整个系统、清除硬盘、重新对硬盘分区，然后恢复数据到新分区</p>
-<p>我们假想出现一中能把这些分区在逻辑上是能够连接在一起的，并能实现动态扩容+分区结构不需要改变</p>
-<h4 id="②原理与简介"><a href="#②原理与简介" class="headerlink" title="②原理与简介"></a>②原理与简介</h4><p>逻辑卷管理器本质上是一个虚拟设备驱动，我们都知道内核是管理CPU和内存的程序，而逻辑卷是在内核和存储设备之间添加的一个新层次，将几块磁盘（物理卷，PhysicalVolume）组合形成卷组（VolumeGroup)，然后在每次从从卷组中划分不同大小的逻辑卷（LogicalVolume），卷组替代了磁盘块成为数据存储的基本单元，底层的原始磁盘不再由内核直接控制，而由LVM层来控制，LVM管理着所有物理卷的物理盘区，维持着逻辑盘区和物理盘区之间的映射</p>
-<p>有以上的原理我们可以知道，逻辑卷不必是连续的空间，它可以跨越许多物理卷，并且可以在任何时候任意的调整大小。相比物理磁盘来说，更易于磁盘空间的管理</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim" alt="mark"></p>
-<h4 id="③LVM机制的基本概念"><a href="#③LVM机制的基本概念" class="headerlink" title="③LVM机制的基本概念"></a>③LVM机制的基本概念</h4><table>
-<thead>
-<tr>
-<th style="text-align:left">PV（Physical Volume，物理卷）</th>
-<th>整个硬盘，或使用fdisk等工具建立的普通分区<br> 包括许多默认4MB大小的PE（Physical Extents，基本单元）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">VG（Volume Group，卷组）</td>
-<td>一个或多个物理卷组合而成的整体</td>
-</tr>
-<tr>
-<td style="text-align:left">LV（Logical Volume，逻辑卷）</td>
-<td>从卷组中分割出的一块空间，用于建立文件系统</td>
-</tr>
-</tbody>
-</table>
-<h4 id="④linux中关于lvm的操作"><a href="#④linux中关于lvm的操作" class="headerlink" title="④linux中关于lvm的操作"></a>④linux中关于lvm的操作</h4><h6 id="Ⅰ-创建pv（物理卷）"><a href="#Ⅰ-创建pv（物理卷）" class="headerlink" title="Ⅰ.创建pv（物理卷）"></a>Ⅰ.创建pv（物理卷）</h6><p>[root@localhost ~]# yum provides pvcreate                               ###安装pvcreate包</p>
-<p>[root@localhost ~]# pvcreate  /dev/sd[bcd]                             ######创建逻辑卷b,c,d, 它们也可以单独创立<br>Physical volume “/dev/sdb” successfully created.<br>Physical volume “/dev/sdc” successfully created.<br>Physical volume “/dev/sdd” successfully created</p>
-<h6 id="Ⅱ-创建VG（卷组）"><a href="#Ⅱ-创建VG（卷组）" class="headerlink" title="Ⅱ.创建VG（卷组）"></a>Ⅱ.创建VG（卷组）</h6><p>[root@localhost ~]# vgcreate  cjz  /dev/sd[bcd]                        #######把bcd组合起来为一个卷组，并起名cjz<br>  Volume group “cjz” successfully created</p>
-<p>关于vg的重要命令  </p>
-<p>vgscan 扫描vg  </p>
-<p>vgdisplay cjz 查看vg里的cjz卷组的信息</p>
-<h6 id="Ⅲ-创建LV-Logical-Volume，逻辑卷"><a href="#Ⅲ-创建LV-Logical-Volume，逻辑卷" class="headerlink" title="Ⅲ.创建LV(Logical Volume，逻辑卷 )"></a>Ⅲ.创建LV(Logical Volume，逻辑卷 )</h6><p>[root@localhost ~]# lvcreate -L 299G -n file_store cjz      ##从cjz卷组中创建一个299G的逻辑卷，取名file_store<br>  Logical volume “file_store” created.<br>-L  指定大小 size<br>-n  指定LV的名字  name</p>
-<p>[root@localhost ~]# mkfs.xfs /dev/cjzi/file_store                                       ########格式化逻辑卷</p>
-<p>一个LV就相当于标准磁盘里的一个分区</p>
-<h6 id="Ⅳ-挂载使用"><a href="#Ⅳ-挂载使用" class="headerlink" title="Ⅳ.挂载使用"></a>Ⅳ.挂载使用</h6><p>[root@localhost ~]# mkdir  /file                                                                  ############### 新建挂载点<br>[root@localhost ~]# mount   /dev/cjz/file_store  /file                 ######挂载LV file_store到/file</p>
-<p>df -Th    可以查看文件系统的挂载情况</p>
-<h6 id="Ⅴ开机自动挂载"><a href="#Ⅴ开机自动挂载" class="headerlink" title="Ⅴ开机自动挂载"></a>Ⅴ开机自动挂载</h6><p>vim  /etc/fstab<br>/dev/cjz/file_store    /file  xfs   defaults 0 0                     #########这是我所要添加的行</p>
-<pre><code>/dev/cjz/file_store  设备文件的路径
-/file 挂载点
-xfs 表示文件系统的类型
-defaults  文件系统默认的挂载选项：类似于ro，rw等等
-0 表示是否支持dump命令，进行备份
-0 表示开机的时候是否检测这个文件系统是否有问题，0表示不检测
-    1 表示检测，优先级高
-    2 表示检测，优先级低
-</code></pre><h6 id="Ⅵ-扩容"><a href="#Ⅵ-扩容" class="headerlink" title="Ⅵ.扩容"></a>Ⅵ.扩容</h6><p>扩容的流程：<br>    pv—》vg—》lv<br>    lv 索要空间步骤：lv –》vg—》pv</p>
-<p>——————————-1.创建新的pv–<br>[root@localhost file]# pvcreate /dev/sde<br>  Physical volume “/dev/sde” successfully created.<br>[root@localhost file]# pvcreate /dev/sdf<br>  Physical volume “/dev/sdf” successfully created.<br>[root@localhost file]# pvscan<br>  PV /dev/sdb   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdc   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdd   VG cjz       lvm2 [&lt;100.00 GiB / 1012.00 MiB free]<br>  PV /dev/sdf                      lvm2 [200.00 GiB]<br>  PV /dev/sde                      lvm2 [200.00 GiB]<br>  Total: 5 [&lt;699.99 GiB] / in use: 3 [&lt;299.99 GiB] / in no VG: 2 [400.00 GiB]<br>[root@localhost file]#<br>——————————-2.将pv扩到vg里<br>[root@localhost file]# vgextend  cjz  /dev/sdf  /dev/sde<br>  Volume group “cjz” successfully extended<br>[root@localhost file]#<br>[root@localhost file]# lvextend -L +399G /dev/alimeimei/file_store </p>
-<p>[root@localhost file]# lvdisplay  /dev/cjz/file_store<br>  LV Size                698.00 GiB<br>——————————–3.告诉linux系统重新识别挂载的分区的大小<br>xfs_growfs —》xfs<br>resize2fs  —》ext3/ext4</p>
-<p> [root@localhost ~]# xfs_growfs /dev/cjz/file_store<br>meta-data=/dev/mapper/cjz-file_store isize=512    agcount=4, agsize=19595264 blks<br>         =                       sectsz=512   attr=2, projid32bit=1<br>         =                       crc=1        finobt=0 spinodes=0<br>data     =                       bsize=4096   blocks=78381056, imaxpct=25<br>         =                       sunit=0      swidth=0 blks<br>naming   =version 2              bsize=4096   ascii-ci=0 ftype=1<br>log      =internal               bsize=4096   blocks=38272, version=2<br>         =                       sectsz=512   sunit=0 blks, lazy-count=1<br>realtime =none                   extsz=4096   blocks=0, rtextents=0<br>data blocks changed from 78381056 to 182976512<br>[root@localhost ~]# df -Th<br>文件系统                         类型      容量  已用  可用 已用% 挂载点<br>/dev/sda3                        xfs        80G  1.6G   79G    2% /<br>devtmpfs                         devtmpfs  481M     0  481M    0% /dev<br>tmpfs                            tmpfs     492M     0  492M    0% /dev/shm<br>tmpfs                            tmpfs     492M  7.6M  485M    2% /run<br>tmpfs                            tmpfs     492M     0  492M    0% /sys/fs/cgroup<br>/dev/sda2                        xfs        20G   33M   20G    1% /data<br>/dev/sda1                        xfs       497M  117M  381M   24% /boot<br>tmpfs                            tmpfs      99M     0   99M    0% /run/user/0<br>/dev/mapper/cjz-file_store xfs       698G   33M  698G    1% /file</p>
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>raid–》磁盘阵列–》raid0   1  5 6 10 –&gt;容错、速度快<br>    lvm–》逻辑卷—》动态扩容—》PV、VG、LV</p>
-<pre><code>先做raid---》然后使用lvm
-</code></pre>
+        <p>[TOC]</p>
+<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态 </p>
+<p>②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。 </p>
+<p>③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。</p>
+<p>④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法</p>
+<p>⑤对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。 </p>
+<p>⑥实例：具体的某个事物， 某个类型实实在在的一个例子。 </p>
+<p>⑦实例化：创建一个类的实例，类的具体对象。 </p>
+<p>⑧属性： 对象的描述信息，一种状态 =&gt; 变量 </p>
+<p>⑨方法：对象的行为 =&gt; 类中定义的函数 def():</p>
+<p>⑩单例模式：一个类只会创建出一个实例，这个类称为单例类，单例模式是一种<strong>对象创建型模式</strong>。</p>
+<h2 id="类的定义和使用"><a href="#类的定义和使用" class="headerlink" title="类的定义和使用"></a>类的定义和使用</h2><p>类名的规范 ：一般首字母大写（大驼峰）   比如 Person, GoodsInfo </p>
+<p>类的定义方式(关键字：class) ：   比如 ①class Person:     ②class Person():   ③ class Person(object):</p>
+<p>​                                                        python2 =&gt;①② 经典类和③新式类    python3 =&gt; ③新式类 </p>
+<p>类的两个重要方法:   <code>__new__</code>  <code>__init__</code></p>
+<p><code>__init__</code>：实例初始化 </p>
+<p>• 这个名称的开始和结尾都是双下划线。</p>
+<p> • 这个方法可以用来对你的对象做一些你希望的初始化任务。</p>
+<p> •方法是一种特殊的方法，被称为类的构造函数或初始化方法，它在类的一个对象被建立 后，自动运行。 </p>
+<p><code>__new__</code>：创建一个实例 </p>
+<p>1.在内存中为对象分配空间</p>
+<p>2.返回对象的引用。（即对象的内存地址）</p>
+<p>• <code>__init__</code>有一个参数self，就是这个<code>__new__</code>返回的实例，<code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始化的动作，<code>__init__</code>不需要返回值。_new__必须要有返回值</p>
+<p> •<code>_new__</code>必须要有返回值，返回实例化出来的实例，这点在自己实现<code>__new__</code>时要特别注意，可以return<strong>父类<strong>new</strong>出来的实例</strong>，或者直接是<strong>object的<strong>new</strong>出来的实例</strong></p>
+<p>• 注意事项：<strong>new</strong>必须产生和class类型一致的instance, 否则<strong>init</strong>是不会执行的</p>
+<p>以下以湖南农大公交车317为例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus317</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    prod = <span class="string">"BYD"</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">     <span class="comment"># 创建</span></span><br><span class="line">    <span class="comment"># cls =&gt; 类；self =&gt; 实例</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"创建实例"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.instance:</span><br><span class="line">            cls.instance = super().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls.instance <span class="comment">#这里容易弄错 传的形参为什么是类？代表要实例化的类</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 每个类都会有__init__方法，默认无参数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, busid)</span>:</span></span><br><span class="line">        <span class="string">"""对实例(self)做初始化"""</span></span><br><span class="line">        <span class="comment"># 实例属性</span></span><br><span class="line">        print(<span class="string">"初始化实例"</span>)</span><br><span class="line">        self.busid = busid</span><br><span class="line"></span><br><span class="line"><span class="comment"># True  =&gt; 农大-&gt; 长华小区</span></span><br><span class="line">    <span class="comment"># False =&gt; 长华小区 -&gt;农大</span></span><br><span class="line">    <span class="comment"># 自动提示了self =&gt; 实例</span></span><br><span class="line">    <span class="comment"># 类的方法和普通的函数的区别=&gt;self</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, flag)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> flag:</span><br><span class="line">            print(<span class="string">"从农大-&gt; 长华小区"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"从长华小区 -&gt;农大"</span>)</span><br><span class="line"><span class="comment">#bus.run() =&gt; Bus317.run(bus)</span></span><br><span class="line">bus1 = Bus317(<span class="string">"0001"</span>)</span><br><span class="line">bus2 = Bus317(<span class="string">"0002"</span>)</span><br><span class="line">print(bus1)</span><br></pre></td></tr></table></figure>
+<p><code>__new__</code>和<code>__init_</code>执行顺序 </p>
+<p>• 先执行<code>__new__</code>,再执行<code>__init__</code></p>
+<h2 id="类的三大基本特性"><a href="#类的三大基本特性" class="headerlink" title="类的三大基本特性"></a>类的三大基本特性</h2><ul>
+<li><p>封装：在类中对数据的赋值、内部调用对外部用户是透明的。 把一些功能的实现细节不对外暴露 </p>
+</li>
+<li><p>继承：子类继承基类的字段和方法。 子类还可以产生派生类</p>
+</li>
+<li><p>多态：接口重用 ，一个接口，多种实现（重写）</p>
+</li>
+</ul>
+<p>一：类的封装</p>
+<p>•将数据隐藏起来这不是目的。隐藏起来然后对外提供操作该数据的接口，然后我们可以在接口附加上对该数据操作的限制，以此完成对数据属性操作的严格控制。</p>
+<p>•在编程语言里，对外提供的接口（接口可理解为了一个入口），可以是函数，称为接口函数，这与接口的概念还不一样，接口代表一组接口函数的集合体</p>
+<p>•电视机本身是一个黑盒子，隐藏了所有细节，但是一定会对外提供了一堆按钮，这些按钮也正是接口的概念，所以说，封装并不是单纯意义的隐藏！！！</p>
+<p>二：类的继承 </p>
+<p>• 可以节省很多的代码，不需要写，直接使用 </p>
+<p>• 子类有<code>__init__</code>: 执行自己的初始化函数 ‘’</p>
+<p>• 子类没有<code>__init__</code>: 在子类实例化的时候会自动执行父类的构造函数</p>
+<p>• 如果你的父类方法的功能不能满足你的需求，你可以在子类重写你父类的方法父类里的方法</p>
+<p>三：Python中的多态</p>
+<p>• 多态（Polymorphism）按字面的意思就是“多种状态”。在面向对象语言中，接口的多种不同的 实现方式即为多态。</p>
+<p> • Python是一种多态语言，崇尚鸭子类型。</p>
+<p> • 在程序设计中，鸭子类型是动态类型的一种风格。</p>
+<p> • 鸭子模型是指：”当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就 可以被称为鸭子。” </p>
+<p>• 我们并不关心对象是什么类型，到底是不是鸭子，只关心行为。</p>
+<p>• 底下例子中person(变量）不仅是Person类型，也是Animal类型，这就是变量的多态</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(object)</span>:</span></span><br><span class="line">    category = <span class="string">'animal'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        Animal.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> super().__new__(cls)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">breath</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'动物可以呼吸'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    category = <span class="string">'person'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        Person.count += <span class="number">1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    category = <span class="string">'pig'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.category=Pig</span><br><span class="line">        Pig.count += <span class="number">1</span></span><br><span class="line">person1 = Person(<span class="string">"练习生陈鹏波"</span>)</span><br><span class="line">person2 = Person(<span class="string">"丁浪"</span>)</span><br><span class="line">person3 = Person(<span class="string">"贺"</span>)</span><br><span class="line">pig1 = Pig(<span class="string">"佩奇"</span>)</span><br><span class="line">pig2 = Pig(<span class="string">"乔治"</span>)</span><br><span class="line">print(<span class="string">"动物的个数："</span>, Animal.count)</span><br><span class="line">print(<span class="string">f"人一共有<span class="subst">&#123;Person.count&#125;</span>个"</span>)</span><br><span class="line">print(<span class="string">f"猪一共有<span class="subst">&#123;Pig.count&#125;</span>只"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="经典类与新式类"><a href="#经典类与新式类" class="headerlink" title="经典类与新式类"></a>经典类与新式类</h2><hr>
+<p>经典类与新式类在类型上的区别</p>
+<p>经典类都是classobj类型，而类的实例都是instance类型，类与实例只有通过<strong>class</strong>属性进行关联</p>
+<p>新式类实例的类型是这个实例所创建自的类（通常是和类实例的<strong>class</strong>相同）</p>
+<hr>
+<p>经典类与新式类的继承顺序</p>
+<p>Python的类如果继承了多个类，那么其寻找方法的方式有两种，分别是：深度优先和广度优先</p>
+<p>py2：经典类是按深度优先来继承的，新式类是按C3 算法来继承的         py3：统一按C3算法来继承的</p>
+<hr>
+<p>MRO（MethodResolutionOrder）：方法解析顺序,是在Python类的多重继承中，解决当定义了多个同名的方法/属性时，为避免产生歧义，保证 用户找到正确的对象所实现的一种算法。</p>
+<p>C3算法：它实际上就是合并所有父类的MRO列表并遵循如下三条准则：</p>
+<p>子类会先于父类被检查</p>
+<p>多个父类会根据它们在列表中的顺序被检查</p>
+<p>如果对下一个类存在两个合法的选择，选择第一个父类</p>
+<h2 id="静态方法、类方法、实例方法"><a href="#静态方法、类方法、实例方法" class="headerlink" title="静态方法、类方法、实例方法"></a>静态方法、类方法、实例方法</h2><p><strong>实例方法</strong> </p>
+<p>​    定义：第一个参数必须是实例对象，该参数名一般约定为“self”，通过它来传递实例的属性和方法（也可以传类的属性和方法）；</p>
+<p>​    调用：只能由实例对象调用。</p>
+<p><strong>类方法</strong></p>
+<p>​    定义：使用装饰器@classmethod。第一个参数必须是当前类对象，该参数名一般约定为“cls”，通过它来传递类的属性和方法（不能传实例的属性和方法）；</p>
+<p>​    调用：实例对象和类对象都可以调用。</p>
+<p><strong>静态方法</strong></p>
+<p>​    定义：使用装饰器@staticmethod。参数随意，没有“self”和“cls”参数，但是方法体中不能使用类或实例的任何属性和方法；</p>
+<p>​    调用：实例对象和类对象都可以调用。</p>
+<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><p>使用装饰器@classmethod。</p>
+<p>原则上，类方法是将类本身作为对象进行操作的方法。假设有个方法，且这个方法在逻辑上采用类本身作为对象来调用更合理，那么这个方法就可以定义为类方法。另外，如果需要继承，也可以定义为类方法。</p>
+<p>如下场景：</p>
+<p>假设我有一个学生类和一个班级类，想要实现的功能为：<br>    执行班级人数增加的操作、获得班级的总人数；<br>    学生类继承自班级类，每实例化一个学生，班级人数都能增加；<br>    最后，我想定义一些学生，获得班级中的总人数。</p>
+<p><strong>思考</strong>：这个问题用类方法做比较合适，为什么？因为我实例化的是学生，但是如果我从学生这一个实例中获得班级总人数，在逻辑上显然是不合理的。同时，如果想要获得班级总人数，如果生成一个班级的实例也是没有必要的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    __num = <span class="number">0</span></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    cls.__num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> cls.__num</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里我用到魔术方法__new__，主要是为了在创建实例的时候调用累加方法。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(self)</span>:</span></span><br><span class="line">    ClassTest.addNum()</span><br><span class="line">    <span class="keyword">return</span> super(ClassTest, self).__new__(self)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(ClassTest)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">a = Student()</span><br><span class="line">b = Student()</span><br><span class="line">print(ClassTest.getNum())</span><br></pre></td></tr></table></figure>
+<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p>使用装饰器@staticmethod。</p>
+<p>静态方法是类中的函数，不需要实例。静态方法主要是用来存放逻辑性的代码，逻辑上属于类，但是和类本身没有关系，也就是说在静态方法中，不会涉及到类中的属性和方法的操作。可以理解为，静态方法是个<strong>独立的、单纯的</strong>函数，它仅仅托管于某个类的名称空间中，便于使用和维护。</p>
+<p>譬如，我想定义一个关于时间操作的类，其中有一个获取当前时间的函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, hour, minute, second)</span>:</span></span><br><span class="line">        self.hour = hour</span><br><span class="line">        self.minute = minute</span><br><span class="line">        self.second = second</span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showTime</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> time.strftime(<span class="string">"%H:%M:%S"</span>, time.localtime())</span><br><span class="line">print(TimeTest.showTime())</span><br><span class="line">t = TimeTest(<span class="number">2</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">nowTime = t.showTime()</span><br><span class="line">print(nowTime)</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -302,7 +300,7 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
         		</li>
       		
 		</ul>
@@ -358,7 +356,7 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/02/2019-07-02-raid与lvm/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/05/面向对象编程/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -372,18 +370,18 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
   
 <nav id="article-nav">
   
-    <a href="/2019/07/05/面向对象编程/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/07/http协议/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          面向对象编程
+          Http协议
         
       </div>
     </a>
   
   
-    <a href="/2019/07/02/关于git一些问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git版本控制</div>
+    <a href="/2019/07/02/2019-07-02-raid与lvm/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">raid与lvm</div>
       <i class="icon-circle-right"></i>
     </a>
   

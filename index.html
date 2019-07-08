@@ -156,6 +156,483 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-http协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/07/http协议/">Http协议</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/07/http协议/" class="archive-article-date">
+  	<time datetime="2019-07-07T04:28:35.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h1><h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>什么是超文本(HyperText)？</p>
+<p>包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。</p>
+<p>什么是URL？</p>
+<p>URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识万维网中的某一个文档。URL由协议、主机和端口(默认为80)以及文件名三部分构成。如：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190707/J99OOUwOAh7L.png?imageslim" alt="mark">!</p>
+<p>​                           <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/gFPQ3AnTQzpS.png?imageslim" alt="mark"></p>
+<p>什么是超文本传输协议HTTP？</p>
+<p>是一种按照URL指示，将超文本文档从一台主机(Web服务器)传输到另一台主机(浏览器)的应用层协议，以实现超链接的功能。</p>
+<h2 id="TTP的工作原理"><a href="#TTP的工作原理" class="headerlink" title="TTP的工作原理"></a>TTP的工作原理</h2><p>请求/响应交互模型                                                                  <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/zTDrHxDUU6vm.png?imageslim" alt="mark"></p>
+<p>在用户点击URL为<a href="http://www.sxtyu.com/index.html的" target="_blank" rel="noopener">http://www.sxtyu.com/index.html的</a>    链接后，浏览器和Web服务器执行以下动作：</p>
+<p>① 浏览器分析超链接中的URL</p>
+<p>②浏览器向DNS请求解析<a href="http://www.sxtyu.com的IP地址" target="_blank" rel="noopener">www.sxtyu.com的IP地址</a></p>
+<p>③DNS将解析出的IP地址202.2.16.21返回浏览器</p>
+<p>④浏览器与服务器建立TCP连接(80端口)</p>
+<p>⑤浏览器请求文档：GET /index.html</p>
+<p>⑥服务器给出响应，将文档 index.html发送给浏览器</p>
+<p>⑦释放TCP连接</p>
+<p>⑧浏览器显示index.html中的内容</p>
+<p>从封装的角度来考虑背后发生了什么     </p>
+<p>http协议属于应用层     去   你的电脑 =&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;服务器  </p>
+<p>​                                      回来    服务器=&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;你的电脑 </p>
+<p> <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/jma5eadbcNms.png?imageslim" alt="mark"></p>
+<h2 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h2><p>请求报文</p>
+<p>即从客户端(浏览器)向Web服务器发送的请求报文。报文的所有字段都是ASCII码。</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/WjXc8wz42JNn.png?imageslim" alt="mark"></p>
+<p>请求报文中的方法</p>
+<p>方法(Method)是对所请求对象所进行的操作,也就是一些命令。请求报文中的操作有:</p>
+<table>
+<thead>
+<tr>
+<th>方法(操作）</th>
+<th>含义</th>
+<th>方法(操作)</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>请求读取一个Web页面</td>
+<td>HEAD</td>
+<td>请求读取一个Web页面的首部</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>附加一个命名资源(如Web页面)</td>
+<td>PUT</td>
+<td>请求存储一个Web页面</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>删除Web页面</td>
+<td>TRACE</td>
+<td>用于测试，要求服务器送回收到的请求</td>
+</tr>
+<tr>
+<td>CONNECT</td>
+<td>用于代理服务器</td>
+<td>OPTION</td>
+<td>查询特定选项</td>
+</tr>
+</tbody>
+</table>
+<p>多讲一句GET与POST的区别（面试经典题）</p>
+<p>GET请求只能进行url编码，且它在url（参数通常限制为2K）中传递的参数是有限制的，且参数直接暴露在url上，它会被浏览器主动cache</p>
+<p>而POST支持多种编码方式，参数放在requestbody中,故它更安全，但post中的参数不会被保留在浏览器历史记录中</p>
+<p>本质上是没有区别的，它们都是http协议的请求方法，底层实现都是依赖tcp/ip协议的，由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
+<p> GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
+<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
+<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+<p>首部字段或消息头</p>
+<table>
+<thead>
+<tr>
+<th>头(header)</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User- Agent</td>
+<td>请求</td>
+<td>关于浏览器和它平台的信息，如Mozilla5.0</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>请求</td>
+<td>客户能处理的页面的类型，如text/html</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>请求</td>
+<td>客户可以接受的字符集，如Unicode-1-1</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>请求</td>
+<td>客户能处理的页面编码方法，如gzip</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>请求</td>
+<td>客户能处理的自然语言，如en(英语)，zh-cn(简体中文）</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>请求</td>
+<td>服务器的DNS名称。从URL中提取出来，必需。</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>请求</td>
+<td>客户的信息凭据列表</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>请求</td>
+<td>将以前设置的Cookie送回服务器器，可用来作为会话信息</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>双向</td>
+<td>消息被发送时的日期和时间</td>
+</tr>
+<tr>
+<td>Server</td>
+<td>响应</td>
+<td>关于服务器的信息，如Microsoft-IIS/6.0</td>
+</tr>
+<tr>
+<td>Content-Encoding</td>
+<td>响应</td>
+<td>内容是如何被编码的（如gzip)</td>
+</tr>
+<tr>
+<td>Content-Language</td>
+<td>响应</td>
+<td>页面所使用的自然语言</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>响应</td>
+<td>以字节计算的页面长度</td>
+</tr>
+<tr>
+<td>Location</td>
+<td>响应</td>
+<td>指示客户将请求发送给别处，即重定向到另一个URL</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>响应</td>
+<td>页面的MIME类型（即哪些文件对应哪些类型比如image对应jpg）</td>
+</tr>
+<tr>
+<td>Set-Cookie</td>
+<td>响应</td>
+<td>服务器希望客户保存一个Cookie</td>
+</tr>
+</tbody>
+</table>
+<p>响应报文中的状态码</p>
+<p>状态码(Status-Code)是响应报文状态行中包含的一个3位数字，指明特定的请求是否被满足，如果没有满足，原因是什么。状态码分为以下五类：</p>
+<table>
+<thead>
+<tr>
+<th>状态码范围</th>
+<th>状态码类别</th>
+<th style="text-align:left">典型状态码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>100-199</td>
+<td>信息类状态码</td>
+<td style="text-align:left">100</td>
+<td>收到请求出事部分，请继续发送</td>
+</tr>
+<tr>
+<td>200-299</td>
+<td>成功状态码</td>
+<td style="text-align:left">200</td>
+<td>请求已经被正常处理</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">204</td>
+<td>请求已经被正常处理，但没有主体数据</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">206</td>
+<td>对资源部分请求成功</td>
+</tr>
+<tr>
+<td>300-399</td>
+<td>重定向状态码</td>
+<td style="text-align:left">301</td>
+<td>请求的URL资源已被更新，响应首部包含新的URL</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">302</td>
+<td>请求的URL资源临时更新</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">304</td>
+<td>请求不符合条件，需要更改条件</td>
+</tr>
+<tr>
+<td>400-499</td>
+<td>客户端错误状态码</td>
+<td style="text-align:left">400</td>
+<td>客户端发送一个错误请求</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">403</td>
+<td>访问被拒绝</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td style="text-align:left">404</td>
+<td>没有找到请求</td>
+</tr>
+<tr>
+<td>500-599</td>
+<td>服务器错误状态码</td>
+<td style="text-align:left">500</td>
+<td>服务器出现错误，无法提供请求的资源</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><p>什么是HTTP代理？</p>
+<p>HTTP代理又称Web缓存或代理服务器(Proxy Server),是一种网络实体，能代表浏览器发出HTTP请求，并将最近的一些请求和响应暂存在本地磁盘中，当请求的Web页面先前暂存过，则直接将暂存的页面发给客户端(浏览器)，无须再次访问Internet。</p>
+<h2 id><a href="#" class="headerlink" title></a><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/9hcqdIsvjvyw.png?imageslim" alt="mark"></h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/07/http协议/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/05/面向对象编程/">面向对象编程</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/05/面向对象编程/" class="archive-article-date">
+  	<time datetime="2019-07-05T14:19:58.142Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态 </p>
+<p>②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。 </p>
+<p>③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。</p>
+<p>④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法</p>
+<p>⑤对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。 </p>
+<p>⑥实例：具体的某个事物， 某个类型实实在在的一个例子。 </p>
+<p>⑦实例化：创建一个类的实例，类的具体对象。 </p>
+<p>⑧属性： 对象的描述信息，一种状态 =&gt; 变量 </p>
+<p>⑨方法：对象的行为 =&gt; 类中定义的函数 def():</p>
+<p>⑩单例模式：一个类只会创建出一个实例，这个类称为单例类，单例模式是一种<strong>对象创建型模式</strong>。</p>
+<h2 id="类的定义和使用"><a href="#类的定义和使用" class="headerlink" title="类的定义和使用"></a>类的定义和使用</h2><p>类名的规范 ：一般首字母大写（大驼峰）   比如 Person, GoodsInfo </p>
+<p>类的定义方式(关键字：class) ：   比如 ①class Person:     ②class Person():   ③ class Person(object):</p>
+<p>​                                                        python2 =&gt;①② 经典类和③新式类    python3 =&gt; ③新式类 </p>
+<p>类的两个重要方法:   <code>__new__</code>  <code>__init__</code></p>
+<p><code>__init__</code>：实例初始化 </p>
+<p>• 这个名称的开始和结尾都是双下划线。</p>
+<p> • 这个方法可以用来对你的对象做一些你希望的初始化任务。</p>
+<p> •方法是一种特殊的方法，被称为类的构造函数或初始化方法，它在类的一个对象被建立 后，自动运行。 </p>
+<p><code>__new__</code>：创建一个实例 </p>
+<p>1.在内存中为对象分配空间</p>
+<p>2.返回对象的引用。（即对象的内存地址）</p>
+<p>• <code>__init__</code>有一个参数self，就是这个<code>__new__</code>返回的实例，<code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始化的动作，<code>__init__</code>不需要返回值。_new__必须要有返回值</p>
+<p> •<code>_new__</code>必须要有返回值，返回实例化出来的实例，这点在自己实现<code>__new__</code>时要特别注意，可以return<strong>父类<strong>new</strong>出来的实例</strong>，或者直接是<strong>object的<strong>new</strong>出来的实例</strong></p>
+<p>• 注意事项：<strong>new</strong>必须产生和class类型一致的instance, 否则<strong>init</strong>是不会执行的</p>
+<p>以下以湖南农大公交车317为例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus317</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    prod = <span class="string">"BYD"</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">     <span class="comment"># 创建</span></span><br><span class="line">    <span class="comment"># cls =&gt; 类；self =&gt; 实例</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"创建实例"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.instance:</span><br><span class="line">            cls.instance = super().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls.instance <span class="comment">#这里容易弄错 传的形参为什么是类？代表要实例化的类</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 每个类都会有__init__方法，默认无参数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, busid)</span>:</span></span><br><span class="line">        <span class="string">"""对实例(self)做初始化"""</span></span><br><span class="line">        <span class="comment"># 实例属性</span></span><br><span class="line">        print(<span class="string">"初始化实例"</span>)</span><br><span class="line">        self.busid = busid</span><br><span class="line"></span><br><span class="line"><span class="comment"># True  =&gt; 农大-&gt; 长华小区</span></span><br><span class="line">    <span class="comment"># False =&gt; 长华小区 -&gt;农大</span></span><br><span class="line">    <span class="comment"># 自动提示了self =&gt; 实例</span></span><br><span class="line">    <span class="comment"># 类的方法和普通的函数的区别=&gt;self</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, flag)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> flag:</span><br><span class="line">            print(<span class="string">"从农大-&gt; 长华小区"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"从长华小区 -&gt;农大"</span>)</span><br><span class="line"><span class="comment">#bus.run() =&gt; Bus317.run(bus)</span></span><br><span class="line">bus1 = Bus317(<span class="string">"0001"</span>)</span><br><span class="line">bus2 = Bus317(<span class="string">"0002"</span>)</span><br><span class="line">print(bus1)</span><br></pre></td></tr></table></figure>
+<p><code>__new__</code>和<code>__init_</code>执行顺序 </p>
+<p>• 先执行<code>__new__</code>,再执行<code>__init__</code></p>
+<h2 id="类的三大基本特性"><a href="#类的三大基本特性" class="headerlink" title="类的三大基本特性"></a>类的三大基本特性</h2><ul>
+<li><p>封装：在类中对数据的赋值、内部调用对外部用户是透明的。 把一些功能的实现细节不对外暴露 </p>
+</li>
+<li><p>继承：子类继承基类的字段和方法。 子类还可以产生派生类</p>
+</li>
+<li><p>多态：接口重用 ，一个接口，多种实现（重写）</p>
+</li>
+</ul>
+<p>一：类的封装</p>
+<p>•将数据隐藏起来这不是目的。隐藏起来然后对外提供操作该数据的接口，然后我们可以在接口附加上对该数据操作的限制，以此完成对数据属性操作的严格控制。</p>
+<p>•在编程语言里，对外提供的接口（接口可理解为了一个入口），可以是函数，称为接口函数，这与接口的概念还不一样，接口代表一组接口函数的集合体</p>
+<p>•电视机本身是一个黑盒子，隐藏了所有细节，但是一定会对外提供了一堆按钮，这些按钮也正是接口的概念，所以说，封装并不是单纯意义的隐藏！！！</p>
+<p>二：类的继承 </p>
+<p>• 可以节省很多的代码，不需要写，直接使用 </p>
+<p>• 子类有<code>__init__</code>: 执行自己的初始化函数 ‘’</p>
+<p>• 子类没有<code>__init__</code>: 在子类实例化的时候会自动执行父类的构造函数</p>
+<p>• 如果你的父类方法的功能不能满足你的需求，你可以在子类重写你父类的方法父类里的方法</p>
+<p>三：Python中的多态</p>
+<p>• 多态（Polymorphism）按字面的意思就是“多种状态”。在面向对象语言中，接口的多种不同的 实现方式即为多态。</p>
+<p> • Python是一种多态语言，崇尚鸭子类型。</p>
+<p> • 在程序设计中，鸭子类型是动态类型的一种风格。</p>
+<p> • 鸭子模型是指：”当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就 可以被称为鸭子。” </p>
+<p>• 我们并不关心对象是什么类型，到底是不是鸭子，只关心行为。</p>
+<p>• 底下例子中person(变量）不仅是Person类型，也是Animal类型，这就是变量的多态</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(object)</span>:</span></span><br><span class="line">    category = <span class="string">'animal'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        Animal.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> super().__new__(cls)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">breath</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'动物可以呼吸'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    category = <span class="string">'person'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        Person.count += <span class="number">1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    category = <span class="string">'pig'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.category=Pig</span><br><span class="line">        Pig.count += <span class="number">1</span></span><br><span class="line">person1 = Person(<span class="string">"练习生陈鹏波"</span>)</span><br><span class="line">person2 = Person(<span class="string">"丁浪"</span>)</span><br><span class="line">person3 = Person(<span class="string">"贺"</span>)</span><br><span class="line">pig1 = Pig(<span class="string">"佩奇"</span>)</span><br><span class="line">pig2 = Pig(<span class="string">"乔治"</span>)</span><br><span class="line">print(<span class="string">"动物的个数："</span>, Animal.count)</span><br><span class="line">print(<span class="string">f"人一共有<span class="subst">&#123;Person.count&#125;</span>个"</span>)</span><br><span class="line">print(<span class="string">f"猪一共有<span class="subst">&#123;Pig.count&#125;</span>只"</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="经典类与新式类"><a href="#经典类与新式类" class="headerlink" title="经典类与新式类"></a>经典类与新式类</h2><hr>
+<p>经典类与新式类在类型上的区别</p>
+<p>经典类都是classobj类型，而类的实例都是instance类型，类与实例只有通过<strong>class</strong>属性进行关联</p>
+<p>新式类实例的类型是这个实例所创建自的类（通常是和类实例的<strong>class</strong>相同）</p>
+<hr>
+<p>经典类与新式类的继承顺序</p>
+<p>Python的类如果继承了多个类，那么其寻找方法的方式有两种，分别是：深度优先和广度优先</p>
+<p>py2：经典类是按深度优先来继承的，新式类是按C3 算法来继承的         py3：统一按C3算法来继承的</p>
+<hr>
+<p>MRO（MethodResolutionOrder）：方法解析顺序,是在Python类的多重继承中，解决当定义了多个同名的方法/属性时，为避免产生歧义，保证 用户找到正确的对象所实现的一种算法。</p>
+<p>C3算法：它实际上就是合并所有父类的MRO列表并遵循如下三条准则：</p>
+<p>子类会先于父类被检查</p>
+<p>多个父类会根据它们在列表中的顺序被检查</p>
+<p>如果对下一个类存在两个合法的选择，选择第一个父类</p>
+<h2 id="静态方法、类方法、实例方法"><a href="#静态方法、类方法、实例方法" class="headerlink" title="静态方法、类方法、实例方法"></a>静态方法、类方法、实例方法</h2><p><strong>实例方法</strong> </p>
+<p>​    定义：第一个参数必须是实例对象，该参数名一般约定为“self”，通过它来传递实例的属性和方法（也可以传类的属性和方法）；</p>
+<p>​    调用：只能由实例对象调用。</p>
+<p><strong>类方法</strong></p>
+<p>​    定义：使用装饰器@classmethod。第一个参数必须是当前类对象，该参数名一般约定为“cls”，通过它来传递类的属性和方法（不能传实例的属性和方法）；</p>
+<p>​    调用：实例对象和类对象都可以调用。</p>
+<p><strong>静态方法</strong></p>
+<p>​    定义：使用装饰器@staticmethod。参数随意，没有“self”和“cls”参数，但是方法体中不能使用类或实例的任何属性和方法；</p>
+<p>​    调用：实例对象和类对象都可以调用。</p>
+<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><p>使用装饰器@classmethod。</p>
+<p>原则上，类方法是将类本身作为对象进行操作的方法。假设有个方法，且这个方法在逻辑上采用类本身作为对象来调用更合理，那么这个方法就可以定义为类方法。另外，如果需要继承，也可以定义为类方法。</p>
+<p>如下场景：</p>
+<p>假设我有一个学生类和一个班级类，想要实现的功能为：<br>    执行班级人数增加的操作、获得班级的总人数；<br>    学生类继承自班级类，每实例化一个学生，班级人数都能增加；<br>    最后，我想定义一些学生，获得班级中的总人数。</p>
+<p><strong>思考</strong>：这个问题用类方法做比较合适，为什么？因为我实例化的是学生，但是如果我从学生这一个实例中获得班级总人数，在逻辑上显然是不合理的。同时，如果想要获得班级总人数，如果生成一个班级的实例也是没有必要的。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    __num = <span class="number">0</span></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    cls.__num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> cls.__num</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里我用到魔术方法__new__，主要是为了在创建实例的时候调用累加方法。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(self)</span>:</span></span><br><span class="line">    ClassTest.addNum()</span><br><span class="line">    <span class="keyword">return</span> super(ClassTest, self).__new__(self)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(ClassTest)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">a = Student()</span><br><span class="line">b = Student()</span><br><span class="line">print(ClassTest.getNum())</span><br></pre></td></tr></table></figure>
+<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p>使用装饰器@staticmethod。</p>
+<p>静态方法是类中的函数，不需要实例。静态方法主要是用来存放逻辑性的代码，逻辑上属于类，但是和类本身没有关系，也就是说在静态方法中，不会涉及到类中的属性和方法的操作。可以理解为，静态方法是个<strong>独立的、单纯的</strong>函数，它仅仅托管于某个类的名称空间中，便于使用和维护。</p>
+<p>譬如，我想定义一个关于时间操作的类，其中有一个获取当前时间的函数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, hour, minute, second)</span>:</span></span><br><span class="line">        self.hour = hour</span><br><span class="line">        self.minute = minute</span><br><span class="line">        self.second = second</span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showTime</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> time.strftime(<span class="string">"%H:%M:%S"</span>, time.localtime())</span><br><span class="line">print(TimeTest.showTime())</span><br><span class="line">t = TimeTest(<span class="number">2</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">nowTime = t.showTime()</span><br><span class="line">print(nowTime)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/05/面向对象编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2019-07-02-raid与lvm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -212,7 +689,58 @@
 </tbody>
 </table>
 <h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
-
+<p>一些题外话：现在大部分公司都购买云服务器了，云服务产商会提供数据不丢失的保障<br>99.9999%，所以没必要购买真实服务器</p>
+<p>能购买服务器的公司都是大公司，真实的服务器才会做raid</p>
+<h3 id="lvm（逻辑卷管理）"><a href="#lvm（逻辑卷管理）" class="headerlink" title="lvm（逻辑卷管理）"></a>lvm（逻辑卷管理）</h3><h4 id="①为什么会出现逻辑卷管理"><a href="#①为什么会出现逻辑卷管理" class="headerlink" title="①为什么会出现逻辑卷管理"></a>①为什么会出现逻辑卷管理</h4><p>我们平时在为系统分区时，该如何评估和分配硬件分区的容量？我们要考虑当前分区需要的容量，并且预计以后分区可能需要的容量的最大值，但是当它满了之后呢？我们得重新备份整个系统、清除硬盘、重新对硬盘分区，然后恢复数据到新分区</p>
+<p>我们假想出现一中能把这些分区在逻辑上是能够连接在一起的，并能实现动态扩容+分区结构不需要改变</p>
+<h4 id="②原理与简介"><a href="#②原理与简介" class="headerlink" title="②原理与简介"></a>②原理与简介</h4><p>逻辑卷管理器本质上是一个虚拟设备驱动，我们都知道内核是管理CPU和内存的程序，而逻辑卷是在内核和存储设备之间添加的一个新层次，将几块磁盘（物理卷，PhysicalVolume）组合形成卷组（VolumeGroup)，然后在每次从从卷组中划分不同大小的逻辑卷（LogicalVolume），卷组替代了磁盘块成为数据存储的基本单元，底层的原始磁盘不再由内核直接控制，而由LVM层来控制，LVM管理着所有物理卷的物理盘区，维持着逻辑盘区和物理盘区之间的映射</p>
+<p>有以上的原理我们可以知道，逻辑卷不必是连续的空间，它可以跨越许多物理卷，并且可以在任何时候任意的调整大小。相比物理磁盘来说，更易于磁盘空间的管理</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim" alt="mark"></p>
+<h4 id="③LVM机制的基本概念"><a href="#③LVM机制的基本概念" class="headerlink" title="③LVM机制的基本概念"></a>③LVM机制的基本概念</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">PV（Physical Volume，物理卷）</th>
+<th>整个硬盘，或使用fdisk等工具建立的普通分区<br> 包括许多默认4MB大小的PE（Physical Extents，基本单元）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">VG（Volume Group，卷组）</td>
+<td>一个或多个物理卷组合而成的整体</td>
+</tr>
+<tr>
+<td style="text-align:left">LV（Logical Volume，逻辑卷）</td>
+<td>从卷组中分割出的一块空间，用于建立文件系统</td>
+</tr>
+</tbody>
+</table>
+<h4 id="④linux中关于lvm的操作"><a href="#④linux中关于lvm的操作" class="headerlink" title="④linux中关于lvm的操作"></a>④linux中关于lvm的操作</h4><h6 id="Ⅰ-创建pv（物理卷）"><a href="#Ⅰ-创建pv（物理卷）" class="headerlink" title="Ⅰ.创建pv（物理卷）"></a>Ⅰ.创建pv（物理卷）</h6><p>[root@localhost ~]# yum provides pvcreate                               ###安装pvcreate包</p>
+<p>[root@localhost ~]# pvcreate  /dev/sd[bcd]                             ######创建逻辑卷b,c,d, 它们也可以单独创立<br>Physical volume “/dev/sdb” successfully created.<br>Physical volume “/dev/sdc” successfully created.<br>Physical volume “/dev/sdd” successfully created</p>
+<h6 id="Ⅱ-创建VG（卷组）"><a href="#Ⅱ-创建VG（卷组）" class="headerlink" title="Ⅱ.创建VG（卷组）"></a>Ⅱ.创建VG（卷组）</h6><p>[root@localhost ~]# vgcreate  cjz  /dev/sd[bcd]                        #######把bcd组合起来为一个卷组，并起名cjz<br>  Volume group “cjz” successfully created</p>
+<p>关于vg的重要命令  </p>
+<p>vgscan 扫描vg  </p>
+<p>vgdisplay cjz 查看vg里的cjz卷组的信息</p>
+<h6 id="Ⅲ-创建LV-Logical-Volume，逻辑卷"><a href="#Ⅲ-创建LV-Logical-Volume，逻辑卷" class="headerlink" title="Ⅲ.创建LV(Logical Volume，逻辑卷 )"></a>Ⅲ.创建LV(Logical Volume，逻辑卷 )</h6><p>[root@localhost ~]# lvcreate -L 299G -n file_store cjz      ##从cjz卷组中创建一个299G的逻辑卷，取名file_store<br>  Logical volume “file_store” created.<br>-L  指定大小 size<br>-n  指定LV的名字  name</p>
+<p>[root@localhost ~]# mkfs.xfs /dev/cjzi/file_store                                       ########格式化逻辑卷</p>
+<p>一个LV就相当于标准磁盘里的一个分区</p>
+<h6 id="Ⅳ-挂载使用"><a href="#Ⅳ-挂载使用" class="headerlink" title="Ⅳ.挂载使用"></a>Ⅳ.挂载使用</h6><p>[root@localhost ~]# mkdir  /file                                                                  ############### 新建挂载点<br>[root@localhost ~]# mount   /dev/cjz/file_store  /file                 ######挂载LV file_store到/file</p>
+<p>df -Th    可以查看文件系统的挂载情况</p>
+<h6 id="Ⅴ开机自动挂载"><a href="#Ⅴ开机自动挂载" class="headerlink" title="Ⅴ开机自动挂载"></a>Ⅴ开机自动挂载</h6><p>vim  /etc/fstab<br>/dev/cjz/file_store    /file  xfs   defaults 0 0                     #########这是我所要添加的行</p>
+<pre><code>/dev/cjz/file_store  设备文件的路径
+/file 挂载点
+xfs 表示文件系统的类型
+defaults  文件系统默认的挂载选项：类似于ro，rw等等
+0 表示是否支持dump命令，进行备份
+0 表示开机的时候是否检测这个文件系统是否有问题，0表示不检测
+    1 表示检测，优先级高
+    2 表示检测，优先级低
+</code></pre><h6 id="Ⅵ-扩容"><a href="#Ⅵ-扩容" class="headerlink" title="Ⅵ.扩容"></a>Ⅵ.扩容</h6><p>扩容的流程：<br>    pv—》vg—》lv<br>    lv 索要空间步骤：lv –》vg—》pv</p>
+<p>——————————-1.创建新的pv–<br>[root@localhost file]# pvcreate /dev/sde<br>  Physical volume “/dev/sde” successfully created.<br>[root@localhost file]# pvcreate /dev/sdf<br>  Physical volume “/dev/sdf” successfully created.<br>[root@localhost file]# pvscan<br>  PV /dev/sdb   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdc   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdd   VG cjz       lvm2 [&lt;100.00 GiB / 1012.00 MiB free]<br>  PV /dev/sdf                      lvm2 [200.00 GiB]<br>  PV /dev/sde                      lvm2 [200.00 GiB]<br>  Total: 5 [&lt;699.99 GiB] / in use: 3 [&lt;299.99 GiB] / in no VG: 2 [400.00 GiB]<br>[root@localhost file]#<br>——————————-2.将pv扩到vg里<br>[root@localhost file]# vgextend  cjz  /dev/sdf  /dev/sde<br>  Volume group “cjz” successfully extended<br>[root@localhost file]#<br>[root@localhost file]# lvextend -L +399G /dev/alimeimei/file_store </p>
+<p>[root@localhost file]# lvdisplay  /dev/cjz/file_store<br>  LV Size                698.00 GiB<br>——————————–3.告诉linux系统重新识别挂载的分区的大小<br>xfs_growfs —》xfs<br>resize2fs  —》ext3/ext4</p>
+<p> [root@localhost ~]# xfs_growfs /dev/cjz/file_store<br>meta-data=/dev/mapper/cjz-file_store isize=512    agcount=4, agsize=19595264 blks<br>         =                       sectsz=512   attr=2, projid32bit=1<br>         =                       crc=1        finobt=0 spinodes=0<br>data     =                       bsize=4096   blocks=78381056, imaxpct=25<br>         =                       sunit=0      swidth=0 blks<br>naming   =version 2              bsize=4096   ascii-ci=0 ftype=1<br>log      =internal               bsize=4096   blocks=38272, version=2<br>         =                       sectsz=512   sunit=0 blks, lazy-count=1<br>realtime =none                   extsz=4096   blocks=0, rtextents=0<br>data blocks changed from 78381056 to 182976512<br>[root@localhost ~]# df -Th<br>文件系统                         类型      容量  已用  可用 已用% 挂载点<br>/dev/sda3                        xfs        80G  1.6G   79G    2% /<br>devtmpfs                         devtmpfs  481M     0  481M    0% /dev<br>tmpfs                            tmpfs     492M     0  492M    0% /dev/shm<br>tmpfs                            tmpfs     492M  7.6M  485M    2% /run<br>tmpfs                            tmpfs     492M     0  492M    0% /sys/fs/cgroup<br>/dev/sda2                        xfs        20G   33M   20G    1% /data<br>/dev/sda1                        xfs       497M  117M  381M   24% /boot<br>tmpfs                            tmpfs      99M     0   99M    0% /run/user/0<br>/dev/mapper/cjz-file_store xfs       698G   33M  698G    1% /file</p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>raid–》磁盘阵列–》raid0   1  5 6 10 –&gt;容错、速度快<br>    lvm–》逻辑卷—》动态扩容—》PV、VG、LV</p>
+<pre><code>先做raid---》然后使用lvm
+</code></pre>
       
 
       
@@ -358,6 +886,122 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/07/02/关于git一些问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-计算机网络物理层" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/15/计算机网络物理层/">物理层知识点</a>
+    </h1>
+  
+
+        
+        <a href="/2019/06/15/计算机网络物理层/" class="archive-article-date">
+  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p>[TOC]</p>
+<h4 id="1-物理层与物理层通信"><a href="#1-物理层与物理层通信" class="headerlink" title="1.物理层与物理层通信"></a>1.物理层与物理层通信</h4><p>物理层的概念：物理层是计算机网络osi模型的最底层，被简单的称为“信号和介质层”，它要确保原始的数据能在各种物理媒体上运输</p>
+<p>任务：需要确定与传输媒体的接口的四个特性</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>详细说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>机械特性</td>
+<td>接口的形状，尺寸，引线数目，排列顺序等</td>
+</tr>
+<tr>
+<td>电气特性</td>
+<td>接口电缆上各线的电压范围</td>
+</tr>
+<tr>
+<td>功能特性</td>
+<td>指明某条电线上某一电平的电压代表何种意义</td>
+</tr>
+<tr>
+<td>规程特性</td>
+<td>指明各种可能出现时间的顺序</td>
+</tr>
+</tbody>
+</table>
+<p>组成部分：</p>
+<p>物理层的媒体包括架空明线、平衡电缆、光纤、无线信道等。通信用的互连设备指DTE和DCE间的互连设物理层备。DTE即数据终端设备，又称物理设备，如计算机、终端等都包括在内。而DCE则是数据通信设备或电路连接设备，如调制解调器等。数据传输通常是经过DTE──DCE，再经过DCE──DTE的路径。互连设备指将DTE、DCE连接起来的装置，如各种插头、插座。LAN中的各种粗、细同轴电缆、T型接、插头，接收器，发送器，中继器等都属物理层的媒体和连接器</p>
+<h4 id="2-多路复用技术"><a href="#2-多路复用技术" class="headerlink" title="2.多路复用技术"></a>2.多路复用技术</h4><p>信道复用技术种类：</p>
+<p>频分复用</p>
+<p>就是将用于传输信道的总带宽划分成若干个子频带（或称子信道），每一个子信道传输1路信号。频分复用要求总频率宽度大于各个子信道频率之和，同时为了保证各子信道中所传输的信号互不干扰，应在各子信道之间设立隔离带，这样就保证了各路信号互不干扰（条件之一）。频分复用技术的特点是所有子信道传输的信号以并行的方式工作，每一路信号传输时可不考虑传输时延，因而频分复用技术取得了非常广泛的应用。频分复用技术除传统意义上的频分复用（FDM）外，还有一种是正交频分复用OFDM</p>
+<p>时分复用</p>
+<p>就是将提供给整个信道传输信息的时间划分成若干时间片（简称时隙)），并这些时隙分配给每一个信号源(h使用，每一路信号在自己的时隙内独占信道进行数据传输。时分复用技术的特点是时隙事先规划分配好且固定不变，所以有时也叫<a href="https://baike.baidu.com/item/%E5%90%8C%E6%AD%A5%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8/8949160" target="_blank" rel="noopener">同步时分复用</a>。其优点是时隙分配固定，便于调节控制，适于数字信息的传输；缺点是当某信号源没有数据传输时，它所对应的信道会出现空闲，而其他繁忙的信道无法占用这个空闲的信道，因此会降低线路的利用率。时分复用技术与频分复用技术一样，有着非常广泛的应用，电话就是其中最经典的例子，此外时分复用技术在广电也同样取得了广泛地应用，如SDH，ATM，IP和HFC网络中CM与CMTS的通信都是利用了时分复用的技术。 </p>
+<p>波分复用</p>
+<p>波分复用WDM(Wavelength Division Multiplexing)是将两种或多种不同波长的光载波信号（携带各种信息）在发送端经复用器(亦称合波器，Multiplexer)汇合在一起，并耦合到光线路的同一根光纤中进行传输的技术；在接收端，经解复用器(亦称分波器或称去复用器，Demultiplexer)将各种波长的光载波分离，然后由光接收机作进一步处理以恢复原信号。这种在同一根光纤中同时传输两个或众多不同波长光信号的技术，称为波分复用。 </p>
+<p>码分复用</p>
+<p>码分复用是用一组包含互相正交的码字的码组携带多路信号。采用同一波长的扩频序列，频谱资源利用率高，与WDM结合，可以大大增加系统容量。有<a href="https://baike.baidu.com/item/%E7%A0%81%E5%88%86%E5%A4%9A%E5%9D%80/2503754" target="_blank" rel="noopener">码分多址</a>，<a href="https://baike.baidu.com/item/%E9%A2%91%E5%88%86%E5%A4%9A%E5%9D%80/2810943" target="_blank" rel="noopener">频分多址</a>(FDMA)、<a href="https://baike.baidu.com/item/%E6%97%B6%E5%88%86%E5%A4%9A%E5%9D%80/2810720" target="_blank" rel="noopener">时分多址</a>(TDMA)和同步码分多址(SCDMA)等相关技术。 </p>
+<h4 id="3-信道通信的方式"><a href="#3-信道通信的方式" class="headerlink" title="3.信道通信的方式"></a>3.信道通信的方式</h4><p>单向通信———-只有一个方向的通信而没有反方向的通信</p>
+<p>双向交替通信（半双工）——–都可以发送和接收消息，但不能同时发送和接收</p>
+<p>双向同时通信（全双工）——–都可以发送和接收消息，也可以同时发送和接收</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/06/15/计算机网络物理层/">展开全文 >></a>
         </p>
       
 
@@ -572,122 +1216,6 @@
 
 
   
-    <article id="post-计算机网络物理层" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/15/计算机网络物理层/">物理层知识点</a>
-    </h1>
-  
-
-        
-        <a href="/2019/06/15/计算机网络物理层/" class="archive-article-date">
-  	<time datetime="2019-06-15T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h3><p>[TOC]</p>
-<h4 id="1-物理层与物理层通信"><a href="#1-物理层与物理层通信" class="headerlink" title="1.物理层与物理层通信"></a>1.物理层与物理层通信</h4><p>物理层的概念：物理层是计算机网络osi模型的最底层，被简单的称为“信号和介质层”，它要确保原始的数据能在各种物理媒体上运输</p>
-<p>任务：需要确定与传输媒体的接口的四个特性</p>
-<table>
-<thead>
-<tr>
-<th>特性</th>
-<th>详细说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>机械特性</td>
-<td>接口的形状，尺寸，引线数目，排列顺序等</td>
-</tr>
-<tr>
-<td>电气特性</td>
-<td>接口电缆上各线的电压范围</td>
-</tr>
-<tr>
-<td>功能特性</td>
-<td>指明某条电线上某一电平的电压代表何种意义</td>
-</tr>
-<tr>
-<td>规程特性</td>
-<td>指明各种可能出现时间的顺序</td>
-</tr>
-</tbody>
-</table>
-<p>组成部分：</p>
-<p>物理层的媒体包括架空明线、平衡电缆、光纤、无线信道等。通信用的互连设备指DTE和DCE间的互连设物理层备。DTE即数据终端设备，又称物理设备，如计算机、终端等都包括在内。而DCE则是数据通信设备或电路连接设备，如调制解调器等。数据传输通常是经过DTE──DCE，再经过DCE──DTE的路径。互连设备指将DTE、DCE连接起来的装置，如各种插头、插座。LAN中的各种粗、细同轴电缆、T型接、插头，接收器，发送器，中继器等都属物理层的媒体和连接器</p>
-<h4 id="2-多路复用技术"><a href="#2-多路复用技术" class="headerlink" title="2.多路复用技术"></a>2.多路复用技术</h4><p>信道复用技术种类：</p>
-<p>频分复用</p>
-<p>就是将用于传输信道的总带宽划分成若干个子频带（或称子信道），每一个子信道传输1路信号。频分复用要求总频率宽度大于各个子信道频率之和，同时为了保证各子信道中所传输的信号互不干扰，应在各子信道之间设立隔离带，这样就保证了各路信号互不干扰（条件之一）。频分复用技术的特点是所有子信道传输的信号以并行的方式工作，每一路信号传输时可不考虑传输时延，因而频分复用技术取得了非常广泛的应用。频分复用技术除传统意义上的频分复用（FDM）外，还有一种是正交频分复用OFDM</p>
-<p>时分复用</p>
-<p>就是将提供给整个信道传输信息的时间划分成若干时间片（简称时隙)），并这些时隙分配给每一个信号源(h使用，每一路信号在自己的时隙内独占信道进行数据传输。时分复用技术的特点是时隙事先规划分配好且固定不变，所以有时也叫<a href="https://baike.baidu.com/item/%E5%90%8C%E6%AD%A5%E6%97%B6%E5%88%86%E5%A4%8D%E7%94%A8/8949160" target="_blank" rel="noopener">同步时分复用</a>。其优点是时隙分配固定，便于调节控制，适于数字信息的传输；缺点是当某信号源没有数据传输时，它所对应的信道会出现空闲，而其他繁忙的信道无法占用这个空闲的信道，因此会降低线路的利用率。时分复用技术与频分复用技术一样，有着非常广泛的应用，电话就是其中最经典的例子，此外时分复用技术在广电也同样取得了广泛地应用，如SDH，ATM，IP和HFC网络中CM与CMTS的通信都是利用了时分复用的技术。 </p>
-<p>波分复用</p>
-<p>波分复用WDM(Wavelength Division Multiplexing)是将两种或多种不同波长的光载波信号（携带各种信息）在发送端经复用器(亦称合波器，Multiplexer)汇合在一起，并耦合到光线路的同一根光纤中进行传输的技术；在接收端，经解复用器(亦称分波器或称去复用器，Demultiplexer)将各种波长的光载波分离，然后由光接收机作进一步处理以恢复原信号。这种在同一根光纤中同时传输两个或众多不同波长光信号的技术，称为波分复用。 </p>
-<p>码分复用</p>
-<p>码分复用是用一组包含互相正交的码字的码组携带多路信号。采用同一波长的扩频序列，频谱资源利用率高，与WDM结合，可以大大增加系统容量。有<a href="https://baike.baidu.com/item/%E7%A0%81%E5%88%86%E5%A4%9A%E5%9D%80/2503754" target="_blank" rel="noopener">码分多址</a>，<a href="https://baike.baidu.com/item/%E9%A2%91%E5%88%86%E5%A4%9A%E5%9D%80/2810943" target="_blank" rel="noopener">频分多址</a>(FDMA)、<a href="https://baike.baidu.com/item/%E6%97%B6%E5%88%86%E5%A4%9A%E5%9D%80/2810720" target="_blank" rel="noopener">时分多址</a>(TDMA)和同步码分多址(SCDMA)等相关技术。 </p>
-<h4 id="3-信道通信的方式"><a href="#3-信道通信的方式" class="headerlink" title="3.信道通信的方式"></a>3.信道通信的方式</h4><p>单向通信———-只有一个方向的通信而没有反方向的通信</p>
-<p>双向交替通信（半双工）——–都可以发送和接收消息，但不能同时发送和接收</p>
-<p>双向同时通信（全双工）——–都可以发送和接收消息，也可以同时发送和接收</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">计算机网络</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/06/15/计算机网络物理层/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -835,7 +1363,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端知识</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,7 +1379,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
