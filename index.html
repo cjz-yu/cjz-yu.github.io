@@ -156,6 +156,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-上下文管理器介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/11/上下文管理器介绍/">上下文管理</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/11/上下文管理器介绍/" class="archive-article-date">
+  	<time datetime="2019-07-11T15:25:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h2 id="上下文管理器介绍"><a href="#上下文管理器介绍" class="headerlink" title="上下文管理器介绍"></a>上下文管理器介绍</h2><p> •上下文管理器类似装饰器，也是一个包装任意代码块的对象，它能保证代码执行的一致性，，当执行exit时，当退出上下文管理器时，相关的资源会被正确的回收。使用上下文管理器的好处是，一定能够保证退出步骤的执行，<strong>通过 with 语句在编写代码时，会使代码变得更加简洁，不用再去关闭文件</strong></p>
+<p> • 当退出上下文管理器时，相关的资源会被正确地回收（即使内部代码出错，退出步骤也会执行） 上下文管理器的应用</p>
+<p> • 上下文管理器被用到最多的就是——<strong>作为确保资源正确清理的一种方式</strong></p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>with语句 </p>
+<p>• with语句仅仅能对支持上下文管理协议的对象使用。 </p>
+<p>• with语句的表达式的作用是返回一个遵循特定协议的对象，具体来说，该对象必须定义一个</p>
+<p>　<strong><strong>enter</strong>()</strong>：主要执行一些环境准备工作，同时返回一资源对象。如果上下文管理器open(“test.txt”)的<strong>enter</strong>()函数返回一个文件对象。</p>
+<p><strong><strong>exit</strong>()</strong>：完整形式为<strong>exit</strong>(type, value, traceback)，有三个参数，用来接收处理异常，如果代码在运行时发生异常，异常会被保存到这里。如果执行体语句没有引发异常，则这三个参数均被设为None </p>
+<p>①exc_type : 异常类型        ②exc_val : 异常值           ③exc_tb : 异常回溯追踪</p>
+<p>exit_()方法返回True或False,分别指示被引发的异常有没有被处理，如果返回False，引发的异常将会被传递出上下文。如果<strong>exit</strong>()函数内部引发了异常，则会覆盖掉执行体的中引发的异常。处理异常时，不需要重新抛出异常，只需要返回False，with语句会检测<strong>exit</strong>()返回False来处理异常。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>   <span class="comment"># 第一步：首先进入上下文之前会调用初始化方法</span></span><br><span class="line">        print(<span class="string">'init'</span>)</span><br><span class="line">        self.name = <span class="string">'陈鹏波'</span></span><br><span class="line">        self.age = <span class="number">21</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span><span class="params">(self)</span>:</span>   <span class="comment"># 第二步：然后进入上下文会调用__enter__方法，return返回的结果会通过as关键字赋值给后面的变量</span></span><br><span class="line">        print(<span class="string">'代码执行到了enter.........'</span>)</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span><span class="params">(self, exc_type, exc_val, exc_tb)</span>:</span></span><br><span class="line">        print(<span class="string">'代码执行到了__exit__......'</span>)      <span class="comment"># 第四步：执行完毕语句块后，会调用__exit__方法退出上下文</span></span><br><span class="line">        <span class="keyword">if</span> exc_type == <span class="literal">None</span>:</span><br><span class="line">            print(<span class="string">'程序没问题'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'程序有问题，具体问题如下：'</span>)</span><br><span class="line">            print(<span class="string">'Type: '</span>, exc_type)</span><br><span class="line">            print(<span class="string">'Value:'</span>, exc_val)</span><br><span class="line">            print(<span class="string">'TreacBack:'</span>, exc_tb)</span><br><span class="line">            <span class="comment"># 返回值决定了捕获的异常是否继续向外抛出</span></span><br><span class="line">            <span class="comment"># 如果是 False 那么就会继续向外抛出，程序会看到系统提示的异常信息</span></span><br><span class="line">            <span class="comment"># 如果是 True 不会向外抛出，程序看不到系统提示信息，只能看到Felse中的输出</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">with</span> Student() <span class="keyword">as</span> stu:      <span class="comment"># __enter__返回一个地址（实质是被as后的stu变量接收）</span></span><br><span class="line">    print(stu.name)         <span class="comment"># 第三步：调用了__enter__后，会执行上下文的语句块</span></span><br><span class="line">    print(stu.fa)           <span class="comment">#这里出错，会调用__exit__,然后直接退出程序，不会执行下一行语句啦</span></span><br><span class="line">    print(stu.age)</span><br></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190711/tAbf0zAb0bGj.png?imageslim" alt="mark"></p>
+<p>。</p>
+<h2 id="contextlib模块实现上下文管理器"><a href="#contextlib模块实现上下文管理器" class="headerlink" title="contextlib模块实现上下文管理器"></a>contextlib模块实现上下文管理器</h2><p>• contextlib模块实现上下文自动管理<br>• 这个生成器可以用更简单的方法创建上下文管理器</p>
+<p>例1：当contextlib与try-except-finally联系起来</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 让普通函数也可以使用上下文管理, 前提条件是函数必须是生成器函数，且只有yield语句</span></span><br><span class="line"><span class="keyword">import</span> contextlib</span><br><span class="line"><span class="meta">@contextlib.contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_context_manager</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"__enter__"</span>)              <span class="comment"># 第二部：调用__enter__</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">yield</span>                       <span class="comment"># 第二部：返回__enter__函数的返回值给f对象</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        print(<span class="string">"ValueError"</span>)</span><br><span class="line">    <span class="keyword">finally</span>:					   <span class="comment">#不管文件操作有没有出现异常，try/finally中的finnally语句都会			print("__exit__")							执行，从而保证文件的正确关闭</span></span><br><span class="line">        				           <span class="comment"># 第四部：调用__exit__</span></span><br><span class="line"><span class="keyword">with</span> my_context_manager() <span class="keyword">as</span> f:</span><br><span class="line">    print(<span class="string">"这是代码块"</span>)             <span class="comment"># 第三部：执行上下文语句块</span></span><br><span class="line">    int(<span class="string">'a'</span>)                       <span class="comment">#这里是第三部触发一个值错误</span></span><br></pre></td></tr></table></figure>
+<p>运行结果：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190711/iFHQFg2FSEB1.png?imageslim" alt="mark"></p>
+<p>例二：锁资源自动获取和释放的例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@contextmanager</span><br><span class="line">def locked(lock):</span><br><span class="line">    lock.acquire()</span><br><span class="line">    try:</span><br><span class="line">        yield</span><br><span class="line">    finally:</span><br><span class="line">        lock.release()</span><br><span class="line"></span><br><span class="line">with locked(myLock):</span><br><span class="line">    #代码执行到这里时，myLock已经自动上锁</span><br><span class="line">    pass</span><br><span class="line">    #执行完后会，会自动释放锁</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/11/上下文管理器介绍/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-http协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1367,6 +1461,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
@@ -1376,10 +1474,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>
