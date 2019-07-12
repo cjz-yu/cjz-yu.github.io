@@ -156,6 +156,204 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-2019-07-12-HTML语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/12/2019-07-12-HTML语言/">HTML语言</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/12/2019-07-12-HTML语言/" class="archive-article-date">
+  	<time datetime="2019-07-12T14:46:58.532Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="html是什么"><a href="#html是什么" class="headerlink" title="html是什么"></a>html是什么</h1><hr>
+<p>前言</p>
+<p>web前端语言有html、css、JavaScript等，服务端语言有php、java、c#等等。今天主要介绍的是html语言，也是网页中最基本的语言之一。作为一个小白程序员，有一定的前端知识是必要的，就拿HTML语言练练手</p>
+<p>对它的一些理解：</p>
+<p>“html”是“Hyper Text Markup Language”的缩写，即“超文本标记语言”，是标准通用标记语言下的一个应用。html并不是一种编程语言，它是一种标记语言，是由一些标签组成，主要是用来制作网页的。</p>
+<p>为什么说是超文本语言呢？“超文本”指的是它的内容可以是一些非文本的内容，比如：图片、链接、声音等等。</p>
+<h1 id="标准HTML页面"><a href="#标准HTML页面" class="headerlink" title="标准HTML页面"></a>标准HTML页面</h1><p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190712/xfTvOpjw4ilV.png?imageslim" alt="mark"></p>
+<p>上方的图片就是一个标准的HTML页面，现在我们大多数使用的HTML编辑器都会自动生成以上信息</p>
+<p>html语言主要分为两个部分，第一部分是“头部”，“头部”主要提供网页的基本信息，比如：标题、编码等等；第二部分是“主体”，主体部分提供的是网页的主题内容，即浏览器中显示的内容。</p>
+<p>“头部”由“<hend>标签”来标记，“主体”部分由“<body>标签”来标记。除了这两个部分，还有文档的类型声明，文档类型声明的作用就是告诉浏览器你用的是哪个html版本来编写的，浏览器才能成功的渲染。</body></hend></p>
+<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><p>是由尖括号包围的关键词，比如 <html></html><br>• 标签对中的第一个标签是开始标签，第二个标签是结束标签<br>• 开始和结束标签也被称为开放标签和闭合标签</p>
+<h2 id="html的属性"><a href="#html的属性" class="headerlink" title="html的属性"></a>html的属性</h2><p> HTML 标签可以拥有属性。属性提供了有关 HTML 元素的更多的信息。<br>• 属性总是以名称/值对的形式出现，比如：name=”value”。<br>• 属性总是在 HTML 元素的<a href>开始标签</a>中规定。</p>
+<h1 id="一些常见的HTML标签和用法"><a href="#一些常见的HTML标签和用法" class="headerlink" title="一些常见的HTML标签和用法"></a>一些常见的HTML标签和用法</h1><h2 id="①格式化（前7条比较常用）"><a href="#①格式化（前7条比较常用）" class="headerlink" title="①格式化（前7条比较常用）"></a>①格式化（前7条比较常用）</h2><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; title &gt;&lt; /title &gt;</td>
+<td>网页最上面的名称</td>
+</tr>
+<tr>
+<td>&lt; p&gt; &lt; /p &gt;</td>
+<td>添加段落</td>
+</tr>
+<tr>
+<td>&lt; hx &gt; &lt; h1 &gt;…&lt; h6 &gt;</td>
+<td>&lt; h1&gt;&lt; /h1&gt;（应该成对存在） 添加网页标题</td>
+</tr>
+<tr>
+<td>&lt; hr/&gt;</td>
+<td>会显示一条很长很长的长线</td>
+</tr>
+<tr>
+<td>&lt; br/&gt;</td>
+<td>分行显示文本</td>
+</tr>
+<tr>
+<td>&lt; ul &gt;  &lt; li &gt; &lt; /li &gt; &lt; /ul &gt;</td>
+<td>带小圆点标题</td>
+</tr>
+<tr>
+<td>&lt; ol &gt; &lt; li &gt; &lt; /li &gt; &lt; /ol &gt;</td>
+<td>带序号的标题</td>
+</tr>
+<tr>
+<td>&lt; b &gt; &lt; /b &gt;</td>
+<td>加粗字体</td>
+</tr>
+<tr>
+<td>&lt; i &gt; &lt; /i &gt;</td>
+<td>斜体</td>
+</tr>
+<tr>
+<td>&lt; big &gt;&lt; /big &gt;</td>
+<td>放大 字体</td>
+</tr>
+<tr>
+<td>&lt; em &gt;&lt; /em &gt;</td>
+<td>着重文字</td>
+</tr>
+<tr>
+<td>&lt; ins&gt;&lt; /ins&gt;</td>
+<td>插入字（在字体下方划一横线）</td>
+</tr>
+<tr>
+<td>&lt; del&gt;&lt; /del&gt;</td>
+<td>删除字（在字体中间划一横线）</td>
+</tr>
+<tr>
+<td>&lt; sub&gt;&lt; /sub&gt;</td>
+<td>下标字</td>
+</tr>
+<tr>
+<td>&lt; sup&gt;&lt; /sup&gt;</td>
+<td>上标字</td>
+</tr>
+</tbody>
+</table>
+<h2 id="②表格"><a href="#②表格" class="headerlink" title="②表格"></a>②表格</h2><table>
+<thead>
+<tr>
+<th>&lt; table&gt;&lt; /table&gt;</th>
+<th>代表一个表格，一个表格中只允许出现一对<table>标签</table></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; tr&gt;&lt; /tr&gt;</td>
+<td></td></tr><tr>表示表格一行的开始，</tr>表示表格一行的结束
+
+<tr>
+<td>&lt; td&gt;&lt; /td&gt;</td>
+<td></td><td>表示表格中某行中的一个单元格的开始，</td>表示结束。
+</tr>
+<tr>
+<td>&lt; caption&gt;&lt; /caption&gt;</td>
+<td>标签定义表格的标题</td>
+</tr>
+<tr>
+<td>&lt; th&gt;&lt; /th&gt;</td>
+<td>标签定义表格的表头</td>
+</tr>
+<tr>
+<td>&lt; th colspan=”2”&gt;&lt; /th&gt;</td>
+<td>表示占领两个列单元格</td>
+</tr>
+<tr>
+<td>&lt; th rowspan=”2”&gt;&lt; /th&gt;</td>
+<td>表示占领两个行单元格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="③图像处理"><a href="#③图像处理" class="headerlink" title="③图像处理"></a>③图像处理</h2><p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190712/0K0PQogfE3xH.png?imageslim" alt="mark"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">background</span>=<span class="string">"imgs/1.png"</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/2.png"</span> <span class="attr">alt</span>=<span class="string">"提示信息"</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/2.png"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>background属性表示背景</p>
+<p>width=”200”  宽度200像素</p>
+<p>height=”300” 高度 300像素</p>
+<h2 id="④链接"><a href="#④链接" class="headerlink" title="④链接"></a>④链接</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>链接打开方式<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_parent"</span>&gt;</span>在上级窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>在新窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_self"</span>&gt;</span>在当前窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_top"</span>&gt;</span>在浏览器的整个窗口中打开，忽略任何框架<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>链接路径<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>绝对路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"index.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>相对路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/index.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>根路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>发送邮件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:x010@foxmail.com?subject=交作业"</span>&gt;</span>交作业<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>target的翻译是<strong>目标；对象</strong>  属性规定在何处打开链接文档</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#top1"</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#top2"</span>&gt;</span> 第二节<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"top1"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"top2"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span>第二节<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端知识</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/12/2019-07-12-HTML语言/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-上下文管理器介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1457,7 +1655,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端知识</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1466,6 +1664,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端知识</a>
               </li>
              
               <li class="article-tag-list-item">
