@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>HTML语言 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="前言 三次握手四次断开是面试时经常被问起的点，理解好三次握手是非常有必要的，本文章将从连接建立的过程以及包的传输路径介绍这部分知识点  首先我们思考一下，我们在浏览器敲下www.hao123.com,是如何就能出现hao123的页面？以及这背后到底发生了些什么？ 1.域名解析：浏览器向这个用户的上网接入商发出域名请求，接入商的DNS服务器要查询域名数据库，看这个域名的DNS服务器是什么。然后到DN">
+<meta name="keywords" content="计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML语言">
+<meta property="og:url" content="http://yoursite.com/2019/08/04/三次握手四次断开/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言 三次握手四次断开是面试时经常被问起的点，理解好三次握手是非常有必要的，本文章将从连接建立的过程以及包的传输路径介绍这部分知识点  首先我们思考一下，我们在浏览器敲下www.hao123.com,是如何就能出现hao123的页面？以及这背后到底发生了些什么？ 1.域名解析：浏览器向这个用户的上网接入商发出域名请求，接入商的DNS服务器要查询域名数据库，看这个域名的DNS服务器是什么。然后到DN">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://qinniu.bolaobiao.top/blog/20190804/zqu27eOUz6fF.png?imageslim">
+<meta property="og:image" content="http://qinniu.bolaobiao.top/blog/20190804/V6j9lRShOqcu.png?imageslim">
+<meta property="og:image" content="http://qinniu.bolaobiao.top/blog/20190804/L1kWDY4DscEw.png?imageslim">
+<meta property="og:updated_time" content="2019-08-04T07:31:53.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="HTML语言">
+<meta name="twitter:description" content="前言 三次握手四次断开是面试时经常被问起的点，理解好三次握手是非常有必要的，本文章将从连接建立的过程以及包的传输路径介绍这部分知识点  首先我们思考一下，我们在浏览器敲下www.hao123.com,是如何就能出现hao123的页面？以及这背后到底发生了些什么？ 1.域名解析：浏览器向这个用户的上网接入商发出域名请求，接入商的DNS服务器要查询域名数据库，看这个域名的DNS服务器是什么。然后到DN">
+<meta name="twitter:image" content="http://qinniu.bolaobiao.top/blog/20190804/zqu27eOUz6fF.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -154,346 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Linux的资源查看" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-三次握手四次断开" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/Linux的资源查看/">资源查看</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/04/Linux的资源查看/" class="archive-article-date">
-  	<time datetime="2019-08-04T11:58:42.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="Linux的资源查看"><a href="#Linux的资源查看" class="headerlink" title="Linux的资源查看"></a>Linux的资源查看</h1><h3 id="ps命令"><a href="#ps命令" class="headerlink" title="ps命令"></a>ps命令</h3><p>ps命令就是最基本进程查看命令。使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵尸、哪些进程占用了过多的资源等等.总之大部分信息都是可以通过执行该命令得到。ps是显示瞬间进程的状态，并不动态连续；如果想对进程进行实时监控应该用top命令。</p>
-<p><strong>1.参数：</strong></p>
-<ul>
-<li>-A ：所有的进程均显示出来，与 -e 具有同样的效用；</li>
-<li>-a ： 显示现行终端机下的所有进程，包括其他用户的进程；</li>
-<li>-u ：以用户为主的进程状态 ；</li>
-<li>x ：通常与 a 这个参数一起使用，可列出较完整信息。</li>
-</ul>
-<p><strong>2.列出目前所有的正在内存当中的程序</strong></p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190804/nhk2hvrvWxp8.png?imageslim" alt="mark"></p>
-<ul>
-<li>USER：该进程属于那个使用者账号。</li>
-<li>PID ：该进程的进程ID号。</li>
-<li>%CPU：该进程使用掉的 CPU 资源百分比；</li>
-<li>%MEM：该进程所占用的物理内存百分比；</li>
-<li>VSZ ：该进程使用掉的虚拟内存量 (Kbytes)</li>
-<li>RSS ：该进程占用的固定的内存量 (Kbytes)</li>
-<li>TTY ：该进程是在那个终端机上面运作，若与终端机无关，则显示 ?。另外， tty1-tty6 是本机上面的登入者程序，若为 pts/0 等等的，则表示为由网络连接进主机的程序。</li>
-<li>STAT：该程序目前的状态，主要的状态有：</li>
-</ul>
-<ol>
-<li>R ：该程序目前正在运作，或者是可被运作；</li>
-<li>S ：该程序目前正在睡眠当中，但可被某些讯号(signal) 唤醒。</li>
-<li>T ：该程序目前正在侦测或者是停止了；</li>
-<li>Z ：该程序应该已经终止，但是其父程序却无法正常的终止他，造成 zombie (疆尸) 程序的状态</li>
-</ol>
-<ul>
-<li>START：该进程被触发启动的时间；</li>
-<li>TIME ：该进程实际使用 CPU 运作的时间</li>
-</ul>
-<h3 id="进程资源查看类"><a href="#进程资源查看类" class="headerlink" title="进程资源查看类"></a>进程资源查看类</h3><h4 id="1-lsof"><a href="#1-lsof" class="headerlink" title="1.lsof"></a>1.lsof</h4><p>lsof(list open files)是一个列出当前系统打开文件的工具。在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。</p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190804/oJzGfuc1jPBE.png?imageslim" alt="mark"></p>
-<p>lsof输出各列信息的意义如下：</p>
-<p>COMMAND：进程的名称 PID：进程标识符</p>
-<p>USER：进程所有者</p>
-<p>FD：文件描述符，应用程序通过文件描述符识别该文件。如cwd、txt等 TYPE：文件类型，如DIR、REG等</p>
-<p>DEVICE：指定磁盘的名称</p>
-<p>SIZE：文件的大小</p>
-<p>NODE：索引节点（文件在磁盘上的标识）</p>
-<p>NAME：打开文件的确切名称</p>
-<h4 id="2-语法格式：-lsof-［options］-filename"><a href="#2-语法格式：-lsof-［options］-filename" class="headerlink" title="2.语法格式： lsof ［options］ filename"></a>2.语法格式： lsof ［options］ filename</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -g gid 显示归属gid的进程情况</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof +d /usr/local/ 显示目录下被进程开启的文件</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -d 4 显示使用fd为4的进程</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsof -i 列出所有的网络连接</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lsof  -i tcp 列出所有tcp 网络连接信息</span><br><span class="line">lsof -i :3306 列出谁在使用某个端口</span><br><span class="line">lsof -i udp:55 列出谁在使用某个特定的udp端口</span><br></pre></td></tr></table></figure>
-<h4 id="3-top命令"><a href="#3-top命令" class="headerlink" title="3.top命令"></a>3.top命令</h4><p>top命令经常用来监控<a href="http://lib.csdn.net/base/linux" target="_blank" rel="noopener">Linux</a>的系统状况，比如cpu、内存的使用，程序员基本都知道这个命令，但比较奇怪的是能用好它的人却很少，例如top监控视图中内存数值的含义就有不少的曲解</p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190804/sfPXtosSNmrO.png?imageslim" alt="mark"></p>
-<p>第一行：<br>19:30:23 — 当前系统时间<br>8:16 — 系统已经运行了8小时16分钟（在这期间没有重启过）<br>1 users — 当前有1个用户登录系统<br>load average: 1.15, 1.42, 1.44 — load average后面的三个数分别是1分钟、5分钟、15分钟的负载情况。<br>load average数据是每隔5秒钟检查一次活跃的进程数，然后按特定算法计算出的数值。如果这个数除以逻辑CPU的数量，结果高于5的时候就表明系统在超负荷运转了。</p>
-<p> 第二行：<br>Tasks — 任务（进程），系统现在共有183个进程，其中处于运行中的有1个，182个在休眠（sleep），stoped状态的有0个，zombie状态（僵尸）的有0个。<br>第三行：cpu状态<br>6.7% us — 用户空间占用CPU的百分比。<br>0.4% sy — 内核空间占用CPU的百分比。<br>0.0% ni — 改变过优先级的进程占用CPU的百分比<br>92.9% id — 空闲CPU百分比<br>0.0% wa — IO等待占用CPU的百分比<br>0.0% hi — 硬中断（Hardware IRQ）占用CPU的百分比<br>0.0% si — 软中断（Software Interrupts）占用CPU的百分比<br>在这里CPU的使用比率和windows概念不同，如果你不理解用户空间和内核空间，需要充充电了。<br>第四行：内存状态<br>8306544k total — 物理内存总量（8GB）<br>7775876k used — 使用中的内存总量（7.7GB）<br>530668k free — 空闲内存总量（530M）<br>79236k buffers — 缓存的内存量 （79M）<br>第五行：swap交换分区<br>2031608k total — 交换区总量（2GB）<br>2556k used — 使用的交换区总量（2.5M）<br>2029052k free — 空闲交换区总量（2GB）<br>4231276k cached — 缓冲的交换区总量（4GB）</p>
-<p>这里要说明的是不能用windows的内存概念理解这些数据，如果按windows的方式此台服务器“危矣”：8G的内存总量只剩下530M的可用内存。Linux的内存管理有其特殊性，复杂点需要一本书来说明，这里只是简单说点和我们传统概念（windows）的不同。</p>
-<p>第四行中使用中的内存总量（used）指的是现在系统内核控制的内存数，空闲内存总量（free）是内核还未纳入其管控范围的数量。纳入内核管理的内存不见得都在使用中，还包括过去使用过的现在可以被重复利用的内存，内核并不把这些可被重新使用的内存交还到free中去，因此在<a href="http://lib.csdn.net/base/linux" target="_blank" rel="noopener">linux</a>上free内存会越来越少，但不用为此担心。</p>
-<p>如果出于习惯去计算可用内存数，这里有个近似的计算公式：第四行的free + 第四行的buffers + 第五行的cached，按这个公式此台服务器的可用内存：530668+79236+4231276 = 4.7GB。</p>
-<p>对于内存监控，在top里我们要时刻监控第五行swap交换分区的used，如果这个数值在不断的变化，说明内核在不断进行内存和swap的数据交换，这是真正的内存不够用了。</p>
-<p>第六行是空行</p>
-<p>第七行以下：各进程（任务）的状态监控<br>PID — 进程id<br>USER — 进程所有者<br>PR — 进程优先级<br>NI — nice值。负值表示高优先级，正值表示低优先级<br>VIRT — 进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES<br>RES — 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA<br>SHR — 共享内存大小，单位kb<br>S — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程<br>%CPU — 上次更新到现在的CPU时间占用百分比<br>%MEM — 进程使用的物理内存百分比<br>TIME+ — 进程使用的CPU时间总计，单位1/100秒<br>COMMAND — 进程名称（命令名/命令行）</p>
-<p><strong>多U多核CPU监控</strong>在top基本视图中，按键盘数字“1”，可监控每个逻辑CPU的状况：</p>
-<h4 id="netstat命令"><a href="#netstat命令" class="headerlink" title="netstat命令"></a>netstat命令</h4><p> netstat命令用于显示与IP、TCP、UDP和ICMP协议相关的统计数据，一般用于检验本机各端口的网络连接情况。netstat是在内核中访问网络及相关信息的程序，它能提供TCP连接，TCP和UDP监听，进程内存管理的相关报告。</p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190804/b6T9vT6muTyE.png?imageslim" alt="mark"></p>
-<p>显示所有TCP与UDP连接状态</p>
-<h4 id="4-dstat-命令（全能命令）"><a href="#4-dstat-命令（全能命令）" class="headerlink" title="4.dstat 命令（全能命令）"></a>4.dstat 命令（全能命令）</h4><p>dstat 是一个可以取代vmstat，iostat，netstat和ifstat这些命令的多功能产品。dstat扬长避短，即克服了这些命令的局限又增加了一些额外的功能，不但拥有更多的监控项，也更灵活。dstat在性能测试、基准测试和排除故障过程中可以很方便监控系统运行状况。 </p>
-<p><strong>特性</strong></p>
-<ul>
-<li>结合了vmstat，iostat，ifstat，netstat以及更多的信息</li>
-<li>实时显示统计情况，输出报告</li>
-<li>在分析和排障时可以通过启用监控项并排序</li>
-<li>模块化设计</li>
-<li>使用python编写的，方便扩展现有的工作任务</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@jack ~]# dstat</span><br></pre></td></tr></table></figure>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190804/bhQKCTj3RNCU.png?imageslim" alt="mark"></p>
-<table>
-<thead>
-<tr>
-<th>分组</th>
-<th>分组含义及子项字段含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CPU状态</td>
-<td>CPU的使用率。显示了用户占比，系统占比、空闲占比、等待占比、硬中断和软中断情况。</td>
-</tr>
-<tr>
-<td>磁盘统计</td>
-<td>磁盘的读写，分别显示磁盘的读、写总数。</td>
-</tr>
-<tr>
-<td>网络统计</td>
-<td>网络设备发送和接受的数据，分别显示的网络收、发数据总数。</td>
-</tr>
-<tr>
-<td>分页统计</td>
-<td>系统的分页活动。分别显示换入（in）和换出（out）。</td>
-</tr>
-<tr>
-<td>系统统计</td>
-<td>统计中断（int）和上下文切换（csw）。</td>
-</tr>
-</tbody>
-</table>
-<h1 id="free命令详解"><a href="#free命令详解" class="headerlink" title="free命令详解"></a>free命令详解</h1><p>free 命令显示系统内存的使用情况，包括物理内存、交换内存(swap)和内核缓冲区内存</p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190811/dC4CzkGjnIgJ.png?imageslim" alt="mark"></p>
-<p>如果加上 -h 选项，输出的结果会友好很多：</p>
-<p><img src="http://qinniu.bolaobiao.top/blog/20190811/8ruSwUdPQlLO.png?imageslim" alt="mark"></p>
-<p><strong>输出简介</strong></p>
-<p>下面先解释一下输出的内容：<br><strong>Mem</strong> 行(第二行)是内存的使用情况。<br><strong>Swap</strong> 行(第三行)是交换空间的使用情况。<br><strong>total</strong> 列显示系统总的可用物理内存和交换空间大小。<br><strong>used</strong> 列显示已经被使用的物理内存和交换空间。<br><strong>free</strong> 列显示还有多少物理内存和交换空间可用使用。<br><strong>shared</strong> 列显示被共享使用的物理内存大小。<br><strong>buff/cache</strong> 列显示被 buffer 和 cache 使用的物理内存大小。<br><strong>available</strong> 列显示还可以被应用程序使用的物理内存大小。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/Linux的资源查看/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019-07-02-Linux命令及知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/2019-07-02-Linux命令及知识点/">Linux命令及知识点</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/04/2019-07-02-Linux命令及知识点/" class="archive-article-date">
-  	<time datetime="2019-08-04T11:49:38.739Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-etc-passwd：存放用户信息-etc-shadow：存放密码信息"><a href="#1-etc-passwd：存放用户信息-etc-shadow：存放密码信息" class="headerlink" title="1./etc/passwd：存放用户信息   /etc/shadow：存放密码信息"></a>1./etc/passwd：存放用户信息   /etc/shadow：存放密码信息</h4><p><strong>每创建一个用户都会在/etc/passwd里面增加一行记录</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">nginx:x:997:995:Nginx web server:/var/lib/nginx:sbin/nologin</span><br><span class="line">user1:x:1000:1000::/home/user1:/bin/bash</span><br></pre></td></tr></table></figure>
-<p>①第一段为用户名 ②第二段存放的是该账号的口令 ③第三段代表用户标识列，也称为uid</p>
-<p>④第四段表示组标识号，也称为gid ⑤第五段为注释，记录姓名邮箱等属性</p>
-<p>⑥第六段是用户的家目录 ⑦第七段为用户的shell。用登录后，要启动一个进程，用来将用户下达的指令传给内核，这就是shell。</p>
-<h4 id="2-用户账户："><a href="#2-用户账户：" class="headerlink" title="2.用户账户："></a>2.用户账户：</h4><p> 超级用户root</p>
-<p> 程序用户  System accounts</p>
-<p> 普通用户  –》useradd</p>
-<p>UID （User Identity，用户标识号）</p>
-<p> 超级用户root的UID为0</p>
-<p> 程序用户的UID1-999</p>
-<p> 普通用户的UID大于等于1000</p>
-<h4 id="3-安装ftp的服务器软件包-yum-install-vsftpd-y"><a href="#3-安装ftp的服务器软件包-yum-install-vsftpd-y" class="headerlink" title="3.安装ftp的服务器软件包 yum install vsftpd -y"></a>3.安装ftp的服务器软件包 yum install vsftpd -y</h4><p>启动vsftpd服务器 service vsftpd start</p>
-<p>   ftp 是用户的家目录</p>
-<h4 id="4-etc-login-defs-用来定义新建用户和组的初始化信息，设置普通用户的UID和GID范围"><a href="#4-etc-login-defs-用来定义新建用户和组的初始化信息，设置普通用户的UID和GID范围" class="headerlink" title="4./etc/login.defs  用来定义新建用户和组的初始化信息，设置普通用户的UID和GID范围"></a>4./etc/login.defs  用来定义新建用户和组的初始化信息，设置普通用户的UID和GID范围</h4><h4 id="5-var-spool-mail-每个普通用户的邮箱存放位置"><a href="#5-var-spool-mail-每个普通用户的邮箱存放位置" class="headerlink" title="5./var/spool/mail  每个普通用户的邮箱存放位置"></a>5./var/spool/mail  每个普通用户的邮箱存放位置</h4><h4 id="6-linux里的ssh服务规定，没有设置密码的用户不能远程登录系统"><a href="#6-linux里的ssh服务规定，没有设置密码的用户不能远程登录系统" class="headerlink" title="6.linux里的ssh服务规定，没有设置密码的用户不能远程登录系统"></a>6.linux里的ssh服务规定，没有设置密码的用户不能远程登录系统</h4><p>   root用户可以修改所有用户密码，不要求复杂性</p>
-<p>   普通用户只能改自己的密码，要求复杂性</p>
-<h4 id="7-备份文件：-etc-shadow-etc-group-etc-passwd"><a href="#7-备份文件：-etc-shadow-etc-group-etc-passwd" class="headerlink" title="7.备份文件：/etc/shadow-   /etc/group-    /etc/passwd-"></a>7.备份文件：/etc/shadow-   /etc/group-    /etc/passwd-</h4><h4 id="8-主要控制用户初始配置文件"><a href="#8-主要控制用户初始配置文件" class="headerlink" title="8.主要控制用户初始配置文件"></a>8.主要控制用户初始配置文件</h4><p> .bash_profile:用户每次登录时执行，主要用来执行.bashrc的，输出PATH变量</p>
-<p>  .bashrc:每次进入新的Bash环境时执行(每次你新开一个终端或者运行bash程序就会执行)</p>
-<p>   .bash_logout:用户每次退出登录时执行</p>
-<p>   .bash_history:记录存放上次注销前使用的历史命令</p>
-<p>  每次只要新建用户，就会从/etc/skel/*目录下，拷贝文件过去到用户家目录下</p>
-<p>  其中 影响所有的用户：/etc/profile     /etc/bashrc</p>
-<p>  影响个别的用户：~/.bashrc     ~/.bash_profile</p>
-<p>  如果你写的程序想让用户登录开机就运行  ~/.bashrc或者/etc/bashrc</p>
-<p>   如果你写的程序想让开机运行，不登录也运行 /etc/rc.local</p>
-<h4 id="9-表示所有的隐藏文件"><a href="#9-表示所有的隐藏文件" class="headerlink" title="9.* 表示所有的隐藏文件"></a>9.* 表示所有的隐藏文件</h4><h4 id="11-kill-命令"><a href="#11-kill-命令" class="headerlink" title="11.kill 命令"></a>11.kill 命令</h4><p>Kill命令工作原理：</p>
-<p>　　向Linux内核发送一个系统操作信号和某个程序的进程标识号，然后系统内核就可以对进程标识号指定的进程进行操作。比如在top命令中，我们可以看到系统运行许多进程，有时就需要使用kill中止默写进程来提高系统资源。在讲解安装和登录命令时，曾提到系统多个虚拟控制台的作用是当一个程序出错造成系统锁死时，可以切换到其他虚拟控制台关闭这个程序。此时使用的命令就是kill，因为kill是大多数Shell内部命令可以直接调用的。</p>
-<p>kill -l 列出信号量所有信息</p>
-<p>9种常见信号</p>
-<table>
-<thead>
-<tr>
-<th>SIGHUP</th>
-<th>1 终端断线</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>SIGINT</td>
-<td>2 中断（同 Ctrl + C）</td>
-</tr>
-<tr>
-<td>SIGQUIT</td>
-<td>3 退出（同 Ctrl + \）</td>
-</tr>
-<tr>
-<td>SIGKILL</td>
-<td>9 强制终止</td>
-</tr>
-<tr>
-<td>SIGTERM</td>
-<td>15 终止（正常结束） ，缺省信号</td>
-</tr>
-<tr>
-<td>SIGCONT</td>
-<td>18 继续（同fg/bg命令）</td>
-</tr>
-<tr>
-<td>SIGSTOP</td>
-<td>19 停止</td>
-</tr>
-<tr>
-<td>SIGTSTP</td>
-<td>20 暂停（同 Ctrl + Z）</td>
-</tr>
-</tbody>
-</table>
-<h4 id="12-资源查看类"><a href="#12-资源查看类" class="headerlink" title="12.资源查看类"></a>12.资源查看类</h4><p>   进程资源查看类：top、ps、lsof、w、netstat -anplut</p>
-<p>​    内存资源查看类：free -m</p>
-<p>​     cpu资源查看类：top、cat /proc/cpuinfo</p>
-<p>​     网络资源查看类：dstat、w(当前登录系统的情况)</p>
-<p>​     磁盘资源查看类：dstat、iostat</p>
-<p>(list open files)是一个列出当前系统打开文件的工具</p>
-<h4 id="10-load-average-for-the-past-1-5-and-15-minutes"><a href="#10-load-average-for-the-past-1-5-and-15-minutes" class="headerlink" title="10.load average for the past 1, 5, and 15 minutes"></a>10.load average for the past 1, 5, and 15 minutes</h4><p>​     指的是cpu的最近1，5，15分钟的负载</p>
-<p>​     负载：单位时间内就绪队列里排队的进程数量</p>
-<p>​          为1的时间，刚刚好，不忙也不闲</p>
-<p>​          就绪对列里的进程数量小于5，就是正常，还在可接受的能力范围内</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/2019-07-02-Linux命令及知识点/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-三次握手四次断开" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/04/三次握手四次断开/">HTML语言</a>
+    <h1 class="article-title" itemprop="name">
+      HTML语言
     </h1>
   
 
@@ -579,6 +256,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -597,16 +295,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/04/三次握手四次断开/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/04/三次握手四次断开/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/08/04/2019-07-02-Linux命令及知识点/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Linux命令及知识点
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/07/22/闭包与装饰器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">闭包与装饰器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -626,1153 +392,14 @@
 
 
 
-
-  
-    <article id="post-闭包与装饰器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/闭包与装饰器/">闭包与装饰器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/22/闭包与装饰器/" class="archive-article-date">
-  	<time datetime="2019-07-22T15:06:08.363Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><h4 id="一：什么是闭包"><a href="#一：什么是闭包" class="headerlink" title="一：什么是闭包"></a>一：什么是闭包</h4><p>①在函数中可以（嵌套）定义另一个函数时，如果内部的函数引用了外部的函数的变量，则可能产生<br>闭包。<br>②闭包可以用来在一个函数与一组“私有”变量之间创建关联关系。<br>③在给定函数被多次调用的过程中，这些私有变量能够保持其持久性。</p>
-<p>简单来说就是当某个函数被当成对象返回的时候，夹带了外部变量，就形成了一个闭包</p>
-<h4 id="二：-形成闭包的三个条件，缺一不可："><a href="#二：-形成闭包的三个条件，缺一不可：" class="headerlink" title="二： 形成闭包的三个条件，缺一不可："></a>二： 形成闭包的三个条件，缺一不可：</h4><p>①必须有一个内嵌函数(函数里定义的函数）——这对应函数之间的嵌套<br>②内嵌函数必须引用一个定义在闭合范围内(外部函数里)的变量——内部函数引用外部变量<br>③外部函数必须返回内嵌函数——必须返回那个内部函数</p>
-<p> 闭包的概念很简单：一个可以引用在函数闭合范围内变量的函数。即”内部函数”，只有那个内部函<br>数才有所谓的<strong>closure</strong>属性。闭包函数会获得一个非空的<strong>closure</strong>属性（对比我们最后的函数test，test是一<br>个不具备闭包的函数，它的<strong>closure</strong>属性是None），这个属性是一个元组</p>
-<p>一个简单的闭包例子</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 特点：k,b</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span><span class="params">(k, b)</span>:</span></span><br><span class="line">    <span class="comment"># print("this is func1")</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func2</span><span class="params">(x)</span>:</span></span><br><span class="line">        y = k*x+b</span><br><span class="line">        <span class="comment"># print("this is func2")</span></span><br><span class="line">        print(y)</span><br><span class="line">    <span class="keyword">return</span> func2</span><br><span class="line">line1 = func1(<span class="number">1</span>, <span class="number">1</span>)  <span class="comment">#得到一个Y=x+1的函数</span></span><br><span class="line">line1(<span class="number">1</span>)</span><br><span class="line">line1(<span class="number">2</span>)</span><br><span class="line">line1(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="什么是装饰器"><a href="#什么是装饰器" class="headerlink" title="什么是装饰器"></a>什么是装饰器</h2><h4 id="什么是装饰器-1"><a href="#什么是装饰器-1" class="headerlink" title="什么是装饰器"></a>什么是装饰器</h4><p>• 装饰器是这样一种设计模式：如果一个类（函数）希望添加其他类（函数）的一些功能，而不希望<br>通过继承或是直接修改源代码实现，那么可以使用装饰器模式。<br>• 简单来说Python中的装饰器就是指某些函数或其他可调用对象，以函数或类作为可选输入参数，<br>然后返回函数或类的形式。通过这个在Python2.6版本中被新加入的特性可以用来实现装饰器设计<br>模式。<br>• 装饰器就是一个可以接受调用也可以返回调用的函数，该函数接受被装饰的函数作为其位置参数。<br>装饰器通过使用该参数来执行某些操作，然后返回原始参数或一些其他的调用<br>• 函数也是对象，也可以当做参数传递</p>
-<p>简单理解就是给某些函数增加新功能，又不想重构源代码</p>
-<p>一个简单的装饰器例子</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> datetime,time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log</span><span class="params">(func)</span>:</span></span><br><span class="line">    print(<span class="string">'hello'</span>)                                          <span class="comment">#第一步先进行封装，执行这里</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_dec</span><span class="params">(*args,**kwargs)</span>:</span></span><br><span class="line">        start=time.time()</span><br><span class="line">        now = time.strftime(<span class="string">"%Y--%m--%d %H:%M:%S"</span>, time.localtime())</span><br><span class="line">        func(*args)                                       <span class="comment"># 这里又调用了add函数</span></span><br><span class="line">        ret = func(*args, **kwargs)</span><br><span class="line">        time.sleep(<span class="number">1</span>)</span><br><span class="line">        cost = time.time()-start</span><br><span class="line">        print(<span class="string">f"<span class="subst">&#123;now&#125;</span>执行了<span class="subst">&#123;func.__name__&#125;</span>函数,总用时<span class="subst">&#123;cost<span class="number">-1</span>&#125;</span>"</span>)</span><br><span class="line">        <span class="keyword">return</span> ret                                          </span><br><span class="line">    <span class="keyword">return</span> _dec                                         <span class="comment">#第三部执行到这里，然后进入内嵌函数_dec()</span></span><br><span class="line"><span class="meta">@log            #相当于log(add(x，y))</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x,y)</span>:</span></span><br><span class="line">    print(<span class="string">'执行add函数'</span>)                                 <span class="comment">#第二部执行到这里</span></span><br><span class="line">    print(x+y)</span><br><span class="line">add(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>运行结果显示：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190712/PP6exCd5iStB.png?imageslim" alt="mark"></p>
-<h2 id="编写和使用装饰器"><a href="#编写和使用装饰器" class="headerlink" title="编写和使用装饰器"></a>编写和使用装饰器</h2><p>应用多个装饰器<br>• 定义两个装饰器(log, cost)<br>• 定义一个函数(add)，将两个装饰器应用到该函数</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190722/dCOPMJp6DEh4.png?imageslim" alt="mark"></p>
-<p> 应用多个装饰器 • <b>封装时，至下而上 • 执行时，至上而下</b></p>
-<h2 id="装饰器的应用"><a href="#装饰器的应用" class="headerlink" title="装饰器的应用"></a>装饰器的应用</h2><p>类实现装饰器</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">log2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, level)</span>:</span></span><br><span class="line">        print(<span class="string">"封装log2功能"</span>)</span><br><span class="line">        self.level = level</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, func)</span>:</span></span><br><span class="line">        print(<span class="string">"i am call"</span>)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">_dec</span><span class="params">(*args, **kwargs)</span>:</span></span><br><span class="line">            print(<span class="string">f"[<span class="subst">&#123;self.level&#125;</span>]记一条日志...."</span>)</span><br><span class="line">            ret = func(*args, **kwargs)</span><br><span class="line">            <span class="keyword">return</span> ret</span><br><span class="line">        <span class="comment"># _dec.__name__ = func.__name__</span></span><br><span class="line">        <span class="keyword">return</span> _dec</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@log2(level="INFO")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a+b</span><br></pre></td></tr></table></figure>
-<p>运行结果<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190722/axlkKwEP3Tqg.png?imageslim" alt="mark"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/22/闭包与装饰器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019-07-12-HTML语言" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/12/2019-07-12-HTML语言/">HTML语言</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/12/2019-07-12-HTML语言/" class="archive-article-date">
-  	<time datetime="2019-07-12T14:46:58.532Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="html是什么"><a href="#html是什么" class="headerlink" title="html是什么"></a>html是什么</h1><hr>
-<p>前言</p>
-<p>web前端语言有html、css、JavaScript等，服务端语言有php、java、c#等等。今天主要介绍的是html语言，也是网页中最基本的语言之一。作为一个小白程序员，有一定的前端知识是必要的，就拿HTML语言练练手</p>
-<p>对它的一些理解：</p>
-<p>“html”是“Hyper Text Markup Language”的缩写，即“超文本标记语言”，是标准通用标记语言下的一个应用。html并不是一种编程语言，它是一种标记语言，是由一些标签组成，主要是用来制作网页的。</p>
-<p>为什么说是超文本语言呢？“超文本”指的是它的内容可以是一些非文本的内容，比如：图片、链接、声音等等。</p>
-<h1 id="标准HTML页面"><a href="#标准HTML页面" class="headerlink" title="标准HTML页面"></a>标准HTML页面</h1><p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190712/xfTvOpjw4ilV.png?imageslim" alt="mark"></p>
-<p>上方的图片就是一个标准的HTML页面，现在我们大多数使用的HTML编辑器都会自动生成以上信息</p>
-<p>html语言主要分为两个部分，第一部分是“头部”，“头部”主要提供网页的基本信息，比如：标题、编码等等；第二部分是“主体”，主体部分提供的是网页的主题内容，即浏览器中显示的内容。</p>
-<p>“头部”由“&lt; hend&gt;标签”来标记，“主体”部分由“&lt; body&gt;标签”来标记。除了这两个部分，还有文档的类型声明，文档类型声明的作用就是告诉浏览器你用的是哪个html版本来编写的，浏览器才能成功的渲染。</p>
-<h2 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h2><p>是由尖括号包围的关键词，比如 &lt; html&gt;&lt; /html&gt;<br>• 标签对中的第一个标签是开始标签，第二个标签是结束标签<br>• 开始和结束标签也被称为开放标签和闭合标签</p>
-<h2 id="html的属性"><a href="#html的属性" class="headerlink" title="html的属性"></a>html的属性</h2><p> HTML 标签可以拥有属性。属性提供了有关 HTML 元素的更多的信息。<br>• 属性总是以名称/值对的形式出现，比如：name=”value”。<br>• 属性总是在 HTML 元素的<a href>开始标签</a>中规定。</p>
-<h1 id="一些常见的HTML标签和用法"><a href="#一些常见的HTML标签和用法" class="headerlink" title="一些常见的HTML标签和用法"></a>一些常见的HTML标签和用法</h1><h2 id="①格式化（前7条比较常用）"><a href="#①格式化（前7条比较常用）" class="headerlink" title="①格式化（前7条比较常用）"></a>①格式化（前7条比较常用）</h2><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>意义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt; title &gt;&lt; /title &gt;</td>
-<td>网页最上面的名称</td>
-</tr>
-<tr>
-<td>&lt; p&gt; &lt; /p &gt;</td>
-<td>添加段落</td>
-</tr>
-<tr>
-<td>&lt; hx &gt; &lt; h1 &gt;…&lt; h6 &gt;</td>
-<td>&lt; h1&gt;&lt; /h1&gt;（应该成对存在） 添加网页标题</td>
-</tr>
-<tr>
-<td>&lt; hr/&gt;</td>
-<td>会显示一条很长很长的长线</td>
-</tr>
-<tr>
-<td>&lt; br/&gt;</td>
-<td>分行显示文本</td>
-</tr>
-<tr>
-<td>&lt; ul &gt;  &lt; li &gt; &lt; /li &gt; &lt; /ul &gt;</td>
-<td>带小圆点标题</td>
-</tr>
-<tr>
-<td>&lt; ol &gt; &lt; li &gt; &lt; /li &gt; &lt; /ol &gt;</td>
-<td>带序号的标题</td>
-</tr>
-<tr>
-<td>&lt; b &gt; &lt; /b &gt;</td>
-<td>加粗字体</td>
-</tr>
-<tr>
-<td>&lt; i &gt; &lt; /i &gt;</td>
-<td>斜体</td>
-</tr>
-<tr>
-<td>&lt; big &gt;&lt; /big &gt;</td>
-<td>放大 字体</td>
-</tr>
-<tr>
-<td>&lt; em &gt;&lt; /em &gt;</td>
-<td>着重文字</td>
-</tr>
-<tr>
-<td>&lt; ins&gt;&lt; /ins&gt;</td>
-<td>插入字（在字体下方划一横线）</td>
-</tr>
-<tr>
-<td>&lt; del&gt;&lt; /del&gt;</td>
-<td>删除字（在字体中间划一横线）</td>
-</tr>
-<tr>
-<td>&lt; sub&gt;&lt; /sub&gt;</td>
-<td>下标字</td>
-</tr>
-<tr>
-<td>&lt; sup&gt;&lt; /sup&gt;</td>
-<td>上标字</td>
-</tr>
-</tbody>
-</table>
-<h2 id="②表格"><a href="#②表格" class="headerlink" title="②表格"></a>②表格</h2><table>
-<thead>
-<tr>
-<th>&lt; table&gt;&lt; /table&gt;</th>
-<th>代表一个表格，一个表格中只允许出现一对&lt; table&gt;标签</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&lt; tr&gt;&lt; /tr&gt;</td>
-<td>&lt; tr&gt;表示表格一行的开始，&lt; /tr&gt;表示表格一行的结束</td>
-</tr>
-<tr>
-<td>&lt; td&gt;&lt; /td&gt;</td>
-<td>&lt; td&gt;表示表格中某行中的一个单元格的开始，&lt; /td&gt;表示结束。</td>
-</tr>
-<tr>
-<td>&lt; caption&gt;&lt; /caption&gt;</td>
-<td>标签定义表格的标题</td>
-</tr>
-<tr>
-<td>&lt; th&gt;&lt; /th&gt;</td>
-<td>标签定义表格的表头</td>
-</tr>
-<tr>
-<td>&lt; th colspan=”2”&gt;&lt; /th&gt;</td>
-<td>表示占领两个列单元格</td>
-</tr>
-<tr>
-<td>&lt; th rowspan=”2”&gt;&lt; /th&gt;</td>
-<td>表示占领两个行单元格</td>
-</tr>
-</tbody>
-</table>
-<h2 id="③图像处理"><a href="#③图像处理" class="headerlink" title="③图像处理"></a>③图像处理</h2><p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190712/0K0PQogfE3xH.png?imageslim" alt="mark"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">background</span>=<span class="string">"imgs/1.png"</span>&gt;</span>  </span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/2.png"</span> <span class="attr">alt</span>=<span class="string">"提示信息"</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"imgs/2.png"</span> <span class="attr">width</span>=<span class="string">"200"</span> <span class="attr">height</span>=<span class="string">"300"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>background属性表示背景</p>
-<p>width=”200”  宽度200像素</p>
-<p>height=”300” 高度 300像素</p>
-<h2 id="④链接"><a href="#④链接" class="headerlink" title="④链接"></a>④链接</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>链接打开方式<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_parent"</span>&gt;</span>在上级窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>在新窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_self"</span>&gt;</span>在当前窗口打开<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_top"</span>&gt;</span>在浏览器的整个窗口中打开，忽略任何框架<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>链接路径<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>绝对路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"index.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>相对路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/index.html"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>根路径<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>发送邮件<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"mailto:x010@foxmail.com?subject=交作业"</span>&gt;</span>交作业<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>target的翻译是<strong>目标；对象</strong>  属性规定在何处打开链接文档</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#top1"</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#top2"</span>&gt;</span> 第二节<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">name</span>=<span class="string">"top1"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span>第一节<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"top2"</span>&gt;</span><span class="tag">&lt;<span class="name">h3</span>&gt;</span>第二节<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"width: 100%;height: 500px"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/12/2019-07-12-HTML语言/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-上下文管理器介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/11/上下文管理器介绍/">上下文管理</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/11/上下文管理器介绍/" class="archive-article-date">
-  	<time datetime="2019-07-11T15:25:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h2 id="上下文管理器介绍"><a href="#上下文管理器介绍" class="headerlink" title="上下文管理器介绍"></a>上下文管理器介绍</h2><p> •上下文管理器类似装饰器，也是一个包装任意代码块的对象，它能保证代码执行的一致性，，当执行exit时，当退出上下文管理器时，相关的资源会被正确的回收。使用上下文管理器的好处是，一定能够保证退出步骤的执行，<strong>通过 with 语句在编写代码时，会使代码变得更加简洁，不用再去关闭文件</strong></p>
-<p> • 当退出上下文管理器时，相关的资源会被正确地回收（即使内部代码出错，退出步骤也会执行） 上下文管理器的应用</p>
-<p> • 上下文管理器被用到最多的就是——<strong>作为确保资源正确清理的一种方式</strong></p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>with语句 </p>
-<p>• with语句仅仅能对支持上下文管理协议的对象使用。 </p>
-<p>• with语句的表达式的作用是返回一个遵循特定协议的对象，具体来说，该对象必须定义一个</p>
-<p>　<strong><strong>enter</strong>()</strong>：主要执行一些环境准备工作，同时返回一资源对象。如果上下文管理器open(“test.txt”)的<strong>enter</strong>()函数返回一个文件对象。</p>
-<p><strong><strong>exit</strong>()</strong>：完整形式为<strong>exit</strong>(type, value, traceback)，有三个参数，用来接收处理异常，如果代码在运行时发生异常，异常会被保存到这里。如果执行体语句没有引发异常，则这三个参数均被设为None </p>
-<p>①exc_type : 异常类型        ②exc_val : 异常值           ③exc_tb : 异常回溯追踪</p>
-<p>exit_()方法返回True或False,分别指示被引发的异常有没有被处理，如果返回False，引发的异常将会被传递出上下文。如果<strong>exit</strong>()函数内部引发了异常，则会覆盖掉执行体的中引发的异常。处理异常时，不需要重新抛出异常，只需要返回False，with语句会检测<strong>exit</strong>()返回False来处理异常。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span>   <span class="comment"># 第一步：首先进入上下文之前会调用初始化方法</span></span><br><span class="line">        print(<span class="string">'init'</span>)</span><br><span class="line">        self.name = <span class="string">'陈鹏波'</span></span><br><span class="line">        self.age = <span class="number">21</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__enter__</span><span class="params">(self)</span>:</span>   <span class="comment"># 第二步：然后进入上下文会调用__enter__方法，return返回的结果会通过as关键字赋值给后面的变量</span></span><br><span class="line">        print(<span class="string">'代码执行到了enter.........'</span>)</span><br><span class="line">        <span class="keyword">return</span> self</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__exit__</span><span class="params">(self, exc_type, exc_val, exc_tb)</span>:</span></span><br><span class="line">        print(<span class="string">'代码执行到了__exit__......'</span>)      <span class="comment"># 第四步：执行完毕语句块后，会调用__exit__方法退出上下文</span></span><br><span class="line">        <span class="keyword">if</span> exc_type == <span class="literal">None</span>:</span><br><span class="line">            print(<span class="string">'程序没问题'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'程序有问题，具体问题如下：'</span>)</span><br><span class="line">            print(<span class="string">'Type: '</span>, exc_type)</span><br><span class="line">            print(<span class="string">'Value:'</span>, exc_val)</span><br><span class="line">            print(<span class="string">'TreacBack:'</span>, exc_tb)</span><br><span class="line">            <span class="comment"># 返回值决定了捕获的异常是否继续向外抛出</span></span><br><span class="line">            <span class="comment"># 如果是 False 那么就会继续向外抛出，程序会看到系统提示的异常信息</span></span><br><span class="line">            <span class="comment"># 如果是 True 不会向外抛出，程序看不到系统提示信息，只能看到Felse中的输出</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"><span class="keyword">with</span> Student() <span class="keyword">as</span> stu:      <span class="comment"># __enter__返回一个地址（实质是被as后的stu变量接收）</span></span><br><span class="line">    print(stu.name)         <span class="comment"># 第三步：调用了__enter__后，会执行上下文的语句块</span></span><br><span class="line">    print(stu.fa)           <span class="comment">#这里出错，会调用__exit__,然后直接退出程序，不会执行下一行语句啦</span></span><br><span class="line">    print(stu.age)</span><br></pre></td></tr></table></figure>
-<p>执行结果：</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190711/tAbf0zAb0bGj.png?imageslim" alt="mark"></p>
-<p>。</p>
-<h2 id="contextlib模块实现上下文管理器"><a href="#contextlib模块实现上下文管理器" class="headerlink" title="contextlib模块实现上下文管理器"></a>contextlib模块实现上下文管理器</h2><p>• contextlib模块实现上下文自动管理<br>• 这个生成器可以用更简单的方法创建上下文管理器</p>
-<p>例1：当contextlib与try-except-finally联系起来</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 让普通函数也可以使用上下文管理, 前提条件是函数必须是生成器函数，且只有yield语句</span></span><br><span class="line"><span class="keyword">import</span> contextlib</span><br><span class="line"><span class="meta">@contextlib.contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">my_context_manager</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"__enter__"</span>)              <span class="comment"># 第二部：调用__enter__</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">yield</span>                       <span class="comment"># 第二部：返回__enter__函数的返回值给f对象</span></span><br><span class="line">    <span class="keyword">except</span> ValueError:</span><br><span class="line">        print(<span class="string">"ValueError"</span>)</span><br><span class="line">    <span class="keyword">finally</span>:					   <span class="comment">#不管文件操作有没有出现异常，try/finally中的finnally语句都会			print("__exit__")							执行，从而保证文件的正确关闭</span></span><br><span class="line">        				           <span class="comment"># 第四部：调用__exit__</span></span><br><span class="line"><span class="keyword">with</span> my_context_manager() <span class="keyword">as</span> f:</span><br><span class="line">    print(<span class="string">"这是代码块"</span>)             <span class="comment"># 第三部：执行上下文语句块</span></span><br><span class="line">    int(<span class="string">'a'</span>)                       <span class="comment">#这里是第三部触发一个值错误</span></span><br></pre></td></tr></table></figure>
-<p>运行结果：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190711/iFHQFg2FSEB1.png?imageslim" alt="mark"></p>
-<p>例二：锁资源自动获取和释放的例子</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@contextmanager</span><br><span class="line">def locked(lock):</span><br><span class="line">    lock.acquire()</span><br><span class="line">    try:</span><br><span class="line">        yield</span><br><span class="line">    finally:</span><br><span class="line">        lock.release()</span><br><span class="line"></span><br><span class="line">with locked(myLock):</span><br><span class="line">    #代码执行到这里时，myLock已经自动上锁</span><br><span class="line">    pass</span><br><span class="line">    #执行完后会，会自动释放锁</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/11/上下文管理器介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-http协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/07/http协议/">Http协议</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/07/http协议/" class="archive-article-date">
-  	<time datetime="2019-07-07T04:28:35.520Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="http协议"><a href="#http协议" class="headerlink" title="http协议"></a>http协议</h1><h2 id="HTTP简介"><a href="#HTTP简介" class="headerlink" title="HTTP简介"></a>HTTP简介</h2><p>什么是超文本(HyperText)？</p>
-<p>包含有超链接(Link)和各种多媒体元素标记(Markup)的文本。这些超文本文件彼此链接，形成网状(Web)，因此又被称为网页(Web Page)。这些链接使用URL表示。最常见的超文本格式是超文本标记语言HTML。</p>
-<p>什么是URL？</p>
-<p>URL即统一资源定位符(Uniform Resource Locator)，用来唯一地标识万维网中的某一个文档。URL由协议、主机和端口(默认为80)以及文件名三部分构成。如：<img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190707/J99OOUwOAh7L.png?imageslim" alt="mark">!</p>
-<p>​                           <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/gFPQ3AnTQzpS.png?imageslim" alt="mark"></p>
-<p>什么是超文本传输协议HTTP？</p>
-<p>是一种按照URL指示，将超文本文档从一台主机(Web服务器)传输到另一台主机(浏览器)的应用层协议，以实现超链接的功能。</p>
-<h2 id="TTP的工作原理"><a href="#TTP的工作原理" class="headerlink" title="TTP的工作原理"></a>TTP的工作原理</h2><p>请求/响应交互模型                                                                  <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/zTDrHxDUU6vm.png?imageslim" alt="mark"></p>
-<p>在用户点击URL为<a href="http://www.sxtyu.com/index.html的" target="_blank" rel="noopener">http://www.sxtyu.com/index.html的</a>    链接后，浏览器和Web服务器执行以下动作：</p>
-<p>① 浏览器分析超链接中的URL</p>
-<p>②浏览器向DNS请求解析<a href="http://www.sxtyu.com的IP地址" target="_blank" rel="noopener">www.sxtyu.com的IP地址</a></p>
-<p>③DNS将解析出的IP地址202.2.16.21返回浏览器</p>
-<p>④浏览器与服务器建立TCP连接(80端口)</p>
-<p>⑤浏览器请求文档：GET /index.html</p>
-<p>⑥服务器给出响应，将文档 index.html发送给浏览器</p>
-<p>⑦释放TCP连接</p>
-<p>⑧浏览器显示index.html中的内容</p>
-<p>从封装的角度来考虑背后发生了什么     </p>
-<p>http协议属于应用层     去   你的电脑 =&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;服务器  </p>
-<p>​                                      回来    服务器=&gt;交换机=&gt;路由器=&gt;路由器=&gt;交换机=&gt;你的电脑 </p>
-<p> <img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/jma5eadbcNms.png?imageslim" alt="mark"></p>
-<h2 id="HTTP报文结构"><a href="#HTTP报文结构" class="headerlink" title="HTTP报文结构"></a>HTTP报文结构</h2><p>请求报文</p>
-<p>即从客户端(浏览器)向Web服务器发送的请求报文。报文的所有字段都是ASCII码。</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/WjXc8wz42JNn.png?imageslim" alt="mark"></p>
-<p>请求报文中的方法</p>
-<p>方法(Method)是对所请求对象所进行的操作,也就是一些命令。请求报文中的操作有:</p>
-<table>
-<thead>
-<tr>
-<th>方法(操作）</th>
-<th>含义</th>
-<th>方法(操作)</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GET</td>
-<td>请求读取一个Web页面</td>
-<td>HEAD</td>
-<td>请求读取一个Web页面的首部</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>附加一个命名资源(如Web页面)</td>
-<td>PUT</td>
-<td>请求存储一个Web页面</td>
-</tr>
-<tr>
-<td>DELETE</td>
-<td>删除Web页面</td>
-<td>TRACE</td>
-<td>用于测试，要求服务器送回收到的请求</td>
-</tr>
-<tr>
-<td>CONNECT</td>
-<td>用于代理服务器</td>
-<td>OPTION</td>
-<td>查询特定选项</td>
-</tr>
-</tbody>
-</table>
-<p>多讲一句GET与POST的区别（面试经典题）</p>
-<p>GET请求只能进行url编码，且它在url（参数通常限制为2K）中传递的参数是有限制的，且参数直接暴露在url上，它会被浏览器主动cache</p>
-<p>而POST支持多种编码方式，参数放在requestbody中,故它更安全，但post中的参数不会被保留在浏览器历史记录中</p>
-<p>本质上是没有区别的，它们都是http协议的请求方法，底层实现都是依赖tcp/ip协议的，由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同。</p>
-<p> GET产生一个TCP数据包；POST产生两个TCP数据包。</p>
-<p>对于GET方式的请求，浏览器会把http header和data一并发送出去，服务器响应200（返回数据）；</p>
-<p>而对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
-<p>首部字段或消息头</p>
-<table>
-<thead>
-<tr>
-<th>头(header)</th>
-<th>类型</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>User- Agent</td>
-<td>请求</td>
-<td>关于浏览器和它平台的信息，如Mozilla5.0</td>
-</tr>
-<tr>
-<td>Accept</td>
-<td>请求</td>
-<td>客户能处理的页面的类型，如text/html</td>
-</tr>
-<tr>
-<td>Accept-Charset</td>
-<td>请求</td>
-<td>客户可以接受的字符集，如Unicode-1-1</td>
-</tr>
-<tr>
-<td>Accept-Encoding</td>
-<td>请求</td>
-<td>客户能处理的页面编码方法，如gzip</td>
-</tr>
-<tr>
-<td>Accept-Language</td>
-<td>请求</td>
-<td>客户能处理的自然语言，如en(英语)，zh-cn(简体中文）</td>
-</tr>
-<tr>
-<td>Host</td>
-<td>请求</td>
-<td>服务器的DNS名称。从URL中提取出来，必需。</td>
-</tr>
-<tr>
-<td>Authorization</td>
-<td>请求</td>
-<td>客户的信息凭据列表</td>
-</tr>
-<tr>
-<td>Cookie</td>
-<td>请求</td>
-<td>将以前设置的Cookie送回服务器器，可用来作为会话信息</td>
-</tr>
-<tr>
-<td>Date</td>
-<td>双向</td>
-<td>消息被发送时的日期和时间</td>
-</tr>
-<tr>
-<td>Server</td>
-<td>响应</td>
-<td>关于服务器的信息，如Microsoft-IIS/6.0</td>
-</tr>
-<tr>
-<td>Content-Encoding</td>
-<td>响应</td>
-<td>内容是如何被编码的（如gzip)</td>
-</tr>
-<tr>
-<td>Content-Language</td>
-<td>响应</td>
-<td>页面所使用的自然语言</td>
-</tr>
-<tr>
-<td>Content-Length</td>
-<td>响应</td>
-<td>以字节计算的页面长度</td>
-</tr>
-<tr>
-<td>Location</td>
-<td>响应</td>
-<td>指示客户将请求发送给别处，即重定向到另一个URL</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>响应</td>
-<td>页面的MIME类型（即哪些文件对应哪些类型比如image对应jpg）</td>
-</tr>
-<tr>
-<td>Set-Cookie</td>
-<td>响应</td>
-<td>服务器希望客户保存一个Cookie</td>
-</tr>
-</tbody>
-</table>
-<p>响应报文中的状态码</p>
-<p>状态码(Status-Code)是响应报文状态行中包含的一个3位数字，指明特定的请求是否被满足，如果没有满足，原因是什么。状态码分为以下五类：</p>
-<table>
-<thead>
-<tr>
-<th>状态码范围</th>
-<th>状态码类别</th>
-<th style="text-align:left">典型状态码</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>100-199</td>
-<td>信息类状态码</td>
-<td style="text-align:left">100</td>
-<td>收到请求出事部分，请继续发送</td>
-</tr>
-<tr>
-<td>200-299</td>
-<td>成功状态码</td>
-<td style="text-align:left">200</td>
-<td>请求已经被正常处理</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">204</td>
-<td>请求已经被正常处理，但没有主体数据</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">206</td>
-<td>对资源部分请求成功</td>
-</tr>
-<tr>
-<td>300-399</td>
-<td>重定向状态码</td>
-<td style="text-align:left">301</td>
-<td>请求的URL资源已被更新，响应首部包含新的URL</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">302</td>
-<td>请求的URL资源临时更新</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">304</td>
-<td>请求不符合条件，需要更改条件</td>
-</tr>
-<tr>
-<td>400-499</td>
-<td>客户端错误状态码</td>
-<td style="text-align:left">400</td>
-<td>客户端发送一个错误请求</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">403</td>
-<td>访问被拒绝</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td style="text-align:left">404</td>
-<td>没有找到请求</td>
-</tr>
-<tr>
-<td>500-599</td>
-<td>服务器错误状态码</td>
-<td style="text-align:left">500</td>
-<td>服务器出现错误，无法提供请求的资源</td>
-</tr>
-</tbody>
-</table>
-<h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><p>什么是HTTP代理？</p>
-<p>HTTP代理又称Web缓存或代理服务器(Proxy Server),是一种网络实体，能代表浏览器发出HTTP请求，并将最近的一些请求和响应暂存在本地磁盘中，当请求的Web页面先前暂存过，则直接将暂存的页面发给客户端(浏览器)，无须再次访问Internet。</p>
-<h2 id><a href="#" class="headerlink" title></a><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190708/9hcqdIsvjvyw.png?imageslim" alt="mark"></h2>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/07/http协议/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-面向对象编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/面向对象编程/">面向对象编程</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/面向对象编程/" class="archive-article-date">
-  	<time datetime="2019-07-05T14:19:58.142Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>[TOC]</p>
-<h1 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h1><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><p>①函数式编程 ：① 函数可以作为参数传递、修改，或作为返回值 ② 函数内不修改外部变量的状态 </p>
-<p>②面向过程编程 (函数) ：    根据操作数据的语句块来实现功能。 </p>
-<p>③面向对象编程 ：               把数据和功能结合起来，用称为对象的东西包裹起来组织程序的方法。</p>
-<p>④类：  一系列具有相同特性的对象的集合，该集合中邮每个对象共有的属性和方法</p>
-<p>⑤对象：通过类定义的数据结构实例。对象包括两个数据成员（类变量和实例变量）和方法。 </p>
-<p>⑥实例：具体的某个事物， 某个类型实实在在的一个例子。 </p>
-<p>⑦实例化：创建一个类的实例，类的具体对象。 </p>
-<p>⑧属性： 对象的描述信息，一种状态 =&gt; 变量 </p>
-<p>⑨方法：对象的行为 =&gt; 类中定义的函数 def():</p>
-<p>⑩单例模式：一个类只会创建出一个实例，这个类称为单例类，单例模式是一种<strong>对象创建型模式</strong>。</p>
-<h2 id="类的定义和使用"><a href="#类的定义和使用" class="headerlink" title="类的定义和使用"></a>类的定义和使用</h2><p>类名的规范 ：一般首字母大写（大驼峰）   比如 Person, GoodsInfo </p>
-<p>类的定义方式(关键字：class) ：   比如 ①class Person:     ②class Person():   ③ class Person(object):</p>
-<p>​                                                        python2 =&gt;①② 经典类和③新式类    python3 =&gt; ③新式类 </p>
-<p>类的两个重要方法:   <code>__new__</code>  <code>__init__</code></p>
-<p><code>__init__</code>：实例初始化 </p>
-<p>• 这个名称的开始和结尾都是双下划线。</p>
-<p> • 这个方法可以用来对你的对象做一些你希望的初始化任务。</p>
-<p> •方法是一种特殊的方法，被称为类的构造函数或初始化方法，它在类的一个对象被建立 后，自动运行。 </p>
-<p><code>__new__</code>：创建一个实例 </p>
-<p>1.在内存中为对象分配空间</p>
-<p>2.返回对象的引用。（即对象的内存地址）</p>
-<p>• <code>__init__</code>有一个参数self，就是这个<code>__new__</code>返回的实例，<code>__init__</code>在<code>__new__</code>的基础上可以完成一些其它初始化的动作，<code>__init__</code>不需要返回值。_new__必须要有返回值</p>
-<p> •<code>_new__</code>必须要有返回值，返回实例化出来的实例，这点在自己实现<code>__new__</code>时要特别注意，可以return<strong>父类<strong>new</strong>出来的实例</strong>，或者直接是<strong>object的<strong>new</strong>出来的实例</strong></p>
-<p>• 注意事项：<strong>new</strong>必须产生和class类型一致的instance, 否则<strong>init</strong>是不会执行的</p>
-<p>以下以湖南农大公交车317为例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bus317</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 类属性</span></span><br><span class="line">    prod = <span class="string">"BYD"</span></span><br><span class="line">    instance = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">     <span class="comment"># 创建</span></span><br><span class="line">    <span class="comment"># cls =&gt; 类；self =&gt; 实例</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        print(<span class="string">"创建实例"</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cls.instance:</span><br><span class="line">            cls.instance = super().__new__(cls)</span><br><span class="line">        <span class="keyword">return</span> cls.instance <span class="comment">#这里容易弄错 传的形参为什么是类？代表要实例化的类</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># 每个类都会有__init__方法，默认无参数</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, busid)</span>:</span></span><br><span class="line">        <span class="string">"""对实例(self)做初始化"""</span></span><br><span class="line">        <span class="comment"># 实例属性</span></span><br><span class="line">        print(<span class="string">"初始化实例"</span>)</span><br><span class="line">        self.busid = busid</span><br><span class="line"></span><br><span class="line"><span class="comment"># True  =&gt; 农大-&gt; 长华小区</span></span><br><span class="line">    <span class="comment"># False =&gt; 长华小区 -&gt;农大</span></span><br><span class="line">    <span class="comment"># 自动提示了self =&gt; 实例</span></span><br><span class="line">    <span class="comment"># 类的方法和普通的函数的区别=&gt;self</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self, flag)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> flag:</span><br><span class="line">            print(<span class="string">"从农大-&gt; 长华小区"</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">"从长华小区 -&gt;农大"</span>)</span><br><span class="line"><span class="comment">#bus.run() =&gt; Bus317.run(bus)</span></span><br><span class="line">bus1 = Bus317(<span class="string">"0001"</span>)</span><br><span class="line">bus2 = Bus317(<span class="string">"0002"</span>)</span><br><span class="line">print(bus1)</span><br></pre></td></tr></table></figure>
-<p><code>__new__</code>和<code>__init_</code>执行顺序 </p>
-<p>• 先执行<code>__new__</code>,再执行<code>__init__</code></p>
-<h2 id="类的三大基本特性"><a href="#类的三大基本特性" class="headerlink" title="类的三大基本特性"></a>类的三大基本特性</h2><ul>
-<li><p>封装：在类中对数据的赋值、内部调用对外部用户是透明的。 把一些功能的实现细节不对外暴露 </p>
-</li>
-<li><p>继承：子类继承基类的字段和方法。 子类还可以产生派生类</p>
-</li>
-<li><p>多态：接口重用 ，一个接口，多种实现（重写）</p>
-</li>
-</ul>
-<p>一：类的封装</p>
-<p>•将数据隐藏起来这不是目的。隐藏起来然后对外提供操作该数据的接口，然后我们可以在接口附加上对该数据操作的限制，以此完成对数据属性操作的严格控制。</p>
-<p>•在编程语言里，对外提供的接口（接口可理解为了一个入口），可以是函数，称为接口函数，这与接口的概念还不一样，接口代表一组接口函数的集合体</p>
-<p>•电视机本身是一个黑盒子，隐藏了所有细节，但是一定会对外提供了一堆按钮，这些按钮也正是接口的概念，所以说，封装并不是单纯意义的隐藏！！！</p>
-<p>二：类的继承 </p>
-<p>• 可以节省很多的代码，不需要写，直接使用 </p>
-<p>• 子类有<code>__init__</code>: 执行自己的初始化函数 ‘’</p>
-<p>• 子类没有<code>__init__</code>: 在子类实例化的时候会自动执行父类的构造函数</p>
-<p>• 如果你的父类方法的功能不能满足你的需求，你可以在子类重写你父类的方法父类里的方法</p>
-<p>三：Python中的多态</p>
-<p>• 多态（Polymorphism）按字面的意思就是“多种状态”。在面向对象语言中，接口的多种不同的 实现方式即为多态。</p>
-<p> • Python是一种多态语言，崇尚鸭子类型。</p>
-<p> • 在程序设计中，鸭子类型是动态类型的一种风格。</p>
-<p> • 鸭子模型是指：”当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就 可以被称为鸭子。” </p>
-<p>• 我们并不关心对象是什么类型，到底是不是鸭子，只关心行为。</p>
-<p>• 底下例子中person(变量）不仅是Person类型，也是Animal类型，这就是变量的多态</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span><span class="params">(object)</span>:</span></span><br><span class="line">    category = <span class="string">'animal'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls, *args, **kwargs)</span>:</span></span><br><span class="line">        Animal.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> super().__new__(cls)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">breath</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'动物可以呼吸'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    category = <span class="string">'person'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        Person.count += <span class="number">1</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pig</span><span class="params">(Animal)</span>:</span></span><br><span class="line">    category = <span class="string">'pig'</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.category=Pig</span><br><span class="line">        Pig.count += <span class="number">1</span></span><br><span class="line">person1 = Person(<span class="string">"练习生陈鹏波"</span>)</span><br><span class="line">person2 = Person(<span class="string">"丁浪"</span>)</span><br><span class="line">person3 = Person(<span class="string">"贺"</span>)</span><br><span class="line">pig1 = Pig(<span class="string">"佩奇"</span>)</span><br><span class="line">pig2 = Pig(<span class="string">"乔治"</span>)</span><br><span class="line">print(<span class="string">"动物的个数："</span>, Animal.count)</span><br><span class="line">print(<span class="string">f"人一共有<span class="subst">&#123;Person.count&#125;</span>个"</span>)</span><br><span class="line">print(<span class="string">f"猪一共有<span class="subst">&#123;Pig.count&#125;</span>只"</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="经典类与新式类"><a href="#经典类与新式类" class="headerlink" title="经典类与新式类"></a>经典类与新式类</h2><hr>
-<p>经典类与新式类在类型上的区别</p>
-<p>经典类都是classobj类型，而类的实例都是instance类型，类与实例只有通过<strong>class</strong>属性进行关联</p>
-<p>新式类实例的类型是这个实例所创建自的类（通常是和类实例的<strong>class</strong>相同）</p>
-<hr>
-<p>经典类与新式类的继承顺序</p>
-<p>Python的类如果继承了多个类，那么其寻找方法的方式有两种，分别是：深度优先和广度优先</p>
-<p>py2：经典类是按深度优先来继承的，新式类是按C3 算法来继承的         py3：统一按C3算法来继承的</p>
-<hr>
-<p>MRO（MethodResolutionOrder）：方法解析顺序,是在Python类的多重继承中，解决当定义了多个同名的方法/属性时，为避免产生歧义，保证 用户找到正确的对象所实现的一种算法。</p>
-<p>C3算法：它实际上就是合并所有父类的MRO列表并遵循如下三条准则：</p>
-<p>子类会先于父类被检查</p>
-<p>多个父类会根据它们在列表中的顺序被检查</p>
-<p>如果对下一个类存在两个合法的选择，选择第一个父类</p>
-<h2 id="静态方法、类方法、实例方法"><a href="#静态方法、类方法、实例方法" class="headerlink" title="静态方法、类方法、实例方法"></a>静态方法、类方法、实例方法</h2><p><strong>实例方法</strong> </p>
-<p>​    定义：第一个参数必须是实例对象，该参数名一般约定为“self”，通过它来传递实例的属性和方法（也可以传类的属性和方法）；</p>
-<p>​    调用：只能由实例对象调用。</p>
-<p><strong>类方法</strong></p>
-<p>​    定义：使用装饰器@classmethod。第一个参数必须是当前类对象，该参数名一般约定为“cls”，通过它来传递类的属性和方法（不能传实例的属性和方法）；</p>
-<p>​    调用：实例对象和类对象都可以调用。</p>
-<p><strong>静态方法</strong></p>
-<p>​    定义：使用装饰器@staticmethod。参数随意，没有“self”和“cls”参数，但是方法体中不能使用类或实例的任何属性和方法；</p>
-<p>​    调用：实例对象和类对象都可以调用。</p>
-<h3 id="类方法"><a href="#类方法" class="headerlink" title="类方法"></a>类方法</h3><p>使用装饰器@classmethod。</p>
-<p>原则上，类方法是将类本身作为对象进行操作的方法。假设有个方法，且这个方法在逻辑上采用类本身作为对象来调用更合理，那么这个方法就可以定义为类方法。另外，如果需要继承，也可以定义为类方法。</p>
-<p>如下场景：</p>
-<p>假设我有一个学生类和一个班级类，想要实现的功能为：<br>    执行班级人数增加的操作、获得班级的总人数；<br>    学生类继承自班级类，每实例化一个学生，班级人数都能增加；<br>    最后，我想定义一些学生，获得班级中的总人数。</p>
-<p><strong>思考</strong>：这个问题用类方法做比较合适，为什么？因为我实例化的是学生，但是如果我从学生这一个实例中获得班级总人数，在逻辑上显然是不合理的。同时，如果想要获得班级总人数，如果生成一个班级的实例也是没有必要的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClassTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    __num = <span class="number">0</span></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">addNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    cls.__num += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getNum</span><span class="params">(cls)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> cls.__num</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里我用到魔术方法__new__，主要是为了在创建实例的时候调用累加方法。</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(self)</span>:</span></span><br><span class="line">    ClassTest.addNum()</span><br><span class="line">    <span class="keyword">return</span> super(ClassTest, self).__new__(self)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(ClassTest)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">''</span></span><br><span class="line"></span><br><span class="line">a = Student()</span><br><span class="line">b = Student()</span><br><span class="line">print(ClassTest.getNum())</span><br></pre></td></tr></table></figure>
-<h3 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h3><p>使用装饰器@staticmethod。</p>
-<p>静态方法是类中的函数，不需要实例。静态方法主要是用来存放逻辑性的代码，逻辑上属于类，但是和类本身没有关系，也就是说在静态方法中，不会涉及到类中的属性和方法的操作。可以理解为，静态方法是个<strong>独立的、单纯的</strong>函数，它仅仅托管于某个类的名称空间中，便于使用和维护。</p>
-<p>譬如，我想定义一个关于时间操作的类，其中有一个获取当前时间的函数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TimeTest</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, hour, minute, second)</span>:</span></span><br><span class="line">        self.hour = hour</span><br><span class="line">        self.minute = minute</span><br><span class="line">        self.second = second</span><br><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showTime</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> time.strftime(<span class="string">"%H:%M:%S"</span>, time.localtime())</span><br><span class="line">print(TimeTest.showTime())</span><br><span class="line">t = TimeTest(<span class="number">2</span>, <span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line">nowTime = t.showTime()</span><br><span class="line">print(nowTime)</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/面向对象编程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019-07-02-raid与lvm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/2019-07-02-raid与lvm/">raid与lvm</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/02/2019-07-02-raid与lvm/" class="archive-article-date">
-  	<time datetime="2019-07-02T12:53:29.193Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="linux的raid与lvm"><a href="#linux的raid与lvm" class="headerlink" title="linux的raid与lvm"></a>linux的raid与lvm</h1><h2 id="raid磁盘阵列概念"><a href="#raid磁盘阵列概念" class="headerlink" title="raid磁盘阵列概念"></a>raid磁盘阵列概念</h2><p>百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MTBF），储存冗余数据也增加了容错</p>
-<p>个人理解：把很多独立的磁盘组合起来形成一个逻辑上的巨大磁盘，数据从原来的磁盘溢满可以到存在多个硬盘上</p>
-<h2 id="raid功能"><a href="#raid功能" class="headerlink" title="raid功能"></a>raid功能</h2><p>(1)通过对磁盘上的数据进行条带化，实现对数据成块存取，减少磁盘的机械寻道时间，提高了数据存取速度。 </p>
-<p>(2)通过对一个阵列中的几块磁盘同时读取，减少了磁盘的机械寻道时间，提高数据存取速度。 </p>
-<p>(3)通过镜像或者存储奇偶校验信息的方式，实现了对数据的冗余保护</p>
-<p>机械寻道的意思类似你在一本书的目录找到你想看的章节,你在翻到那个章节所需要的时间…这是个物理过程不可避免…类似内存寻址的方式,现在它用一个阵列对多块磁盘读取，肯定要快很多 </p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>磁盘阵列作为独立系统在主机外直连或通过网络与主机相连。磁盘阵列有多个端口可以被不同主机或不同端口连接。一个主机连接阵列的不同端口可提升传输速度。 </p>
-<p>和当时PC用单磁盘内部集成缓存一样，在磁盘阵列内部为加快与主机交互速度，都带有一定量的缓冲存储器。主机与磁盘阵列的缓存交互，缓存与具体的磁盘交互数据。 </p>
-<p>在应用中，有部分常用的数据是需要经常读取的，磁盘阵列根据内部的算法，查找出这些经常读取的数据，存储在缓存中，加快主机读取这些数据的速度，而对于其他缓存中没有的数据，主机要读取，则由阵列从磁盘上直接读取传输给主机。对于主机写入的数据，只写在缓存中，主机可以立即完成写操作。然后由缓存再慢慢写入磁盘。</p>
-<h2 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h2><p>优点：提高传输速率  原因是多个磁盘同时工作提高了存储系统的吞吐量在逻辑上属于同一磁盘驱动器</p>
-<p>缺点：RAID0没有冗余功能，如果一个磁盘（物理）损坏，则所有的数据都无法使用。</p>
-<p>​      RAID1磁盘的利用率最高只能达到50%(使用两块盘的情况下)，是所有RAID级别中最低的。  </p>
-<h2 id="RAID级别"><a href="#RAID级别" class="headerlink" title="RAID级别"></a>RAID级别</h2><p>级别有RAID0、RAID1、RAID5、RAID6、RAID10、RAID01等，这里讲几种经典的</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">RAID0</th>
-<th style="text-align:left">读写速度快，但是没有容错功能。2块以上磁盘组成。磁盘利用率100% –》条带卷</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">RAID1</td>
-<td style="text-align:left">镜像卷：2块磁盘组成，有容错功能。磁盘利用率50%</td>
-</tr>
-<tr>
-<td style="text-align:center">raid5</td>
-<td style="text-align:left">背后的原理是 分布校验 + 条带  ：可以容错，至少3块磁盘，最多坏一块。</td>
-</tr>
-<tr>
-<td style="text-align:center">raid6</td>
-<td style="text-align:left">背后的原理是 分布校验 +分布校验+ 条带  ：可以容错，至少4块磁盘，最多坏2块。</td>
-</tr>
-</tbody>
-</table>
-<h4 id="raid-磁盘阵列（独立冗余磁盘阵列）"><a href="#raid-磁盘阵列（独立冗余磁盘阵列）" class="headerlink" title="raid  磁盘阵列（独立冗余磁盘阵列）"></a>raid  磁盘阵列（独立冗余磁盘阵列）</h4><p>硬raid（推荐）： 会有一个raid卡，用来控制这个raid，是正raid的大脑<br>            容错功能<br>            专门有数据处理的芯片<br>    软raid： 通过软件来实现raid控制功能，不需要需要硬件。<br>            需要使用电脑的cpu里来处理数据<br>            kernel里有这个软件–》linux自带不需要安装</p>
-<p>一些题外话：现在大部分公司都购买云服务器了，云服务产商会提供数据不丢失的保障<br>99.9999%，所以没必要购买真实服务器</p>
-<p>能购买服务器的公司都是大公司，真实的服务器才会做raid</p>
-<h3 id="lvm（逻辑卷管理）"><a href="#lvm（逻辑卷管理）" class="headerlink" title="lvm（逻辑卷管理）"></a>lvm（逻辑卷管理）</h3><h4 id="①为什么会出现逻辑卷管理"><a href="#①为什么会出现逻辑卷管理" class="headerlink" title="①为什么会出现逻辑卷管理"></a>①为什么会出现逻辑卷管理</h4><p>我们平时在为系统分区时，该如何评估和分配硬件分区的容量？我们要考虑当前分区需要的容量，并且预计以后分区可能需要的容量的最大值，但是当它满了之后呢？我们得重新备份整个系统、清除硬盘、重新对硬盘分区，然后恢复数据到新分区</p>
-<p>我们假想出现一中能把这些分区在逻辑上是能够连接在一起的，并能实现动态扩容+分区结构不需要改变</p>
-<h4 id="②原理与简介"><a href="#②原理与简介" class="headerlink" title="②原理与简介"></a>②原理与简介</h4><p>逻辑卷管理器本质上是一个虚拟设备驱动，我们都知道内核是管理CPU和内存的程序，而逻辑卷是在内核和存储设备之间添加的一个新层次，将几块磁盘（物理卷，PhysicalVolume）组合形成卷组（VolumeGroup)，然后在每次从从卷组中划分不同大小的逻辑卷（LogicalVolume），卷组替代了磁盘块成为数据存储的基本单元，底层的原始磁盘不再由内核直接控制，而由LVM层来控制，LVM管理着所有物理卷的物理盘区，维持着逻辑盘区和物理盘区之间的映射</p>
-<p>有以上的原理我们可以知道，逻辑卷不必是连续的空间，它可以跨越许多物理卷，并且可以在任何时候任意的调整大小。相比物理磁盘来说，更易于磁盘空间的管理</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim" alt="mark"></p>
-<h4 id="③LVM机制的基本概念"><a href="#③LVM机制的基本概念" class="headerlink" title="③LVM机制的基本概念"></a>③LVM机制的基本概念</h4><table>
-<thead>
-<tr>
-<th style="text-align:left">PV（Physical Volume，物理卷）</th>
-<th>整个硬盘，或使用fdisk等工具建立的普通分区<br> 包括许多默认4MB大小的PE（Physical Extents，基本单元）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">VG（Volume Group，卷组）</td>
-<td>一个或多个物理卷组合而成的整体</td>
-</tr>
-<tr>
-<td style="text-align:left">LV（Logical Volume，逻辑卷）</td>
-<td>从卷组中分割出的一块空间，用于建立文件系统</td>
-</tr>
-</tbody>
-</table>
-<h4 id="④linux中关于lvm的操作"><a href="#④linux中关于lvm的操作" class="headerlink" title="④linux中关于lvm的操作"></a>④linux中关于lvm的操作</h4><h6 id="Ⅰ-创建pv（物理卷）"><a href="#Ⅰ-创建pv（物理卷）" class="headerlink" title="Ⅰ.创建pv（物理卷）"></a>Ⅰ.创建pv（物理卷）</h6><p>[root@localhost ~]# yum provides pvcreate                               ###安装pvcreate包</p>
-<p>[root@localhost ~]# pvcreate  /dev/sd[bcd]                             ######创建逻辑卷b,c,d, 它们也可以单独创立<br>Physical volume “/dev/sdb” successfully created.<br>Physical volume “/dev/sdc” successfully created.<br>Physical volume “/dev/sdd” successfully created</p>
-<h6 id="Ⅱ-创建VG（卷组）"><a href="#Ⅱ-创建VG（卷组）" class="headerlink" title="Ⅱ.创建VG（卷组）"></a>Ⅱ.创建VG（卷组）</h6><p>[root@localhost ~]# vgcreate  cjz  /dev/sd[bcd]                        #######把bcd组合起来为一个卷组，并起名cjz<br>  Volume group “cjz” successfully created</p>
-<p>关于vg的重要命令  </p>
-<p>vgscan 扫描vg  </p>
-<p>vgdisplay cjz 查看vg里的cjz卷组的信息</p>
-<h6 id="Ⅲ-创建LV-Logical-Volume，逻辑卷"><a href="#Ⅲ-创建LV-Logical-Volume，逻辑卷" class="headerlink" title="Ⅲ.创建LV(Logical Volume，逻辑卷 )"></a>Ⅲ.创建LV(Logical Volume，逻辑卷 )</h6><p>[root@localhost ~]# lvcreate -L 299G -n file_store cjz      ##从cjz卷组中创建一个299G的逻辑卷，取名file_store<br>  Logical volume “file_store” created.<br>-L  指定大小 size<br>-n  指定LV的名字  name</p>
-<p>[root@localhost ~]# mkfs.xfs /dev/cjzi/file_store                                       ########格式化逻辑卷</p>
-<p>一个LV就相当于标准磁盘里的一个分区</p>
-<h6 id="Ⅳ-挂载使用"><a href="#Ⅳ-挂载使用" class="headerlink" title="Ⅳ.挂载使用"></a>Ⅳ.挂载使用</h6><p>[root@localhost ~]# mkdir  /file                                                                  ############### 新建挂载点<br>[root@localhost ~]# mount   /dev/cjz/file_store  /file                 ######挂载LV file_store到/file</p>
-<p>df -Th    可以查看文件系统的挂载情况</p>
-<h6 id="Ⅴ开机自动挂载"><a href="#Ⅴ开机自动挂载" class="headerlink" title="Ⅴ开机自动挂载"></a>Ⅴ开机自动挂载</h6><p>vim  /etc/fstab<br>/dev/cjz/file_store    /file  xfs   defaults 0 0                     #########这是我所要添加的行</p>
-<pre><code>/dev/cjz/file_store  设备文件的路径
-/file 挂载点
-xfs 表示文件系统的类型
-defaults  文件系统默认的挂载选项：类似于ro，rw等等
-0 表示是否支持dump命令，进行备份
-0 表示开机的时候是否检测这个文件系统是否有问题，0表示不检测
-    1 表示检测，优先级高
-    2 表示检测，优先级低
-</code></pre><h6 id="Ⅵ-扩容"><a href="#Ⅵ-扩容" class="headerlink" title="Ⅵ.扩容"></a>Ⅵ.扩容</h6><p>扩容的流程：<br>    pv—》vg—》lv<br>    lv 索要空间步骤：lv –》vg—》pv</p>
-<p>——————————-1.创建新的pv–<br>[root@localhost file]# pvcreate /dev/sde<br>  Physical volume “/dev/sde” successfully created.<br>[root@localhost file]# pvcreate /dev/sdf<br>  Physical volume “/dev/sdf” successfully created.<br>[root@localhost file]# pvscan<br>  PV /dev/sdb   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdc   VG cjz       lvm2 [&lt;100.00 GiB / 0    free]<br>  PV /dev/sdd   VG cjz       lvm2 [&lt;100.00 GiB / 1012.00 MiB free]<br>  PV /dev/sdf                      lvm2 [200.00 GiB]<br>  PV /dev/sde                      lvm2 [200.00 GiB]<br>  Total: 5 [&lt;699.99 GiB] / in use: 3 [&lt;299.99 GiB] / in no VG: 2 [400.00 GiB]<br>[root@localhost file]#<br>——————————-2.将pv扩到vg里<br>[root@localhost file]# vgextend  cjz  /dev/sdf  /dev/sde<br>  Volume group “cjz” successfully extended<br>[root@localhost file]#<br>[root@localhost file]# lvextend -L +399G /dev/alimeimei/file_store </p>
-<p>[root@localhost file]# lvdisplay  /dev/cjz/file_store<br>  LV Size                698.00 GiB<br>——————————–3.告诉linux系统重新识别挂载的分区的大小<br>xfs_growfs —》xfs<br>resize2fs  —》ext3/ext4</p>
-<p> [root@localhost ~]# xfs_growfs /dev/cjz/file_store<br>meta-data=/dev/mapper/cjz-file_store isize=512    agcount=4, agsize=19595264 blks<br>         =                       sectsz=512   attr=2, projid32bit=1<br>         =                       crc=1        finobt=0 spinodes=0<br>data     =                       bsize=4096   blocks=78381056, imaxpct=25<br>         =                       sunit=0      swidth=0 blks<br>naming   =version 2              bsize=4096   ascii-ci=0 ftype=1<br>log      =internal               bsize=4096   blocks=38272, version=2<br>         =                       sectsz=512   sunit=0 blks, lazy-count=1<br>realtime =none                   extsz=4096   blocks=0, rtextents=0<br>data blocks changed from 78381056 to 182976512<br>[root@localhost ~]# df -Th<br>文件系统                         类型      容量  已用  可用 已用% 挂载点<br>/dev/sda3                        xfs        80G  1.6G   79G    2% /<br>devtmpfs                         devtmpfs  481M     0  481M    0% /dev<br>tmpfs                            tmpfs     492M     0  492M    0% /dev/shm<br>tmpfs                            tmpfs     492M  7.6M  485M    2% /run<br>tmpfs                            tmpfs     492M     0  492M    0% /sys/fs/cgroup<br>/dev/sda2                        xfs        20G   33M   20G    1% /data<br>/dev/sda1                        xfs       497M  117M  381M   24% /boot<br>tmpfs                            tmpfs      99M     0   99M    0% /run/user/0<br>/dev/mapper/cjz-file_store xfs       698G   33M  698G    1% /file</p>
-<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>raid–》磁盘阵列–》raid0   1  5 6 10 –&gt;容错、速度快<br>    lvm–》逻辑卷—》动态扩容—》PV、VG、LV</p>
-<pre><code>先做raid---》然后使用lvm
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/02/2019-07-02-raid与lvm/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于git一些问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/关于git一些问题/">git版本控制</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/02/关于git一些问题/" class="archive-article-date">
-  	<time datetime="2019-07-02T03:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#### </p>
-<h3 id="什么是Git？"><a href="#什么是Git？" class="headerlink" title="什么是Git？"></a>什么是Git？</h3><ul>
-<li>Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。</li>
-<li>与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。</li>
-<li>每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，因此当服务器中断时，你需要的所有恢复数据都在你队友的本地 Git 存储库中。</li>
-<li>还有一个中央云存储库，开发人员可以向其提交更改，并与其他团队成员进行共享，如图所示，所有协作者都在提交更改“远程存储库”。</li>
-<li></li>
-</ul>
-<h4 id="git和SVN有什么区别？"><a href="#git和SVN有什么区别？" class="headerlink" title="git和SVN有什么区别？"></a>git和SVN有什么区别？</h4><table>
-<thead>
-<tr>
-<th>GIt</th>
-<th><strong>SVN</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.Git是一个分布式的版本控制工具</td>
-<td>1. SVN 是集中版本控制工具</td>
-</tr>
-<tr>
-<td>2.它属于第3代版本控制工具</td>
-<td>2.它属于第2代版本控制工具</td>
-</tr>
-<tr>
-<td>3.客户端可以在其本地系统上克隆整个存储库</td>
-<td>3.版本历史记录存储在服务器端存储库中</td>
-</tr>
-<tr>
-<td>4.即使离线也可以提交</td>
-<td>4.只允许在线提交</td>
-</tr>
-<tr>
-<td>5.Push/pull 操作更快</td>
-<td>5.Push/pull 操作较慢</td>
-</tr>
-<tr>
-<td>6.工程可以用 commit 自动共享</td>
-<td>6.没有任何东西自动共享</td>
-</tr>
-</tbody>
-</table>
-<h4 id="集中式版本控制与分布式版本控制的区别（图）"><a href="#集中式版本控制与分布式版本控制的区别（图）" class="headerlink" title="集中式版本控制与分布式版本控制的区别（图）"></a>集中式版本控制与分布式版本控制的区别（图）</h4><p>集中式版本控制客户端省磁盘空间，权限控制方便，可以做到目录级别的控制<br>缺点：如果server关机了，客户端无法提交数据和做验证。server磁盘坏了，会丢失所有的变化数据</p>
-<p>分布式版本控制：可以本地查看所有的版本历史，可以离线提交，只需在联网时push到相应的服务器或用户<br>每个用户那里保存的都是所有版本的版本数据，所以只要有一个用户的设备没问题就可以恢复所有数据。<br>缺点：增加了本地存储空间的占用，代码保密性差，不利于做权限控制。</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim" alt="mark"></p>
-<p>git常见的命令</p>
-<p>git clone 克隆远程仓库到本地<br>git remote -v 查看远程仓库<br>git add 将文件暂存<br>git commit -m ‘备注信息’将文件提交到本地仓库<br>git push origin master 将文件推到origin源master分支<br>git pull origin master 拉取数据到本地<br>git status  查看状态<br>git log  查看日志<br>git config 查看配置<br>git reset –hard commit ID号 回滚（通过git log得到）<br>git branch -a 查看所有分支<br>git checkout 分支名  切换分支<br>git branch 分支名 创建新分支<br>git branch -d 分支名 删除分支</p>
-<h4 id="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"><a href="#提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？" class="headerlink" title="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"></a>提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？</h4><h5 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h5><p>当web页面有更新，本地也有更新，然后本地在push前，没有得到最新版本就直接push就会产生冲突，即本地与服务器存在不一致的地方就会冲突<br>或者当两人甚至多人对同一个文件进行修改时，push也会产生冲突</p>
-<h5 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h5><p>通过git stash命令，把工作区的修改提交到栈区，目的是保存工作区的修改；<br>通过git pull命令，拉取远程分支上的代码并合并到本地分支，目的是消除冲突；<br>通过git stash pop命令，把保存在栈区的修改部分合并到最新的工作空间中；</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/02/关于git一些问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -1795,8 +422,8 @@ defaults  文件系统默认的挂载选项：类似于ro，rw等等
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
