@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="####  什么是Git？ Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。 与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。 每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim">
-<meta property="og:updated_time" content="2019-07-04T12:11:10.507Z">
+<meta property="og:image" content="http://qinniu.bolaobiao.top/blog/20190826/vGLbMiCJx2Yv.png?imageslim">
+<meta property="og:updated_time" content="2019-08-26T14:53:09.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git版本控制">
 <meta name="twitter:description" content="####  什么是Git？ Git 是分布式版本控制系统（DVCS）。它可以跟踪文件的更改，并允许你恢复到任何特定版本的更改。 与 SVN 等其他版本控制系统（VCS）相比，其分布式架构具有许多优势，一个主要优点是它不依赖于中央服务器来存储项目文件的所有版本。 每个开发人员都可以“克隆”我在图中用“Local repository”标注的存储库的副本，并且在他的硬盘驱动器上具有项目的完整历史记录，">
-<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim">
+<meta name="twitter:image" content="http://qinniu.bolaobiao.top/blog/20190826/vGLbMiCJx2Yv.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -225,9 +225,26 @@
 </table>
 <h4 id="集中式版本控制与分布式版本控制的区别（图）"><a href="#集中式版本控制与分布式版本控制的区别（图）" class="headerlink" title="集中式版本控制与分布式版本控制的区别（图）"></a>集中式版本控制与分布式版本控制的区别（图）</h4><p>集中式版本控制客户端省磁盘空间，权限控制方便，可以做到目录级别的控制<br>缺点：如果server关机了，客户端无法提交数据和做验证。server磁盘坏了，会丢失所有的变化数据</p>
 <p>分布式版本控制：可以本地查看所有的版本历史，可以离线提交，只需在联网时push到相应的服务器或用户<br>每个用户那里保存的都是所有版本的版本数据，所以只要有一个用户的设备没问题就可以恢复所有数据。<br>缺点：增加了本地存储空间的占用，代码保密性差，不利于做权限控制。</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/lv8d7EyfWkrq.png?imageslim" alt="mark"></p>
+<p><img src="http://qinniu.bolaobiao.top/blog/20190826/vGLbMiCJx2Yv.png?imageslim" alt="mark"></p>
 <p>git常见的命令</p>
-<p>git clone 克隆远程仓库到本地<br>git remote -v 查看远程仓库<br>git add 将文件暂存<br>git commit -m ‘备注信息’将文件提交到本地仓库<br>git push origin master 将文件推到origin源master分支<br>git pull origin master 拉取数据到本地<br>git status  查看状态<br>git log  查看日志<br>git config 查看配置<br>git reset –hard commit ID号 回滚（通过git log得到）<br>git branch -a 查看所有分支<br>git checkout 分支名  切换分支<br>git branch 分支名 创建新分支<br>git branch -d 分支名 删除分支</p>
+<p>git clone 克隆远程仓库到本地<br>git remote -v 查看远程仓库<br>git add 将文件暂存<br>git commit -m ‘备注信息’将文件提交到本地仓库</p>
+<p>git push origin master 将文件推到origin源master分支<br>git pull origin master 拉取数据到本地</p>
+<p>git status  查看状态<br>git log  查看日志<br>git config 查看配置<br>git reset –hard commit ID号 回滚（通过git log得到）<br>git branch -a 查看所有分支<br>git checkout 分支名  切换分支<br>git branch 分支名 创建新分支<br>git branch -d 分支名 删除分支</p>
+<p>push与pull详解</p>
+<h5 id="———————————————————-git-pull"><a href="#———————————————————-git-pull" class="headerlink" title="———————————————————-git pull"></a>———————————————————-git pull</h5><p><code>git pull</code>命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull &lt;远程主机名&gt; <span class="xml"><span class="tag">&lt;<span class="name">远程分支名</span>&gt;</span>:<span class="tag">&lt;<span class="name">本地分支名</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>比如，取回<code>origin</code>主机的<code>next</code>分支，与本地的<code>master</code>分支合并，需要写成下面这样。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin next:master</span><br></pre></td></tr></table></figure>
+<p>如果远程分支是与当前分支合并，则冒号后面的部分可以省略。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull origin master</span><br></pre></td></tr></table></figure>
+<p>如果远程主机删除了某个分支，默认情况下，<code>git pull</code> 不会在拉取远程分支的时候，删除对应的本地分支。这是为了防止，由于其他人操作了远程主机，导致<code>git pull</code>不知不觉删除了本地分支。</p>
+<p>但是，你可以改变这个行为，加上参数 <code>-p</code> 就会在本地删除远程已经删除的分支。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git pull -p</span><br><span class="line"># 等同于下面的命令</span><br><span class="line">$ git fetch --prune origin </span><br><span class="line">$ git fetch -p</span><br></pre></td></tr></table></figure>
+<h5 id="———————————————————-git-push"><a href="#———————————————————-git-push" class="headerlink" title="———————————————————-git push"></a>———————————————————-git push</h5><p><code>git push</code>命令用于将本地分支的更新，推送到远程主机。它的格式与<code>git pull</code>命令相仿。</p>
+<p>  $ git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;</p>
+<p>注意，分支推送顺序的写法是&lt;来源地&gt;:&lt;目的地&gt;，所以<code>git pull</code>是&lt;远程分支&gt;:&lt;本地分支&gt;，而<code>git push</code>是&lt;本地分支&gt;:&lt;远程分支&gt;。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin master</span><br></pre></td></tr></table></figure>
+<p>上面命令表示，将本地的<code>master</code>分支推送到<code>origin</code>主机的<code>master</code>分支。如果后者不存在，则会被新建。</p>
 <h4 id="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"><a href="#提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？" class="headerlink" title="提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？"></a>提交时发生冲突，解释冲突的原因是如何产生的以及如何解决？</h4><h5 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h5><p>当web页面有更新，本地也有更新，然后本地在push前，没有得到最新版本就直接push就会产生冲突，即本地与服务器存在不一致的地方就会冲突<br>或者当两人甚至多人对同一个文件进行修改时，push也会产生冲突</p>
 <h5 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h5><p>通过git stash命令，把工作区的修改提交到栈区，目的是保存工作区的修改；<br>通过git pull命令，拉取远程分支上的代码并合并到本地分支，目的是消除冲突；<br>通过git stash pop命令，把保存在栈区的修改部分合并到最新的工作空间中；</p>
 
@@ -344,8 +361,8 @@
     </a>
   
   
-    <a href="/2019/06/15/计算机网络物理层/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">物理层知识点</div>
+    <a href="/2019/06/15/迭代器与生成器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">迭代器与生成器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -479,15 +496,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>

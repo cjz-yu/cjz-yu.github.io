@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
-<meta property="og:updated_time" content="2019-07-04T15:56:25.003Z">
+<meta property="og:image" content="http://qinniu.bolaobiao.top/blog/20190826/ndsuOxdIIcmz.png?imageslim">
+<meta property="og:updated_time" content="2019-08-26T14:55:13.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="raid与lvm">
 <meta name="twitter:description" content="linux的raid与lvmraid磁盘阵列概念百度百科：磁盘阵列是由很多块独立的磁盘，组合成一个容量巨大的磁盘组，利用个别磁盘提供数据所产生加成效果提升整个磁盘系统效能。利用这项技术，将数据切割成许多区段，分别存放在各个硬盘上。把相同的数据存储在多个硬盘的不同的地方（因此，冗余地）的方法。通过把数据放在多个硬盘上，输入输出操作能以平衡的方式交叠，改良性能。因为多个硬盘增加了平均故障间隔时间（MT">
-<meta name="twitter:image" content="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim">
+<meta name="twitter:image" content="http://qinniu.bolaobiao.top/blog/20190826/ndsuOxdIIcmz.png?imageslim">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -223,7 +223,7 @@
 <p>我们假想出现一中能把这些分区在逻辑上是能够连接在一起的，并能实现动态扩容+分区结构不需要改变</p>
 <h4 id="②原理与简介"><a href="#②原理与简介" class="headerlink" title="②原理与简介"></a>②原理与简介</h4><p>逻辑卷管理器本质上是一个虚拟设备驱动，我们都知道内核是管理CPU和内存的程序，而逻辑卷是在内核和存储设备之间添加的一个新层次，将几块磁盘（物理卷，PhysicalVolume）组合形成卷组（VolumeGroup)，然后在每次从从卷组中划分不同大小的逻辑卷（LogicalVolume），卷组替代了磁盘块成为数据存储的基本单元，底层的原始磁盘不再由内核直接控制，而由LVM层来控制，LVM管理着所有物理卷的物理盘区，维持着逻辑盘区和物理盘区之间的映射</p>
 <p>有以上的原理我们可以知道，逻辑卷不必是连续的空间，它可以跨越许多物理卷，并且可以在任何时候任意的调整大小。相比物理磁盘来说，更易于磁盘空间的管理</p>
-<p><img src="http://pu0ird5u5.bkt.clouddn.com/blog/20190704/rWkrS9gHrJtQ.png?imageslim" alt="mark"></p>
+<p><img src="http://qinniu.bolaobiao.top/blog/20190826/ndsuOxdIIcmz.png?imageslim" alt="mark"></p>
 <h4 id="③LVM机制的基本概念"><a href="#③LVM机制的基本概念" class="headerlink" title="③LVM机制的基本概念"></a>③LVM机制的基本概念</h4><table>
 <thead>
 <tr>
@@ -517,15 +517,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
